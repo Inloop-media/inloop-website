@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import AnimatedText from "@/components/AnimatedText";
 
 export default function DashboardPreview() {
   return (
@@ -11,9 +12,10 @@ export default function DashboardPreview() {
           <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-white/40 uppercase mb-2 md:mb-4">
              Intelligence Module
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter mb-6 md:mb-8 text-wrap">
-            Data. <br className="hidden sm:block"/> Without Noise.
-          </h2>
+          <AnimatedText 
+            text="Data. Without Noise." 
+            className="text-4xl sm:text-5xl font-black uppercase tracking-tighter mb-6 md:mb-8 text-wrap" 
+          />
           <p className="text-lg sm:text-xl font-light text-white/60 leading-relaxed max-w-lg mb-6 md:mb-8 text-wrap">
             We track thousands of subreddits to intercept conversations the second they begin. Precision timing is the difference between a top post and being ignored.
           </p>

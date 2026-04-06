@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import AnimatedText from "@/components/AnimatedText";
 
 const capabilities = [
   {
@@ -44,9 +45,10 @@ export default function Features() {
             <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-white/40 uppercase mb-3 md:mb-4">
               System Architecture
             </div>
-            <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter text-wrap">
-              The Engine.
-            </h2>
+            <AnimatedText 
+              text="The Engine." 
+              className="text-4xl sm:text-5xl font-black uppercase tracking-tighter text-wrap" 
+            />
           </div>
           <div className="md:w-2/3 w-full">
             <p className="text-lg sm:text-xl md:text-2xl font-light text-white/60 leading-relaxed max-w-2xl text-wrap">
@@ -59,10 +61,10 @@ export default function Features() {
           {capabilities.map((feature, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.215, 0.61, 0.355, 1] }}
               className="flex flex-col border-t border-white/10 pt-4 sm:pt-6 group w-full"
             >
               <div className="flex items-start justify-between mb-6 sm:mb-8 w-full">

@@ -37,9 +37,14 @@ export default function MockThread() {
 
             {/* Comment 1 */}
             <div className="mb-8 sm:mb-12 relative w-full">
-              <div className="absolute -left-[35px] sm:-left-[45px] md:-left-[55px] top-1 sm:top-1.5 bg-white text-black font-mono text-[8px] sm:text-[10px] px-1 font-bold z-10">
+              <motion.div 
+                initial={{ scale: 0.5, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                className="absolute -left-[35px] sm:-left-[45px] md:-left-[55px] top-1 sm:top-1.5 bg-white text-black font-mono text-[8px] sm:text-[10px] px-1 font-bold z-10"
+              >
                 850
-              </div>
+              </motion.div>
               <div className="bg-white/5 p-4 sm:p-6 border border-white/10 relative w-full">
                 <div className="font-mono text-[8px] sm:text-[10px] tracking-widest uppercase mb-3 sm:mb-4 flex flex-col sm:flex-row justify-start sm:justify-between sm:items-center text-white/50 gap-2 sm:gap-0 w-full">
                   <span className="flex items-center gap-2">
@@ -60,11 +65,25 @@ export default function MockThread() {
                    </div>
                    <div className="w-full">
                      <div className="mb-1">Karma</div>
-                     <div className="text-white">75K</div>
+                     <motion.div 
+                       initial={{ opacity: 0 }}
+                       whileInView={{ opacity: 1 }}
+                       viewport={{ once: true }}
+                       className="text-white"
+                     >
+                       75K
+                     </motion.div>
                    </div>
                    <div className="w-full">
                      <div className="mb-1">Trust</div>
-                     <div className="text-white">98%</div>
+                     <motion.div 
+                       initial={{ opacity: 0 }}
+                       whileInView={{ opacity: 1 }}
+                       viewport={{ once: true }}
+                       className="text-white"
+                     >
+                       98%
+                     </motion.div>
                    </div>
                 </div>
               </div>
@@ -72,9 +91,15 @@ export default function MockThread() {
 
             {/* Comment 2 */}
             <div className="ml-4 sm:ml-8 relative w-full">
-              <div className="absolute -left-[30px] sm:-left-[40px] md:-left-[50px] top-1 sm:top-1.5 bg-white/20 text-white font-mono text-[8px] sm:text-[10px] px-1 z-10">
+              <motion.div 
+                initial={{ scale: 0.5, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="absolute -left-[30px] sm:-left-[40px] md:-left-[50px] top-1 sm:top-1.5 bg-white/20 text-white font-mono text-[8px] sm:text-[10px] px-1 z-10"
+              >
                 420
-              </div>
+              </motion.div>
               <div className="font-mono text-[8px] sm:text-[10px] tracking-widest uppercase mb-2 sm:mb-4 text-white/50 break-all w-full">
                   u/marketing_guru
               </div>

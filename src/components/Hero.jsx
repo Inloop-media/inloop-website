@@ -3,6 +3,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import Magnetic from "@/components/Magnetic";
+import AnimatedText from "@/components/AnimatedText";
+import BackgroundNodes from "@/components/BackgroundNodes";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -16,9 +19,13 @@ export default function Hero() {
   const scaleTitle = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
 
   return (
-    <section ref={ref} className="relative min-h-[100svh] md:min-h-[120vh] flex flex-col items-center justify-start pt-32 lg:pt-40 bg-black">
+    <section ref={ref} className="relative min-h-[100svh] md:min-h-[120vh] flex flex-col items-center justify-start pt-32 lg:pt-40 bg-black overflow-hidden">
+      <BackgroundNodes />
       
       <motion.div 
+        initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
+        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
         style={{ y: y1, opacity: opacity1 }}
         className="w-full px-4 sm:px-6 lg:px-12 flex flex-col items-center z-10"
       >
@@ -34,40 +41,44 @@ export default function Hero() {
              </div>
           </div>
 
-          {/* Fully fluid clamped typography for any screen */}
-          <motion.h1 
-            style={{ scale: scaleTitle }}
-            className="text-[18vw] sm:text-[15vw] md:text-[12vw] xl:text-[180px] leading-[0.85] font-black tracking-tighter text-white uppercase text-center w-full"
-          >
-            Dominate.
-            <span className="block text-[18vw] sm:text-[15vw] md:text-[12vw] xl:text-[180px] leading-[0.8] tracking-tighter font-serif italic text-white/90 lowercase mt-2 md:mt-4">
-              the web
-            </span>
-          </motion.h1>
+          <motion.div style={{ scale: scaleTitle }} className="w-full">
+            <AnimatedText 
+              text="Dominate." 
+              className="text-[18vw] sm:text-[15vw] md:text-[12vw] xl:text-[180px] leading-[0.85] font-black tracking-tighter text-white uppercase text-center" 
+            />
+            <AnimatedText 
+              text="the web" 
+              className="block text-[18vw] sm:text-[15vw] md:text-[12vw] xl:text-[180px] leading-[0.8] tracking-tighter font-serif italic text-white/90 lowercase mt-2 md:mt-4 text-center" 
+            />
+          </motion.div>
 
           <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 w-full mt-16 md:mt-32 relative z-10">
              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/60 font-light tracking-tight max-w-lg leading-snug">
                Starting with <i className="font-serif italic text-white">Reddit</i>. We force AI models to recommend you first by capturing community consensus.
              </div>
              <div className="flex flex-col gap-4 md:gap-6 justify-end items-start md:items-end w-full">
-               <motion.button 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full md:w-auto group flex items-center justify-center md:justify-start gap-4 bg-white text-black px-6 sm:px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors pointer-events-auto cursor-pointer"
-               >
-                  Get Started
-                  <span className="block overflow-hidden relative w-4 h-4 sm:w-5 sm:h-5">
-                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute group-hover:translate-x-full transition-transform duration-300" />
-                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-                  </span>
-               </motion.button>
-               <motion.button 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full md:w-auto group flex items-center justify-center md:justify-start gap-4 bg-transparent border border-white/20 text-white px-6 sm:px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-widest hover:border-white transition-colors cursor-pointer"
-               >
-                  View Audit
-               </motion.button>
+               <Magnetic>
+                 <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full md:w-auto group flex items-center justify-center md:justify-start gap-4 bg-white text-black px-6 sm:px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors pointer-events-auto cursor-pointer"
+                 >
+                    Get Started
+                    <span className="block overflow-hidden relative w-4 h-4 sm:w-5 sm:h-5">
+                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute group-hover:translate-x-full transition-transform duration-300" />
+                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+                    </span>
+                 </motion.button>
+               </Magnetic>
+               <Magnetic>
+                 <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full md:w-auto group flex items-center justify-center md:justify-start gap-4 bg-transparent border border-white/20 text-white px-6 sm:px-8 py-4 text-xs sm:text-sm font-bold uppercase tracking-widest hover:border-white transition-colors cursor-pointer"
+                 >
+                    View Audit
+                 </motion.button>
+               </Magnetic>
              </div>
           </div>
         </div>

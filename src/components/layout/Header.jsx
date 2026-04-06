@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { Activity } from "lucide-react";
+import Magnetic from "@/components/Magnetic";
 
 const links = [
   { name: "Strategy", path: "#strategy" },
@@ -20,26 +21,31 @@ export default function Header() {
       <header className="fixed top-0 w-full z-[100] px-4 sm:px-6 lg:px-12 py-6 mix-blend-difference pointer-events-none">
         <div className="flex items-center justify-between pointer-events-auto">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 text-white group cursor-pointer">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 text-white group cursor-pointer relative">
             <Activity className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
-            <span className="font-black text-lg sm:text-xl tracking-tighter uppercase whitespace-nowrap">ClearEcho</span>
-            <span className="font-mono text-[8px] sm:text-[10px] tracking-widest uppercase opacity-50 hidden md:block ml-2">v2.4</span>
+            <div className="flex flex-col">
+               <span className="font-black text-lg sm:text-xl tracking-tighter uppercase whitespace-nowrap group-hover:skew-x-12 transition-transform duration-75">ClearEcho</span>
+               <div className="absolute inset-0 bg-white/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+            </div>
+            <span className="font-mono text-[8px] sm:text-[10px] tracking-widest uppercase opacity-50 hidden md:block ml-2">SYS_v2.4</span>
           </Link>
 
-          {/* Menu Toggle */}
-          <button 
-            onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center gap-3 group px-4 py-2 hover:bg-white/10 rounded-full transition-colors cursor-pointer"
-          >
-            <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-white font-bold hidden sm:block">
-              {isOpen ? "Close" : "Menu"}
-            </span>
-            <div className="w-5 sm:w-6 flex flex-col gap-1 sm:gap-1.5 relative z-[101]">
-               <motion.div animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 6 : 0 }} className="w-full h-px bg-white" />
-               <motion.div animate={{ opacity: isOpen ? 0 : 1 }} className="w-full h-px bg-white" />
-               <motion.div animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -6 : 0 }} className="w-full h-px bg-white" />
-            </div>
-          </button>
+          {/* Menu Toggle with Magnetic Effect */}
+          <Magnetic size={0.3}>
+            <button 
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex items-center gap-3 group px-4 py-2 hover:bg-white/10 rounded-full transition-colors cursor-pointer"
+            >
+              <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-white font-bold hidden sm:block">
+                {isOpen ? "Close" : "Menu"}
+              </span>
+              <div className="w-5 sm:w-6 flex flex-col gap-1 sm:gap-1.5 relative z-[101]">
+                 <motion.div animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 6 : 0 }} className="w-full h-px bg-white" />
+                 <motion.div animate={{ opacity: isOpen ? 0 : 1 }} className="w-full h-px bg-white" />
+                 <motion.div animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -6 : 0 }} className="w-full h-px bg-white" />
+              </div>
+            </button>
+          </Magnetic>
         </div>
       </header>
 

@@ -1,26 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-
-  // Use springs to make the movement deeply smooth and physical
-  const springConfig = { damping: 25, stiffness: 300, mass: 0.1 };
-  const cursorX = useSpring(0, springConfig);
-  const cursorY = useSpring(0, springConfig);
+  
+  // Multiple spring dots for the trail
+  const dotsCount = 8;
+  const dots = Array.from({ length: dotsCount }).map((_, i) => ({
+    x: useSpring(0, { damping: 25 + i * 2, stiffness: 300 - i * 20, mass: 0.1 + i * 0.05 }),
+    y: useSpring(0, { damping: 25 + i * 2, stiffness: 300 - i * 20, mass: 0.1 + i * 0.05 }),
+  }));
 
   useEffect(() => {
     const mouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-      cursorX.set(e.clientX - 16);
-      cursorY.set(e.clientY - 16);
+      dots.forEach((dot) => {
+        dot.x.set(e.clientX - 4); // Center smaller dots
+        dot.y.set(e.clientY - 4);
+      });
     };
 
     const handleMouseOver = (e) => {
-      // Check if hovering over interactive elements
       if (
         e.target.tagName.toLowerCase() === "button" ||
         e.target.tagName.toLowerCase() === "a" ||
@@ -40,18 +41,22 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("mouseover", handleMouseOver);
     };
-  }, [cursorX, cursorY]);
+  }, [dots]);
 
   return (
     <>
       <style dangerouslySetInnerHTML={{__html: `
         body, a, button { cursor: none !important; }
       `}} />
+      
+      {/* Principal Cursor */}
       <motion.div
         className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9999] mix-blend-difference"
         style={{
-          x: cursorX,
-          y: cursorY,
+          x: dots[0].x,
+          y: dots[0].y,
+          translateX: "-12px",
+          translateY: "-12px",
           backgroundColor: "white"
         }}
         animate={{
@@ -59,6 +64,20 @@ export default function CustomCursor() {
         }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       />
+
+      {/* Trail Dots */}
+      {dots.slice(1).map((dot, i) => (
+        <motion.div
+          key={i}
+          className="fixed top-0 left-0 w-1 h-1 rounded-full pointer-events-none z-[9998] bg-white/40"
+          style={{
+            x: dot.x,
+            y: dot.y,
+            scale: 1 - i * 0.1,
+            opacity: 0.5 - i * 0.05
+          }}
+        />
+      ))}
     </>
   );
 }

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Magnetic from "@/components/Magnetic";
 
 export default function CTA() {
   return (
@@ -44,7 +45,7 @@ export default function CTA() {
              </div>
              
              <div className="pt-8 md:pt-12 w-full">
-               <a href="mailto:contact@clearecho.in" className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest hover:text-black/50 transition-colors break-all">contact@clearecho.in</a>
+                <a href="mailto:contact@clearecho.in" className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest hover:text-black/50 transition-colors break-all">contact@clearecho.in</a>
              </div>
           </motion.div>
 
@@ -71,18 +72,20 @@ export default function CTA() {
                   <textarea className="w-full bg-transparent border-b border-white/20 px-0 py-2 sm:py-3 text-white focus:outline-none focus:border-white transition-colors min-h-[80px] md:min-h-[100px] text-base sm:text-lg md:text-xl font-light placeholder:text-white/20 resize-none rounded-none appearance-none" placeholder="OBJECTIVES..."></textarea>
                 </div>
                 
-                <motion.button 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  type="button" 
-                  className="w-full group bg-white text-black font-bold uppercase tracking-widest py-5 sm:py-6 flex items-center justify-center gap-4 hover:bg-gray-200 transition-colors mt-8 md:mt-12 cursor-pointer text-sm sm:text-base border-none outline-none"
-                >
-                  TRANSMIT
-                  <div className="overflow-hidden relative w-4 h-4 sm:w-5 sm:h-5">
-                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute group-hover:translate-x-full transition-transform duration-300" />
-                     <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-                  </div>
-                </motion.button>
+                <Magnetic strength={0.4}>
+                  <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    type="button" 
+                    className="w-full group bg-white text-black font-bold uppercase tracking-widest py-5 sm:py-6 flex items-center justify-center gap-4 hover:bg-gray-200 transition-colors mt-8 md:mt-12 cursor-pointer text-sm sm:text-base border-none outline-none"
+                  >
+                    TRANSMIT
+                    <div className="overflow-hidden relative w-4 h-4 sm:w-5 sm:h-5">
+                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute group-hover:translate-x-full transition-transform duration-300" />
+                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+                    </div>
+                  </motion.button>
+                </Magnetic>
              </form>
           </motion.div>
 
