@@ -66,20 +66,20 @@ export default function CaseStudyGrid() {
                transition={{ duration: 0.8, delay: idx * 0.1 }}
                className="group relative"
              >
-                <div className="font-mono text-[10px] text-indigo-500 mb-6 flex items-center gap-4">
+                <div className="absolute -left-4 sm:-left-6 -top-6 sm:-top-8 text-[64px] sm:text-[80px] font-black text-black/5 pointer-events-none select-none -z-10">
+                  0{idx + 1}
+                </div>
+                <div className="font-mono text-[10px] text-indigo-500 mb-6 flex items-center gap-4 relative">
                    <span>{study.target}</span>
                    <span className="w-8 h-px bg-indigo-500/30" />
                    <span>{study.label}</span>
                 </div>
-                <div className="text-5xl sm:text-6xl font-black tracking-tighter mb-6 text-black group-hover:text-indigo-500 transition-colors">
+                <div className="text-5xl sm:text-6xl font-black tracking-tighter mb-6 text-black group-hover:text-indigo-500 transition-colors relative">
                    {study.metric}
                 </div>
-                <p className="text-xl font-light text-black leading-relaxed max-w-sm">
+                <p className="text-xl font-light text-black leading-relaxed max-w-sm relative">
                    {study.description}
                 </p>
-                <div className="absolute -left-12 top-0 text-[60px] font-black text-black pointer-events-none select-none">
-                  0{idx + 1}
-                </div>
              </motion.div>
            ))}
         </div>
