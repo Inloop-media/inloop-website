@@ -32,23 +32,29 @@ const phases = [
 
 export default function ProcessGallery() {
   const targetRef = useRef(null);
-  const [windowWidth, setWindowWidth] = useState(0);
+  const trackRef = useRef(null);
+  const [maxTranslate, setMaxTranslate] = useState(0);
 
-  // Safely grab window width for clamp logic
+  // Measure actual track width so the horizontal scroll ends exactly when
+  // the last card is in view, instead of an estimated percentage that
+  // overshoots and forces extra scrolling past Phase 04.
   useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const measure = () => {
+      if (trackRef.current) {
+        const distance = trackRef.current.scrollWidth - window.innerWidth;
+        setMaxTranslate(distance > 0 ? distance : 0);
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
   }, []);
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  // Calculate scroll end dynamically so the exact number of cards fit on the last frame
-  const xTransformValues = windowWidth > 1024 ? ["0%", "-60%"] : windowWidth > 768 ? ["0%", "-100%"] : ["0%", "-200%"];
-  const x = useTransform(scrollYProgress, [0, 1], xTransformValues);
+  const x = useTransform(scrollYProgress, [0, 1], [0, -maxTranslate]);
   const opacityTitle = useTransform(scrollYProgress, [0, 0.1], [1, 0.2]);
 
   return (
@@ -67,7 +73,7 @@ export default function ProcessGallery() {
              </motion.h2>
          </div>
 
-         <motion.div style={{ x }} className="flex h-[60vh] md:h-[70vh] gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 lg:px-24 items-center">
+         <motion.div ref={trackRef} style={{ x }} className="flex h-[60vh] md:h-[70vh] gap-4 sm:gap-6 md:gap-8 px-4 sm:px-6 lg:px-24 items-center w-max">
             {/* Intro Spacing pad */}
             <div className="w-[5vw] md:w-[10vw] flex-shrink-0" />
 
@@ -98,7 +104,7 @@ export default function ProcessGallery() {
             ))}
 
             {/* Outro Spacing pad */}
-            <div className="w-[10vw] md:w-[30vw] flex-shrink-0" />
+            <div className="w-[5vw] md:w-[8vw] flex-shrink-0" />
          </motion.div>
       </div>
     </section>
