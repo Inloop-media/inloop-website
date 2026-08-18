@@ -31,10 +31,10 @@ export default function PerceptionShift() {
     <section className="py-24 md:py-32 bg-black border-t border-white/10 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full text-center mb-16">
         <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-white/40 uppercase mb-4">
-           The AI Perception Scan
+           The Infrastructure Optimization
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter">
-          Before vs. <span className="text-white/20">After</span>
+          Legacy vs <span className="text-white/20">Innoworq</span>
         </h2>
       </div>
 
@@ -46,16 +46,16 @@ export default function PerceptionShift() {
         <div className="absolute inset-0 flex items-center justify-center grayscale opacity-30 px-4">
            <div className="max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-12 text-center w-full">
               <div className="space-y-2">
-                 <div className="text-4xl font-black tracking-tighter">0.12%</div>
-                 <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest">Share of Voice</div>
+                 <div className="text-4xl font-black tracking-tighter">85.4%</div>
+                 <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest">Uptime Ratio</div>
               </div>
               <div className="space-y-2">
-                 <div className="text-4xl font-black tracking-tighter">UNKNOWN</div>
-                 <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest">LLM Authority</div>
+                 <div className="text-4xl font-black tracking-tighter">VULNERABLE</div>
+                 <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest">Security Posture</div>
               </div>
               <div className="space-y-2">
-                 <div className="text-4xl font-black tracking-tighter">0</div>
-                 <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest">Direct Referrals</div>
+                 <div className="text-4xl font-black tracking-tighter">4+ HOURS</div>
+                 <div className="text-[10px] font-mono text-white/40 uppercase tracking-widest">Incident MTTR</div>
               </div>
            </div>
         </div>
@@ -67,16 +67,16 @@ export default function PerceptionShift() {
         >
            <div className="max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-12 text-center w-full">
               <div className="space-y-2">
-                 <div className="text-5xl sm:text-6xl font-black tracking-tighter text-white">42.8%</div>
-                 <div className="text-[10px] font-mono text-white/60 uppercase tracking-widest">Market Dominance</div>
+                 <div className="text-5xl sm:text-6xl font-black tracking-tighter text-white">99.999%</div>
+                 <div className="text-[10px] font-mono text-white/60 uppercase tracking-widest">SLA Compliance</div>
               </div>
               <div className="space-y-2">
-                 <div className="text-5xl sm:text-6xl font-black tracking-tighter text-white">#1 REC</div>
-                 <div className="text-[10px] font-mono text-white/60 uppercase tracking-widest">ChatGPT Verified</div>
+                 <div className="text-5xl sm:text-6xl font-black tracking-tighter text-white">SECURE</div>
+                 <div className="text-[10px] font-mono text-white/60 uppercase tracking-widest">Zero-Trust Verified</div>
               </div>
               <div className="space-y-2">
-                 <div className="text-5xl sm:text-6xl font-black tracking-tighter text-white">12.4K</div>
-                 <div className="text-[10px] font-mono text-white/60 uppercase tracking-widest">Community Citations</div>
+                 <div className="text-5xl sm:text-6xl font-black tracking-tighter text-white">&lt; 15 MINS</div>
+                 <div className="text-[10px] font-mono text-white/60 uppercase tracking-widest">Incident MTTR</div>
               </div>
            </div>
         </motion.div>
@@ -93,7 +93,7 @@ export default function PerceptionShift() {
 
         {/* Floating Instruction */}
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 font-mono text-[8px] tracking-[0.2em] text-white/30 uppercase z-30">
-          Move cursor to scan brand evolution
+          Move cursor to scan infrastructure upgrade
         </div>
       </div>
     </section>

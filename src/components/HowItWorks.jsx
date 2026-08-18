@@ -5,18 +5,18 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Community Audit",
-    description: "We analyze your target subreddits, identify pain points, and map out where AI gathers intelligence about your niche.",
+    title: "Infrastructure Audit",
+    description: "We analyze your network topologies, identify performance bottlenecks, and map out scalable cloud environments.",
   },
   {
     number: "02",
-    title: "Authority Injection",
-    description: "We organically weave your brand into high-ranking conversations using absolute transparency and expert-level value.",
+    title: "Zero-Trust Architecture",
+    description: "We secure your perimeter using zero-trust protocols, multi-factor authentication, and advanced encryption standards.",
   },
   {
     number: "03",
-    title: "AI Synthesis",
-    description: "As your Reddit presence grows, LLMs absorb this community consensus and begin recommending your tool as the default solution.",
+    title: "Continuous Resilience",
+    description: "As workloads migrate, our 24/7 NOC continuously monitors infrastructure health, ensuring 99.999% SLA uptime.",
   },
 ];
 
@@ -30,10 +30,10 @@ export default function HowItWorks() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white text-balance">
-              The Protocol For <br /> Search Dominance
+              The Framework For <br /> IT Excellence
             </h2>
             <p className="text-gray-400 text-lg mb-8 max-w-md">
-              We don&apos;t just post on Reddit. We construct an ironclad narrative that AI models cannot ignore.
+              We don&apos;t just maintain hardware. We architect scalable, secure, and resilient IT ecosystems.
             </p>
             <button className="text-white border-b border-white hover:text-indigo-400 hover:border-indigo-400 transition-colors pb-1 flex items-center gap-2">
               See detailed methodology

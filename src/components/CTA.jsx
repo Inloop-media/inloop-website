@@ -20,32 +20,32 @@ export default function CTA() {
             className="w-full"
           >
              <div className="font-mono text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-4 md:mb-8 text-black/50">
-              Initiate
+              Partner
              </div>
              <h2 className="text-5xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-8 md:mb-12 text-black text-wrap">
-              Scale <br className="hidden sm:block" /> Protocol.
+              Engage <br className="hidden sm:block" /> Support
              </h2>
              <p className="text-lg sm:text-xl md:text-2xl font-light max-w-md text-black/70 mb-12 md:mb-16 leading-relaxed">
-               Book a strategic technical review. We map your infiltration vector.
+               Book a strategic technical review. We architect your enterprise IT roadmap.
              </p>
              
              <div className="space-y-3 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-black border-y border-black/10 py-6 md:py-8 w-full">
                 <div className="flex justify-between w-full">
                   <span>PHASE 1</span>
-                  <span className="text-black/50">ROADMAP</span>
+                  <span className="text-black/50">DISCOVERY</span>
                 </div>
                 <div className="flex justify-between w-full">
                   <span>PHASE 2</span>
-                  <span className="text-black/50">AUDIT</span>
+                  <span className="text-black/50">ARCHITECTURE</span>
                 </div>
                 <div className="flex justify-between w-full">
                   <span>PHASE 3</span>
-                  <span className="text-black/50">EXECUTION</span>
+                  <span className="text-black/50">DEPLOYMENT</span>
                 </div>
              </div>
              
              <div className="pt-8 md:pt-12 w-full">
-                <a href="mailto:contact@clearecho.in" className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest hover:text-black/50 transition-colors break-all">contact@clearecho.in</a>
+                <a href="mailto:hello@innoworq.com" className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest hover:text-black/50 transition-colors break-all">hello@innoworq.com</a>
              </div>
           </motion.div>
 
@@ -58,18 +58,18 @@ export default function CTA() {
           >
              <form className="space-y-6 md:space-y-8 w-full">
                 <div className="space-y-2 md:space-y-3 w-full">
-                  <label className="text-[8px] md:text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase">Access Designation</label>
-                  <input type="text" className="w-full bg-transparent border-b border-white/20 px-0 py-2 sm:py-3 text-white focus:outline-none focus:border-white transition-colors text-base sm:text-lg md:text-xl font-light placeholder:text-white/20 rounded-none appearance-none" placeholder="NAME / ENTITY" />
+                  <label className="text-[8px] md:text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase">Company Name</label>
+                  <input type="text" className="w-full bg-transparent border-b border-white/20 px-0 py-2 sm:py-3 text-white focus:outline-none focus:border-white transition-colors text-base sm:text-lg md:text-xl font-light placeholder:text-white/20 rounded-none appearance-none" placeholder="COMPANY INC." />
                 </div>
                 
                 <div className="space-y-2 md:space-y-3 w-full">
-                  <label className="text-[8px] md:text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase">Network Route</label>
+                  <label className="text-[8px] md:text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase">Email Address</label>
                   <input type="email" className="w-full bg-transparent border-b border-white/20 px-0 py-2 sm:py-3 text-white focus:outline-none focus:border-white transition-colors text-base sm:text-lg md:text-xl font-light placeholder:text-white/20 rounded-none appearance-none" placeholder="EMAIL" />
                 </div>
                 
                 <div className="space-y-2 md:space-y-3 w-full">
-                  <label className="text-[8px] md:text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase">Parameters</label>
-                  <textarea className="w-full bg-transparent border-b border-white/20 px-0 py-2 sm:py-3 text-white focus:outline-none focus:border-white transition-colors min-h-[80px] md:min-h-[100px] text-base sm:text-lg md:text-xl font-light placeholder:text-white/20 resize-none rounded-none appearance-none" placeholder="OBJECTIVES..."></textarea>
+                  <label className="text-[8px] md:text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase">Requirements</label>
+                  <textarea className="w-full bg-transparent border-b border-white/20 px-0 py-2 sm:py-3 text-white focus:outline-none focus:border-white transition-colors min-h-[80px] md:min-h-[100px] text-base sm:text-lg md:text-xl font-light placeholder:text-white/20 resize-none rounded-none appearance-none" placeholder="DETAILS..."></textarea>
                 </div>
                 
                 <Magnetic strength={0.4}>
@@ -79,7 +79,7 @@ export default function CTA() {
                     type="button" 
                     className="w-full group bg-white text-black font-bold uppercase tracking-widest py-5 sm:py-6 flex items-center justify-center gap-4 hover:bg-gray-200 transition-colors mt-8 md:mt-12 cursor-pointer text-sm sm:text-base border-none outline-none"
                   >
-                    TRANSMIT
+                    CONTACT SALES
                     <div className="overflow-hidden relative w-4 h-4 sm:w-5 sm:h-5">
                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute group-hover:translate-x-full transition-transform duration-300" />
                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />

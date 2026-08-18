@@ -19,8 +19,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "ClearEcho | The Community Authority Engine",
-  description: "We turn community trust into brand authority. Scale your presence from Reddit to the entire social web.",
+  title: "INNOWORQ | Enterprise IT Infrastructure, Cloud & Cybersecurity Services",
+  description: "Innoworq Infotech Pvt. Ltd. (INNOWORQ) is a global IT infrastructure, cloud, and cybersecurity support partner offering SLA-based CAMC, L1/L2/L3 support, and hybrid IT solutions.",
 };
 
 export default function RootLayout({ children }) {

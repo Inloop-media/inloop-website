@@ -19,7 +19,7 @@ export default function AnimatedText({ text, className }) {
       className={className}
     >
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden pb-2 mr-[0.25em] align-bottom">
+        <span key={i} className="inline-block overflow-hidden pb-2 pr-2 mr-[0.25em] align-bottom">
           <motion.span 
              variants={{
                hidden: { y: "120%", rotate: 5, opacity: 0 },

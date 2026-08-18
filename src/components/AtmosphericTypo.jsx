@@ -22,7 +22,7 @@ export default function AtmosphericTypo() {
                Core System Protocols
             </div>
             <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none">
-              The Engine. <br/><span className="text-white/20">The Authority.</span>
+              The Uptime <br/><span className="text-white/20">The Security</span>
             </h2>
          </div>
       </div>
@@ -33,19 +33,19 @@ export default function AtmosphericTypo() {
            style={{ x: x1 }}
            className="text-[200px] md:text-[300px] font-black uppercase tracking-tighter whitespace-nowrap leading-none"
          >
-           INFILTRATION_MISSION_SUCCESS_
+           INFRASTRUCTURE_OPTIMIZED_SECURE_
          </motion.div>
          <motion.div 
            className="text-[200px] md:text-[300px] font-black uppercase tracking-tighter whitespace-nowrap leading-none text-outline"
            style={{ WebkitTextStroke: "1px white", color: "transparent", x: x2 }}
          >
-           AUTHORITY_ESTABLISHED_24/7_
+           NOC_SOC_MONITORING_ACTIVE_
          </motion.div>
          <motion.div 
            style={{ x: x1 }}
            className="text-[200px] md:text-[300px] font-black uppercase tracking-tighter whitespace-nowrap leading-none"
          >
-           RELIABILITY_PROTOCOL_ACTIVE_
+           HYBRID_CLOUD_DEPLOYED_
          </motion.div>
       </div>
     </section>

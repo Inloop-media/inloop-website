@@ -6,27 +6,27 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const phases = [
   {
     num: "PHASE 01",
-    title: "Reconnaissance",
-    desc: "We algorithmically scrape millions of data points to identify high-intent conversations where your brand naturally belongs.",
-    metrics: "50,000+ Subs Analyzed"
+    title: "Discovery & Audit",
+    desc: "We comprehensively audit your existing infrastructure to identify vulnerabilities, performance bottlenecks, and legacy hardware constraints.",
+    metrics: "Infrastructure Assessed"
   },
   {
     num: "PHASE 02",
-    title: "Asset Deployment",
-    desc: "Aged, high-karma profiles activate securely. These assets immediately bypass spam algorithms and command respect.",
-    metrics: "Trust Score: 98%"
+    title: "Architecture Design",
+    desc: "Our architects design an SLA-backed, highly resilient network topology tailored to your enterprise requirements and scale.",
+    metrics: "High Availability Setup"
   },
   {
     num: "PHASE 03",
-    title: "Synthetic Insertion",
-    desc: "Operatives weave your brand into active, highly-ranked discussions without pitching, citing you as the definitive solution.",
-    metrics: "P2P Conversion"
+    title: "Migration & Deployment",
+    desc: "Seamless transition of critical workloads to hybrid-cloud or software-defined datacenter environments with zero downtime.",
+    metrics: "Zero-Downtime Migration"
   },
   {
     num: "PHASE 04",
-    title: "AI Capture",
-    desc: "Surging Reddit threads are crawled by Google and ingested by LLMs. Your brand becomes the global AI consensus.",
-    metrics: "LLM Visibility: Locked"
+    title: "24x7 NOC/SOC Operations",
+    desc: "Continuous monitoring, proactive threat hunting, and sub-15 minute incident response for sustained infrastructure resilience.",
+    metrics: "99.999% SLA Guaranteed"
   }
 ];
 
@@ -62,7 +62,7 @@ export default function ProcessGallery() {
                style={{ opacity: opacityTitle }}
                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter"
              >
-               The Infiltration.<br/>
+               The Methodology.<br/>
                <span className="font-serif italic text-white/80 lowercase">step by step.</span>
              </motion.h2>
          </div>

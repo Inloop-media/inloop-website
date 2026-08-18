@@ -22,22 +22,22 @@ export default function GlobalNetwork() {
           
           <div className="lg:col-span-1">
              <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-white/40 uppercase mb-4">
-                Global Dominance
+                Global Reach
              </div>
              <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter mb-8 leading-none">
-                Network <br/><span className="text-indigo-500">Coverage.</span>
+                Data Center <br/><span className="text-indigo-500">Footprint.</span>
              </h2>
              <p className="text-lg font-light text-white/50 leading-relaxed max-w-sm">
-                Our operatives are embedded in every high-authority digital hub on the planet. Geography is no longer a constraint.
+                Our network operations span the globe, providing seamless 24/7 support and ensuring your enterprise data remains resilient and compliant across borders.
              </p>
              
              <div className="mt-12 space-y-4 font-mono text-[10px] uppercase tracking-widest text-white/30">
                 <div className="flex justify-between items-center bg-white/5 p-3 border-l-2 border-indigo-500">
-                   <span>Node Capacity</span>
+                   <span>NOC Availability</span>
                    <span className="text-white">OPTIMAL</span>
                 </div>
                 <div className="flex justify-between items-center bg-white/5 p-3 border-l-2 border-white/20">
-                   <span>Encryption Status</span>
+                   <span>Zero-Trust Protocol</span>
                    <span className="text-white">ENFORCED</span>
                 </div>
              </div>

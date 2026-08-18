@@ -4,12 +4,12 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const keywords = [
-  { initial: "WHISPER", final: "STRATEGIC_WHISPER", x: "10%", y: "20%" },
-  { initial: "TRUST", final: "COMMUNITY_TRUST", x: "60%", y: "15%" },
-  { initial: "REACH", final: "GLOBAL_AUTHORITY", x: "30%", y: "50%" },
-  { initial: "SIGNAL", final: "UNCANNY_RELIABILITY", x: "70%", y: "60%" },
-  { initial: "ECHO", final: "RESONANT_DOMINANCE", x: "15%", y: "75%" },
-  { initial: "PULSE", final: "REALTIME_INTERCEPTION", x: "50%", y: "85%" },
+  { initial: "LATENCY", final: "ZERO_LATENCY", x: "10%", y: "20%" },
+  { initial: "UPTIME", final: "99.999%_UPTIME", x: "60%", y: "15%" },
+  { initial: "CLOUD", final: "HYBRID_CLOUD", x: "30%", y: "50%" },
+  { initial: "METRICS", final: "REALTIME_METRICS", x: "70%", y: "60%" },
+  { initial: "BACKUP", final: "DISASTER_RECOVERY", x: "15%", y: "75%" },
+  { initial: "NETWORK", final: "SD_WAN_NETWORK", x: "50%", y: "85%" },
 ];
 
 export default function SubconsciousModule() {
@@ -21,10 +21,10 @@ export default function SubconsciousModule() {
 
       <div className="relative z-10 text-center max-w-2xl px-6">
          <div className="font-mono text-[8px] md:text-[10px] tracking-[0.4em] text-white/30 uppercase mb-6">
-            Module 09 // Subconscious
+            Module 09 // Infrastructure
          </div>
          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8 leading-tight">
-            Influence. <br/><span className="text-white/20">Without Detection.</span>
+            Resilience. <br/><span className="text-white/20">Without Interruption.</span>
           </h2>
       </div>
 

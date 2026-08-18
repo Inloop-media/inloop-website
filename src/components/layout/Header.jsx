@@ -7,9 +7,9 @@ import { Activity } from "lucide-react";
 import Magnetic from "@/components/Magnetic";
 
 const links = [
-  { name: "Strategy", path: "#strategy" },
-  { name: "Intelligence", path: "#intelligence" },
-  { name: "The Edge", path: "#the-edge" },
+  { name: "Services", path: "/services" },
+  { name: "Solutions", path: "#solutions" },
+  { name: "Industries", path: "/industries" },
   { name: "FAQ", path: "#faq" },
 ];
 
@@ -21,13 +21,12 @@ export default function Header() {
       <header className="fixed top-0 w-full z-[100] px-4 sm:px-6 lg:px-12 py-6 mix-blend-difference pointer-events-none">
         <div className="flex items-center justify-between pointer-events-auto">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 text-white group cursor-pointer relative">
+            <Link href="/" className="flex items-center gap-2 sm:gap-3 text-white group cursor-pointer relative">
             <Activity className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" />
             <div className="flex flex-col">
-               <span className="font-black text-lg sm:text-xl tracking-tighter uppercase whitespace-nowrap group-hover:skew-x-12 transition-transform duration-75">ClearEcho</span>
+               <span className="font-black text-lg sm:text-xl tracking-tighter uppercase whitespace-nowrap group-hover:skew-x-12 transition-transform duration-75">INNOWORQ</span>
                <div className="absolute inset-0 bg-white/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             </div>
-            <span className="font-mono text-[8px] sm:text-[10px] tracking-widest uppercase opacity-50 hidden md:block ml-2">SYS_v2.4</span>
           </Link>
 
           {/* Menu Toggle with Magnetic Effect */}
@@ -101,7 +100,7 @@ export default function Header() {
                    </div>
                    <div>
                      <div className="font-mono text-[10px] tracking-[0.2em] text-white/40 uppercase mb-1 md:mb-2">Transmission</div>
-                     <a href="mailto:contact@clearecho.in" className="text-[16px] sm:text-lg md:text-xl font-light text-white hover:italic hover:font-serif transition-all break-all">contact@clearecho.in</a>
+                     <a href="mailto:hello@innoworq.com" className="text-[16px] sm:text-lg md:text-xl font-light text-white hover:italic hover:font-serif transition-all break-all">hello@innoworq.com</a>
                    </div>
                    <div className="mt-4 md:mt-8 border-t border-white/10 pt-6 md:pt-8 flex gap-4">
                      <a href="#" className="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-white hover:text-black transition-colors rounded-full font-bold">X</a>

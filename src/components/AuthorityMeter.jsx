@@ -12,7 +12,7 @@ export default function AuthorityMeter() {
   // Update labels based on scroll percentage
   const label = useTransform(scrollYProgress, 
     [0, 0.3, 0.6, 0.9], 
-    ["RECONNAISSANCE", "INFILTRATION", "SCALE", "DOMINANCE"]
+    ["INITIALIZING", "CONNECTING", "MONITORING", "SECURE"]
   );
 
   return (

@@ -5,22 +5,22 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const caseStudies = [
   {
-    target: "r/Startups",
-    metric: "+420%",
-    label: "ARR_LIFT",
-    description: "Infiltrated 12 active threads. Established u/growth_lead as the dominant authority."
+    target: "Smart City",
+    metric: "100%",
+    label: "UPTIME_SLA",
+    description: "Deployed edge-computing and redundant NOC tracking for critical municipal services."
   },
   {
-    target: "r/SaaS",
-    metric: "12.4K",
-    label: "CONVERSIONS",
-    description: "Multi-threaded native mentions resulting in direct inbound funnel growth."
+    target: "FinTech Hub",
+    metric: "0",
+    label: "BREACHES",
+    description: "Implemented Zero-Trust architecture and ISO 27001 compliant SOC monitoring."
   },
   {
-    target: "r/Crypto",
-    metric: "98.2%",
-    label: "TRUST_INDEX",
-    description: "Neutralized hostile FUD through systematic high-authority advocacy."
+    target: "Manufacturing",
+    metric: "60%",
+    label: "COST_REDUCTION",
+    description: "Migrated legacy on-premise hardware to a scalable hybrid-cloud environment."
   }
 ];
 
@@ -40,18 +40,18 @@ export default function CaseStudyGrid() {
         {/* Left Side: Sticky Success Summary */}
         <div className="md:sticky md:top-40 md:h-fit z-10">
            <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-white/40 uppercase mb-4">
-              Mission Results
+              IT Success Stories
            </div>
            <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter mb-12">
-              The <br/><span className="text-indigo-500 underline decoration-indigo-500/50 underline-offset-8">Output.</span>
+              Our <br/><span className="text-indigo-500 underline decoration-indigo-500/50 underline-offset-8">Impact</span>
            </h2>
            
            <motion.div 
              style={{ scale: scaleMetric }}
              className="bg-white/5 border border-white/10 p-12 md:p-16 flex flex-col items-center justify-center text-center"
            >
-              <div className="text-6xl sm:text-7xl md:text-8xl font-black tracking-tighter text-white mb-2">94%</div>
-              <div className="font-mono text-[10px] tracking-widest text-white/40 uppercase">Average Client Success Rate</div>
+              <div className="text-6xl sm:text-7xl md:text-8xl font-black tracking-tighter text-white mb-2">99.9%</div>
+              <div className="font-mono text-[10px] tracking-widest text-white/40 uppercase">SLA Adherence across 100+ Clients</div>
            </motion.div>
         </div>
 

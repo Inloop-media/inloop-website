@@ -18,7 +18,7 @@ export default function SlantedMarquee() {
           {[...Array(16)].map((_, i) => (
              <div key={i} className="flex items-center gap-3 sm:gap-6 text-black font-black uppercase text-2xl sm:text-4xl tracking-tighter whitespace-nowrap">
                 <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-black shrink-0" />
-                INITIATE PROTOCOL
+                ZERO-TRUST DEPLOYMENT
              </div>
           ))}
         </motion.div>

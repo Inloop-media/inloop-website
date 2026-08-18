@@ -4,24 +4,24 @@ import { motion } from "framer-motion";
 
 const comparisons = [
   {
-    feature: "Trust Level",
-    echo: "EXTREMELY HIGH",
-    ads: "LOW",
+    feature: "Uptime SLA",
+    echo: "99.999% GUARANTEED",
+    ads: "BEST EFFORT",
   },
   {
-    feature: "Longevity",
-    echo: "PERMANENT",
-    ads: "EPHEMERAL",
+    feature: "Incident Response",
+    echo: "< 15 MINS MTTR",
+    ads: "REACTIVE",
   },
   {
-    feature: "Engagement",
-    echo: "DEEP DISCUSSIONS",
-    ads: "PASSIVE IMPRESSIONS",
+    feature: "Security",
+    echo: "ZERO-TRUST ARCHITECTURE",
+    ads: "PERIMETER DEFENSE",
   },
   {
-    feature: "Cost Efficiency",
-    echo: "STRATEGIC ROI",
-    ads: "EXPENSIVE PPC",
+    feature: "Cost Structure",
+    echo: "PREDICTABLE OPEX",
+    ads: "UNPREDICTABLE CAPEX",
   }
 ];
 
@@ -35,11 +35,11 @@ export default function ComparisonTable() {
               Structural Advantage
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter">
-              The Edge.
+              The Edge
             </h2>
           </div>
           <p className="text-base sm:text-lg md:text-xl font-light text-white/60 max-w-sm mt-4 md:mt-0 leading-relaxed text-wrap">
-            Why the world's smartest brands abandon traditional ad networks.
+            Why enterprise leaders choose INNOWORQ over legacy IT break-fix models.
           </p>
         </div>
 
@@ -53,8 +53,8 @@ export default function ComparisonTable() {
           {/* Header row - Hidden on small mobile to rely on stacked layout, visible on sm and up */}
           <div className="hidden sm:grid sm:grid-cols-3 font-mono text-[10px] uppercase tracking-widest text-white/40 border-b border-white/20 pb-4 w-full">
              <div>Metric</div>
-             <div>ClearEcho System</div>
-             <div>Traditional Ads</div>
+             <div>INNOWORQ Managed IT</div>
+             <div>Standard IT Support</div>
           </div>
 
           {/* Rows */}
@@ -66,14 +66,14 @@ export default function ComparisonTable() {
                  <div className="text-white text-xl sm:text-2xl md:text-3xl font-light tracking-tight mb-4 sm:mb-0">{item.feature}</div>
                  
                  <div>
-                   <div className="sm:hidden font-mono text-[8px] uppercase tracking-widest text-white/40 mb-1">ClearEcho System</div>
+                   <div className="sm:hidden font-mono text-[8px] uppercase tracking-widest text-white/40 mb-1">INNOWORQ Managed IT</div>
                    <div className="text-white font-bold tracking-widest text-xs sm:text-sm md:text-base flex items-center mb-4 sm:mb-0">
                      {item.echo}
                    </div>
                  </div>
 
                  <div>
-                   <div className="sm:hidden font-mono text-[8px] uppercase tracking-widest text-white/40 mb-1">Traditional Ads</div>
+                   <div className="sm:hidden font-mono text-[8px] uppercase tracking-widest text-white/40 mb-1">Standard IT Support</div>
                    <div className="text-white/30 font-medium tracking-widest text-xs sm:text-sm md:text-base flex items-center">
                      {item.ads}
                    </div>

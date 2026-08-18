@@ -24,8 +24,8 @@ export default function ScrollMarquee() {
 
       <motion.div style={{ x: x1 }} className="flex whitespace-nowrap w-max">
         {[...Array(4)].map((_, i) => (
-          <h2 key={i} className="text-5xl sm:text-7xl md:text-[9vw] font-black uppercase text-white/5 tracking-tighter leading-none inline-block pe-8 sm:pe-16 md:pe-24 hover:text-white/20 transition-colors duration-500 cursor-default">
-            PERMANENT INDEXING • ABSOLUTE AUTHORITY • 
+          <h2 key={i} className="text-5xl sm:text-7xl md:text-[9vw] font-black uppercase text-white tracking-tighter leading-none inline-block pe-8 sm:pe-16 md:pe-24 cursor-default">
+            ENTERPRISE INFRASTRUCTURE • HYBRID CLOUD • 
           </h2>
         ))}
       </motion.div>
@@ -34,10 +34,9 @@ export default function ScrollMarquee() {
         {[...Array(4)].map((_, i) => (
           <h2 
             key={i} 
-            className="text-5xl sm:text-7xl md:text-[9vw] font-black uppercase text-transparent tracking-tighter leading-none inline-block pe-8 sm:pe-16 md:pe-24 hover:text-white/20 transition-colors duration-500 cursor-default"
-            style={{ WebkitTextStroke: "1px rgba(255, 255, 255, 0.15)" }}
+            className="text-5xl sm:text-7xl md:text-[9vw] font-black uppercase text-white tracking-tighter leading-none inline-block pe-8 sm:pe-16 md:pe-24 cursor-default"
           >
-            NOISE REDUCTION • SIGNAL AMPLIFICATION • 
+            NOC MONITORING • ZERO-TRUST SECURITY • 
           </h2>
         ))}
       </motion.div>

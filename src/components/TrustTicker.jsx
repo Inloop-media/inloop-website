@@ -3,14 +3,14 @@
 import { motion } from "framer-motion";
 
 const mentions = [
-  "r/technology: 'ClearEcho is the future of community trust...'",
-  "Quora: 'How ClearEcho is changing the game for startups...'",
-  "r/startups: 'Just saw a 40% jump in organic traffic thanks to...'",
-  "Quora: 'The best way to build authority in 2026 is...'",
-  "r/marketing: 'The AI visibility engine is actually insane...'",
-  "r/business: 'Finally a tool that understands Reddit culture...'",
-  "Quora: 'Why ClearEcho is the top recommendation for SaaS...'",
-  "r/saas: 'ClearEcho's approach to r/saas is pure gold...'"
+  "Uptime: 99.999% SLA Guarantee across all managed nodes...",
+  "Incident Response: <15 minutes MTTR for critical alerts...",
+  "Security: Zero-Trust Framework deployed and active...",
+  "Compliance: ISO/IEC 27001:2022 Certified...",
+  "Support: 24/7/365 Global NOC Operations...",
+  "Cloud: AWS / Azure / GCP Infrastructure Management...",
+  "Hardware: Multi-Vendor OEM SLA Support...",
+  "Infrastructure: 100+ Enterprise Data Centers Managed..."
 ];
 
 export default function TrustTicker() {
