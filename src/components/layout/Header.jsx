@@ -63,7 +63,7 @@ export default function Header() {
              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 relative z-10 mt-16 md:mt-0">
                {/* Nav Links */}
                <nav className="flex flex-col gap-4">
-                 <div className="font-mono text-[10px] tracking-[0.2em] text-black/40 uppercase mb-4 md:mb-8 border-b border-black/10 pb-4">
+                 <div className="font-mono text-[10px] tracking-[0.2em] text-black uppercase mb-4 md:mb-8 border-b border-black/10 pb-4">
                    Navigation
                  </div>
                  {links.map((link, idx) => (
@@ -95,11 +95,11 @@ export default function Header() {
                >
                  <div className="flex flex-col gap-6 md:gap-8 md:pl-24">
                    <div>
-                     <div className="font-mono text-[10px] tracking-[0.2em] text-black/40 uppercase mb-1 md:mb-2">Location</div>
+                     <div className="font-mono text-[10px] tracking-[0.2em] text-black uppercase mb-1 md:mb-2">Location</div>
                      <div className="text-lg md:text-xl font-light text-black">Distributed // Earth</div>
                    </div>
                    <div>
-                     <div className="font-mono text-[10px] tracking-[0.2em] text-black/40 uppercase mb-1 md:mb-2">Transmission</div>
+                     <div className="font-mono text-[10px] tracking-[0.2em] text-black uppercase mb-1 md:mb-2">Transmission</div>
                      <a href="mailto:sales@innoworq.com" className="text-[16px] sm:text-lg md:text-xl font-light text-black hover:italic hover:font-serif transition-all break-all">sales@innoworq.com</a>
                    </div>
                    <div className="mt-4 md:mt-8 border-t border-black/10 pt-6 md:pt-8 flex gap-4">

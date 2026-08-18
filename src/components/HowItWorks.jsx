@@ -32,7 +32,7 @@ export default function HowItWorks() {
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-black text-balance">
               The Framework For <br /> IT Excellence
             </h2>
-            <p className="text-gray-500 text-lg mb-8 max-w-md">
+            <p className="text-black text-lg mb-8 max-w-md">
               We don&apos;t just maintain hardware. We architect scalable, secure, and resilient IT ecosystems.
             </p>
             <button className="text-black border-b border-black hover:text-indigo-500 hover:border-indigo-500 transition-colors pb-1 flex items-center gap-2">
@@ -58,7 +58,7 @@ export default function HowItWorks() {
                   </div>
                   <div className="pt-2">
                     <h3 className="text-xl font-bold text-black mb-2">{step.title}</h3>
-                    <p className="text-gray-500 leading-relaxed">
+                    <p className="text-black leading-relaxed">
                       {step.description}
                     </p>
                   </div>

@@ -27,7 +27,7 @@ export default function AuthorityMeter() {
          />
          
          <div className="absolute top-4 right-0 flex items-center gap-2">
-            <span className="font-mono text-[8px] tracking-[0.2em] text-black/40 uppercase">System Status</span>
+            <span className="font-mono text-[8px] tracking-[0.2em] text-black uppercase">System Status</span>
             <motion.span className="font-mono text-[8px] tracking-[0.2em] text-black font-bold uppercase min-w-[100px] text-right">
                {label}
             </motion.span>

@@ -21,17 +21,17 @@ export default function GlobalNetwork() {
         <div className="grid lg:grid-cols-3 gap-16 items-center">
 
           <div className="lg:col-span-1">
-             <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black/40 uppercase mb-4">
+             <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black uppercase mb-4">
                 Global Reach
              </div>
              <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter mb-8 leading-none text-black">
                 Data Center <br/><span className="text-indigo-500">Footprint</span>
              </h2>
-             <p className="text-lg font-light text-black/50 leading-relaxed max-w-sm">
+             <p className="text-lg font-light text-black leading-relaxed max-w-sm">
                 Our network operations span the globe, providing seamless 24/7 support and ensuring your enterprise data remains resilient and compliant across borders.
              </p>
 
-             <div className="mt-12 space-y-4 font-mono text-[10px] uppercase tracking-widest text-black/40">
+             <div className="mt-12 space-y-4 font-mono text-[10px] uppercase tracking-widest text-black">
                 <div className="flex justify-between items-center bg-black/[0.03] p-3 border-l-2 border-indigo-500">
                    <span>NOC Availability</span>
                    <span className="text-black">OPTIMAL</span>

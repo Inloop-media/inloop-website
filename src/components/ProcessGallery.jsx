@@ -55,7 +55,7 @@ export default function ProcessGallery() {
     <section ref={targetRef} className="relative h-[400vh] bg-neutral-50 border-t border-black/10">
       <div className="sticky top-0 flex h-[100svh] items-center overflow-hidden">
          <div className="absolute top-16 md:top-24 left-4 sm:left-6 md:left-12 z-10 w-full overflow-hidden">
-             <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black/40 uppercase mb-2 md:mb-4">
+             <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black uppercase mb-2 md:mb-4">
                 Operational Pipeline
              </div>
              <motion.h2
@@ -63,7 +63,7 @@ export default function ProcessGallery() {
                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-black"
              >
                The Methodology<br/>
-               <span className="font-serif italic text-black/70 lowercase">step by step</span>
+               <span className="font-serif italic text-black lowercase">step by step</span>
              </motion.h2>
          </div>
 
@@ -77,20 +77,20 @@ export default function ProcessGallery() {
                 <div className="absolute inset-0 z-0 opacity-10 mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)"/%3E%3C/svg%3E')` }}></div>
 
                 <div className="relative z-10">
-                  <div className="font-mono text-[8px] md:text-[10px] tracking-widest uppercase text-black/50 mb-6 md:mb-8 border-b border-black/10 pb-3 md:pb-4 flex justify-between">
+                  <div className="font-mono text-[8px] md:text-[10px] tracking-widest uppercase text-black mb-6 md:mb-8 border-b border-black/10 pb-3 md:pb-4 flex justify-between">
                     <span>{phase.num}</span>
                     <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-black rounded-full hidden group-hover:block" />
                   </div>
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight text-black mb-4 md:mb-6 uppercase">
                     {phase.title}
                   </h3>
-                  <p className="text-black/60 text-sm md:text-base font-medium leading-relaxed">
+                  <p className="text-black text-sm md:text-base font-medium leading-relaxed">
                     {phase.desc}
                   </p>
                 </div>
 
                 <div className="relative z-10 mt-6 md:mt-8 pt-4 md:pt-6 border-t border-black/10">
-                  <div className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-black/70">
+                  <div className="font-mono text-[10px] md:text-xs uppercase tracking-widest text-black">
                     STATUS // {phase.metrics}
                   </div>
                 </div>

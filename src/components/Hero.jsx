@@ -38,12 +38,12 @@ export default function Hero() {
             />
             <AnimatedText
               text="Infotech"
-              className="block text-[14.5vw] sm:text-[13.5vw] md:text-[11vw] lg:text-[140px] xl:text-[150px] leading-[0.8] tracking-tighter font-serif italic text-black/80 lowercase mt-2 md:mt-4 text-center"
+              className="block text-[14.5vw] sm:text-[13.5vw] md:text-[11vw] lg:text-[140px] xl:text-[150px] leading-[0.8] tracking-tighter font-serif italic text-black lowercase mt-2 md:mt-4 text-center"
             />
           </motion.div>
 
           <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 w-full mt-24 md:mt-48 relative z-10">
-             <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-black/60 font-light tracking-tight max-w-lg leading-snug">
+             <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-black font-light tracking-tight max-w-lg leading-snug">
                <i className="font-serif italic text-black">Strong partnerships. Smarter solutions. Greater impact.</i> Global IT infrastructure, cloud, and cybersecurity support partner.
              </div>
              <div className="flex flex-col gap-4 md:gap-6 justify-end items-start md:items-end w-full">
@@ -82,27 +82,27 @@ export default function Hero() {
       <div className="md:absolute static bottom-0 left-0 w-full bg-white z-20 border-t border-black/10 mt-16 md:mt-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-black/10">
            <div className="py-8 md:py-12 sm:pr-6 md:pr-12 group flex flex-col items-center text-center">
-             <h3 className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black/40 uppercase mb-4 md:mb-8 w-full text-center">
+             <h3 className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black uppercase mb-4 md:mb-8 w-full text-center">
                Senior IT Experts
              </h3>
-             <div className="text-4xl sm:text-5xl md:text-6xl font-black text-black mb-2 tracking-tighter">350<span className="text-xl md:text-2xl text-black/50">+</span></div>
-             <div className="text-[8px] md:text-[10px] font-mono tracking-widest text-black/50 uppercase">PROFESSIONALS</div>
+             <div className="text-4xl sm:text-5xl md:text-6xl font-black text-black mb-2 tracking-tighter">350<span className="text-xl md:text-2xl text-black">+</span></div>
+             <div className="text-[8px] md:text-[10px] font-mono tracking-widest text-black uppercase">PROFESSIONALS</div>
            </div>
 
            <div className="py-8 md:py-12 sm:px-6 md:px-12 group flex flex-col items-center text-center">
-             <h3 className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black/40 uppercase mb-4 md:mb-8 w-full text-center">
+             <h3 className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black uppercase mb-4 md:mb-8 w-full text-center">
                Global Scale
              </h3>
-             <div className="text-4xl sm:text-5xl md:text-6xl font-black text-black mb-2 tracking-tighter">100<span className="text-xl md:text-2xl text-black/50">+</span></div>
-             <div className="text-[8px] md:text-[10px] font-mono tracking-widest text-black/50 uppercase">ENTERPRISE CLIENTS</div>
+             <div className="text-4xl sm:text-5xl md:text-6xl font-black text-black mb-2 tracking-tighter">100<span className="text-xl md:text-2xl text-black">+</span></div>
+             <div className="text-[8px] md:text-[10px] font-mono tracking-widest text-black uppercase">ENTERPRISE CLIENTS</div>
            </div>
 
            <div className="py-8 md:py-12 sm:pl-6 md:pl-12 group flex flex-col items-center text-center">
-             <h3 className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black/40 uppercase mb-4 md:mb-8 w-full text-center">
+             <h3 className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black uppercase mb-4 md:mb-8 w-full text-center">
                Track Record
              </h3>
-             <div className="text-4xl sm:text-5xl md:text-6xl font-black text-black mb-2 tracking-tighter">100<span className="text-xl md:text-2xl text-black/50">+</span></div>
-             <div className="text-[8px] md:text-[10px] font-mono tracking-widest text-black/50 uppercase">PROJECTS DELIVERED</div>
+             <div className="text-4xl sm:text-5xl md:text-6xl font-black text-black mb-2 tracking-tighter">100<span className="text-xl md:text-2xl text-black">+</span></div>
+             <div className="text-[8px] md:text-[10px] font-mono tracking-widest text-black uppercase">PROJECTS DELIVERED</div>
            </div>
         </div>
       </div>

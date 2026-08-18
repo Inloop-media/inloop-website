@@ -19,33 +19,33 @@ export default function CTA() {
             transition={{ duration: 1 }}
             className="w-full"
           >
-             <div className="font-mono text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-4 md:mb-8 text-black/50">
+             <div className="font-mono text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-4 md:mb-8 text-black">
               Partner
              </div>
              <h2 className="text-5xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-8 md:mb-12 text-black text-wrap">
               Engage <br className="hidden sm:block" /> Support
              </h2>
-             <p className="text-lg sm:text-xl md:text-2xl font-light max-w-md text-black/70 mb-12 md:mb-16 leading-relaxed">
+             <p className="text-lg sm:text-xl md:text-2xl font-light max-w-md text-black mb-12 md:mb-16 leading-relaxed">
                Book a strategic technical review. We architect your enterprise IT roadmap.
              </p>
              
              <div className="space-y-3 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-black border-y border-black/10 py-6 md:py-8 w-full">
                 <div className="flex justify-between w-full">
                   <span>PHASE 1</span>
-                  <span className="text-black/50">DISCOVERY</span>
+                  <span className="text-black">DISCOVERY</span>
                 </div>
                 <div className="flex justify-between w-full">
                   <span>PHASE 2</span>
-                  <span className="text-black/50">ARCHITECTURE</span>
+                  <span className="text-black">ARCHITECTURE</span>
                 </div>
                 <div className="flex justify-between w-full">
                   <span>PHASE 3</span>
-                  <span className="text-black/50">DEPLOYMENT</span>
+                  <span className="text-black">DEPLOYMENT</span>
                 </div>
              </div>
              
              <div className="pt-8 md:pt-12 w-full">
-                <a href="mailto:sales@innoworq.com" className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest hover:text-black/50 transition-colors break-all">sales@innoworq.com</a>
+                <a href="mailto:sales@innoworq.com" className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest hover:text-black transition-colors break-all">sales@innoworq.com</a>
              </div>
           </motion.div>
 

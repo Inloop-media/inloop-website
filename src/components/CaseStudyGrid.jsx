@@ -39,7 +39,7 @@ export default function CaseStudyGrid() {
 
         {/* Left Side: Sticky Success Summary */}
         <div className="md:sticky md:top-40 md:h-fit z-10">
-           <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black/40 uppercase mb-4">
+           <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black uppercase mb-4">
               IT Success Stories
            </div>
            <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tighter mb-12 text-black">
@@ -51,7 +51,7 @@ export default function CaseStudyGrid() {
              className="bg-black/[0.03] border border-black/10 p-12 md:p-16 flex flex-col items-center justify-center text-center"
            >
               <div className="text-6xl sm:text-7xl md:text-8xl font-black tracking-tighter text-black mb-2">99.9%</div>
-              <div className="font-mono text-[10px] tracking-widest text-black/40 uppercase">SLA Adherence across 100+ Clients</div>
+              <div className="font-mono text-[10px] tracking-widest text-black uppercase">SLA Adherence across 100+ Clients</div>
            </motion.div>
         </div>
 
@@ -74,10 +74,10 @@ export default function CaseStudyGrid() {
                 <div className="text-5xl sm:text-6xl font-black tracking-tighter mb-6 text-black group-hover:text-indigo-500 transition-colors">
                    {study.metric}
                 </div>
-                <p className="text-xl font-light text-black/50 leading-relaxed max-w-sm">
+                <p className="text-xl font-light text-black leading-relaxed max-w-sm">
                    {study.description}
                 </p>
-                <div className="absolute -left-12 top-0 text-[60px] font-black text-black/[0.04] pointer-events-none select-none">
+                <div className="absolute -left-12 top-0 text-[60px] font-black text-black pointer-events-none select-none">
                   0{idx + 1}
                 </div>
              </motion.div>

@@ -42,7 +42,7 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 mb-16 md:mb-24 w-full">
           <div className="md:w-1/3 w-full">
-            <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black/40 uppercase mb-3 md:mb-4">
+            <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black uppercase mb-3 md:mb-4">
               Core Services
             </div>
             <AnimatedText
@@ -51,7 +51,7 @@ export default function Features() {
             />
           </div>
           <div className="md:w-2/3 w-full flex items-end md:pl-12 lg:pl-24">
-            <p className="text-lg sm:text-xl md:text-2xl font-light text-black/60 leading-relaxed text-left">
+            <p className="text-lg sm:text-xl md:text-2xl font-light text-black leading-relaxed text-left">
               We deliver end-to-end SLA-bound IT management, hybrid cloud operations, and zero-trust cybersecurity to empower global enterprises.
             </p>
           </div>
@@ -71,12 +71,12 @@ export default function Features() {
                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-black flex items-center justify-center rounded-full group-hover:scale-110 transition-transform">
                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full" />
                  </div>
-                 <div className="font-mono text-[8px] sm:text-[10px] tracking-widest text-black/30">
+                 <div className="font-mono text-[8px] sm:text-[10px] tracking-widest text-black">
                    [{feature.num}]
                  </div>
               </div>
               <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tight mb-3 sm:mb-4 group-hover:pl-2 transition-all text-wrap text-black">{feature.title}</h3>
-              <p className="text-gray-500 leading-relaxed font-light text-sm sm:text-base text-wrap">
+              <p className="text-black leading-relaxed font-light text-sm sm:text-base text-wrap">
                 {feature.description}
               </p>
             </motion.div>

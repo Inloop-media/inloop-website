@@ -20,11 +20,11 @@ export default function SubconsciousModule() {
       </div>
 
       <div className="relative z-10 text-center max-w-2xl px-6">
-         <div className="font-mono text-[8px] md:text-[10px] tracking-[0.4em] text-black/30 uppercase mb-6">
+         <div className="font-mono text-[8px] md:text-[10px] tracking-[0.4em] text-black uppercase mb-6">
             Module 09 // Infrastructure
          </div>
          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8 leading-tight text-black">
-            Resilience <br/><span className="text-black/20">Without Interruption</span>
+            Resilience <br/><span className="text-black">Without Interruption</span>
           </h2>
       </div>
 

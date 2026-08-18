@@ -27,10 +27,10 @@ export default function OEMLogos() {
   return (
     <section className="py-16 md:py-24 bg-neutral-50 border-t border-black/10 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center mb-10 md:mb-12">
-        <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black/40 uppercase mb-3 md:mb-4">
+        <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black uppercase mb-3 md:mb-4">
           OEM Coverage & Alliances
         </div>
-        <p className="text-black/50 text-sm sm:text-base font-light max-w-xl mx-auto">
+        <p className="text-black text-sm sm:text-base font-light max-w-xl mx-auto">
           Supporting enterprise hardware & software ecosystems from leading global technology vendors
         </p>
       </div>

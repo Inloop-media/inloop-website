@@ -18,14 +18,14 @@ export default function ServicesClient() {
     <>
       <section className="relative bg-white pt-32 pb-16 md:pt-40 md:pb-24 px-4 sm:px-6 lg:px-12 border-b border-black/10 w-full overflow-hidden">
         <div className="max-w-7xl mx-auto w-full text-center">
-          <div className="font-mono text-[8px] md:text-[10px] tracking-[0.3em] text-black/40 uppercase mb-4 md:mb-6">
+          <div className="font-mono text-[8px] md:text-[10px] tracking-[0.3em] text-black uppercase mb-4 md:mb-6">
             Service Portfolio Catalog
           </div>
           <AnimatedText
             text="Enterprise IT & Managed Services"
             className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter leading-[0.95] max-w-4xl mx-auto justify-center flex flex-wrap text-black"
           />
-          <p className="text-base sm:text-lg md:text-xl font-light text-black/50 leading-relaxed max-w-2xl mx-auto mt-6 md:mt-8">
+          <p className="text-base sm:text-lg md:text-xl font-light text-black leading-relaxed max-w-2xl mx-auto mt-6 md:mt-8">
             High-availability SLA-bound infrastructure maintenance, cloud operations, 24x7 NOC triage, and digital transformation capabilities across {SERVICES.length} core domains.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function ServicesClient() {
               className={`font-mono text-[10px] sm:text-xs uppercase tracking-widest px-4 sm:px-5 py-2 sm:py-2.5 border transition-colors cursor-pointer ${
                 activeCategory === cat.slug
                   ? "bg-black text-white border-black"
-                  : "bg-transparent text-black/50 border-black/15 hover:text-black hover:border-black/40"
+                  : "bg-transparent text-black border-black/15 hover:text-black hover:border-black/40"
               }`}
             >
               {cat.label}
@@ -54,14 +54,14 @@ export default function ServicesClient() {
         <div className="max-w-7xl mx-auto w-full">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 md:mb-16 border-b border-black/10 pb-6 md:pb-8">
             <div>
-              <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black/40 uppercase mb-2">
+              <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black uppercase mb-2">
                 Complete Portfolio
               </div>
               <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter text-black">
                 {filteredServices.length} {filteredServices.length === 1 ? "Service" : "Services"} Available
               </h2>
             </div>
-            <div className="font-mono text-[10px] tracking-widest text-black/30 uppercase">
+            <div className="font-mono text-[10px] tracking-widest text-black uppercase">
               Click any card to view full specs
             </div>
           </div>
@@ -93,13 +93,13 @@ export default function ServicesClient() {
                       {service.title}
                     </h3>
 
-                    <p className="text-black/50 leading-relaxed font-light text-sm sm:text-base max-w-2xl mb-5 sm:mb-6">
+                    <p className="text-black leading-relaxed font-light text-sm sm:text-base max-w-2xl mb-5 sm:mb-6">
                       {service.description}
                     </p>
 
                     <ul className="space-y-2 mb-6 sm:mb-8">
                       {service.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2.5 text-xs sm:text-sm text-black/60 font-light">
+                        <li key={feature} className="flex items-start gap-2.5 text-xs sm:text-sm text-black font-light">
                           <span className="w-1 h-1 mt-2 bg-indigo-500 shrink-0" />
                           {feature}
                         </li>

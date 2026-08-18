@@ -24,7 +24,7 @@ export default function ScrollProgress() {
       />
 
       {/* Scroll indicator text */}
-      <div className="absolute -left-12 top-0 text-[8px] font-mono uppercase tracking-widest text-black/40 rotate-90 origin-bottom-right translate-x-2 translate-y-[-24px]">
+      <div className="absolute -left-12 top-0 text-[8px] font-mono uppercase tracking-widest text-black rotate-90 origin-bottom-right translate-x-2 translate-y-[-24px]">
         OPERATIONS
       </div>
     </div>

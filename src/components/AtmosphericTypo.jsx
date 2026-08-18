@@ -18,11 +18,11 @@ export default function AtmosphericTypo() {
     <section ref={containerRef} className="py-24 md:py-32 bg-white overflow-hidden relative border-b border-black/5 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
          <div className="flex flex-col items-center justify-center text-center py-20 pointer-events-none">
-            <div className="font-mono text-[10px] md:text-[12px] tracking-[0.4em] text-black/40 uppercase mb-8">
+            <div className="font-mono text-[10px] md:text-[12px] tracking-[0.4em] text-black uppercase mb-8">
                Core System Protocols
             </div>
             <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none text-black">
-              The Uptime <br/><span className="text-black/20">The Security</span>
+              The Uptime <br/><span className="text-black">The Security</span>
             </h2>
          </div>
       </div>

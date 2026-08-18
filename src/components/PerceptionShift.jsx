@@ -30,11 +30,11 @@ export default function PerceptionShift() {
   return (
     <section className="py-24 md:py-32 bg-white border-t border-black/10 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full text-center mb-16">
-        <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black/40 uppercase mb-4">
+        <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black uppercase mb-4">
            The Infrastructure Optimization
         </div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-black">
-          Legacy vs <span className="text-black/20">Innoworq</span>
+          Legacy vs <span className="text-black">Innoworq</span>
         </h2>
       </div>
 
