@@ -15,40 +15,40 @@ export default function BackgroundNodes() {
   return (
     <div ref={containerRef} className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Node 1: Top Right Dot Cluster */}
-      <motion.div 
+      <motion.div
         style={{ y: y1, opacity }}
-        className="absolute top-[10%] right-[15%] w-64 h-64 border border-white/5 rounded-full flex items-center justify-center"
+        className="absolute top-[10%] right-[15%] w-64 h-64 border border-black/10 rounded-full flex items-center justify-center"
       >
-        <div className="w-1 h-1 bg-white/20 rounded-full" />
+        <div className="w-1 h-1 bg-black/30 rounded-full" />
       </motion.div>
 
       {/* Node 2: Background Grid Lines (Drifting) */}
-      <motion.div 
+      <motion.div
         style={{ y: y2, opacity }}
-        className="absolute top-[40%] left-[10%] w-[40vw] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
+        className="absolute top-[40%] left-[10%] w-[40vw] h-px bg-gradient-to-r from-transparent via-black/15 to-transparent"
       />
-      
-      <motion.div 
+
+      <motion.div
         style={{ y: y1, opacity }}
-        className="absolute top-[70%] right-[5%] w-[30vw] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"
+        className="absolute top-[70%] right-[5%] w-[30vw] h-px bg-gradient-to-r from-transparent via-black/15 to-transparent"
       />
 
       {/* Node 3: Tiny Floating Dots */}
-      <motion.div 
+      <motion.div
         style={{ y: y2, opacity }}
-        className="absolute top-[25%] left-[25%] w-0.5 h-0.5 bg-white/30 rounded-full"
+        className="absolute top-[25%] left-[25%] w-0.5 h-0.5 bg-black/40 rounded-full"
       />
-      
-      <motion.div 
+
+      <motion.div
         style={{ y: y1, opacity }}
-        className="absolute top-[60%] right-[30%] w-0.5 h-0.5 bg-white/30 rounded-full"
+        className="absolute top-[60%] right-[30%] w-0.5 h-0.5 bg-black/40 rounded-full"
       />
 
       {/* Subtle Grid Pattern Overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.03]" 
-        style={{ 
-          backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.15) 1px, transparent 1px)`,
           backgroundSize: '80px 80px'
         }}
       />

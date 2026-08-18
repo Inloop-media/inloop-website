@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 export default function SlantedMarquee() {
   return (
-    <section className="relative overflow-hidden bg-black text-black py-24 md:py-32 flex items-center justify-center">
-      {/* Black background filler to blend properly */}
-      <div className="absolute inset-0 bg-[#050505] z-0" />
-      
-      <div className="absolute w-[110%] transform -rotate-3 scale-105 bg-indigo-500 py-4 sm:py-6 border-y border-white shadow-[0_0_50px_rgba(99,102,241,0.2)] z-20">
+    <section className="relative overflow-hidden bg-white text-black py-24 md:py-32 flex items-center justify-center">
+      {/* Background filler to blend properly */}
+      <div className="absolute inset-0 bg-white z-0" />
+
+      <div className="absolute w-[110%] transform -rotate-3 scale-105 bg-indigo-500 py-4 sm:py-6 border-y border-black shadow-[0_0_50px_rgba(99,102,241,0.2)] z-20">
         <motion.div
            animate={{ x: ["-50%", "0%"] }}
            transition={{ ease: "linear", duration: 12, repeat: Infinity }}

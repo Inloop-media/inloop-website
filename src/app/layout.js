@@ -27,9 +27,9 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${playfair.variable} dark antialiased`}
+      className={`${outfit.variable} ${playfair.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-black text-white font-sans selection:bg-white selection:text-black">
+      <body className="min-h-screen flex flex-col bg-white text-black font-sans selection:bg-black selection:text-white">
         <LenisProvider>
           <CustomCursor />
           <Spotlight />

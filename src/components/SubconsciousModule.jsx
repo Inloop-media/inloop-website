@@ -14,17 +14,17 @@ const keywords = [
 
 export default function SubconsciousModule() {
   return (
-    <section className="relative h-[600px] md:h-[800px] bg-black overflow-hidden flex items-center justify-center border-t border-white/5 w-full">
+    <section className="relative h-[600px] md:h-[800px] bg-white overflow-hidden flex items-center justify-center border-t border-black/5 w-full">
       <div className="absolute inset-0 pointer-events-none opacity-20">
          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent" />
       </div>
 
       <div className="relative z-10 text-center max-w-2xl px-6">
-         <div className="font-mono text-[8px] md:text-[10px] tracking-[0.4em] text-white/30 uppercase mb-6">
+         <div className="font-mono text-[8px] md:text-[10px] tracking-[0.4em] text-black/30 uppercase mb-6">
             Module 09 // Infrastructure
          </div>
-         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8 leading-tight">
-            Resilience. <br/><span className="text-white/20">Without Interruption.</span>
+         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8 leading-tight text-black">
+            Resilience <br/><span className="text-black/20">Without Interruption</span>
           </h2>
       </div>
 
@@ -64,7 +64,7 @@ function FloatingWord({ word }) {
           opacity: isHovered ? 1 : 0.2,
           scale: isHovered ? 1.1 : 1,
         }}
-        className="font-mono text-xs md:text-sm tracking-[0.3em] text-white uppercase whitespace-nowrap bg-black/40 backdrop-blur-md px-4 py-2 border border-white/5"
+        className="font-mono text-xs md:text-sm tracking-[0.3em] text-black uppercase whitespace-nowrap bg-white/40 backdrop-blur-md px-4 py-2 border border-black/10 shadow-sm"
       >
         {isHovered ? word.final : word.initial}
       </motion.div>
