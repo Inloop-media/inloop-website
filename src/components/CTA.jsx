@@ -45,7 +45,7 @@ export default function CTA() {
              </div>
              
              <div className="pt-8 md:pt-12 w-full">
-                <a href="mailto:hello@innoworq.com" className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest hover:text-black/50 transition-colors break-all">hello@innoworq.com</a>
+                <a href="mailto:sales@innoworq.com" className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest hover:text-black/50 transition-colors break-all">sales@innoworq.com</a>
              </div>
           </motion.div>
 
