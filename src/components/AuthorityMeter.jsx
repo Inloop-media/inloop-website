@@ -18,7 +18,7 @@ export default function AuthorityMeter() {
   return (
     <motion.div 
       style={{ opacity }}
-      className="fixed top-20 left-0 right-0 h-1 z-[100] bg-black/5 backdrop-blur-sm px-4 md:px-12 pointer-events-none"
+      className="fixed top-20 left-0 right-0 h-1 z-[100] bg-white/5 backdrop-blur-sm px-4 md:px-12 pointer-events-none"
     >
       <div className="relative w-full h-full">
          <motion.div 
@@ -27,8 +27,8 @@ export default function AuthorityMeter() {
          />
          
          <div className="absolute top-4 right-0 flex items-center gap-2">
-            <span className="font-mono text-[8px] tracking-[0.2em] text-black uppercase">System Status</span>
-            <motion.span className="font-mono text-[8px] tracking-[0.2em] text-black font-bold uppercase min-w-[100px] text-right">
+            <span className="font-mono text-[8px] tracking-[0.2em] text-white/40 uppercase">System Status</span>
+            <motion.span className="font-mono text-[8px] tracking-[0.2em] text-white font-bold uppercase min-w-[100px] text-right">
                {label}
             </motion.span>
          </div>

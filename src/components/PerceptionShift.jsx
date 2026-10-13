@@ -28,22 +28,22 @@ export default function PerceptionShift() {
   }, [mouseX]);
 
   return (
-    <section className="py-24 md:py-32 bg-white border-t border-black/10 w-full overflow-hidden">
+    <section className="py-24 md:py-32 bg-black border-t border-white/10 w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full text-center mb-16">
-        <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-black uppercase mb-4">
+        <div className="font-mono text-[8px] md:text-[10px] tracking-[0.2em] text-white/40 uppercase mb-4">
            The Infrastructure Optimization
         </div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-black">
-          Legacy vs <span className="text-black">Innoworq</span>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter">
+          Legacy vs <span className="text-white/20">Innoworq</span>
         </h2>
       </div>
 
-      <div
-        ref={containerRef}
+      <div 
+        ref={containerRef} 
         className="relative w-full h-[400px] md:h-[600px] bg-[#050505] cursor-none group select-none overflow-hidden"
       >
         {/* Layer 1: The "Before" State (Dull, Low trust) */}
-        <div className="absolute inset-0 flex items-center justify-center grayscale opacity-30 px-4 text-white">
+        <div className="absolute inset-0 flex items-center justify-center grayscale opacity-30 px-4">
            <div className="max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-12 text-center w-full">
               <div className="space-y-2">
                  <div className="text-4xl font-black tracking-tighter">85.4%</div>

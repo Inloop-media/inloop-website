@@ -15,9 +15,9 @@ const mentions = [
 
 export default function TrustTicker() {
   return (
-    <section className="py-12 border-y border-black/10 bg-black/[0.03] overflow-hidden relative">
-      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+    <section className="py-12 border-y border-white/5 bg-black/20 overflow-hidden relative">
+      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
       
       <div className="flex text-nowrap whitespace-nowrap overflow-hidden">
         <motion.div
@@ -27,7 +27,7 @@ export default function TrustTicker() {
         >
           {/* Double the array for seamless scrolling */}
           {[...mentions, ...mentions].map((mention, i) => (
-            <div key={i} className="flex items-center gap-4 text-black font-medium font-mono text-sm">
+            <div key={i} className="flex items-center gap-4 text-gray-400 font-medium font-mono text-sm">
               <span className="w-2 h-2 rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.8)]" />
               {mention}
             </div>
