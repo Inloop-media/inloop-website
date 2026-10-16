@@ -5,7 +5,7 @@ import { RevealLines, FadeUp } from "@/components/home/SectionHead";
 
 export default function HomeIntro() {
   return (
-    <section className="bg-[#050505] pt-[100px] pb-[100px]">
+    <section className="bg-[#000000] pt-[100px] pb-[100px]">
       <div className="gs-wrap">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-12">
           <RevealLines

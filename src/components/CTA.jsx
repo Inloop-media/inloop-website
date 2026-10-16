@@ -52,7 +52,7 @@ export default function CTA({ id = "contact" }) {
   };
 
   return (
-    <section id={id} className="bg-[#050505] py-[100px]">
+    <section id={id} className="bg-[#000000] py-[100px]">
       <div className="gs-wrap grid grid-cols-1 lg:grid-cols-[264px_1fr] gap-14 lg:gap-[11.5vw] 2xl:gap-[226px]">
         <div>
           <RevealLines lines={["Lets Get in", "Touch"]} className="gs-h2" />

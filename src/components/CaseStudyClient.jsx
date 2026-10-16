@@ -36,11 +36,11 @@ export default function CaseStudyClient({ slug }) {
   return (
     <>
       {/* Full-bleed hero */}
-      <section className="relative h-[100svh] overflow-hidden bg-[#050505]">
+      <section className="relative h-[100svh] overflow-hidden bg-[#000000]">
         <motion.div initial={{ scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.8, ease: EASE }} className="absolute inset-0">
           <CaseVisual c={c} big />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-black/40" />
         <div className="absolute left-0 right-0 bottom-12">
           <div className="gs-wrap-64">
             <Kicker size="sm">{c.category}</Kicker>
@@ -50,7 +50,7 @@ export default function CaseStudyClient({ slug }) {
       </section>
 
       {/* Overview */}
-      <section className="bg-[#050505] pt-[135px] pb-[100px]">
+      <section className="bg-[#000000] pt-[135px] pb-[100px]">
         <div className="gs-wrap-64 grid grid-cols-1 md:grid-cols-[1fr_700px] gap-8 md:gap-[68px]">
           <FadeUp className="md:text-right flex md:flex-col md:items-end gap-4">
             <div className="text-[24px] font-medium leading-[1.5] text-white">Overview</div>
@@ -63,7 +63,7 @@ export default function CaseStudyClient({ slug }) {
       </section>
 
       {/* Tag + banner */}
-      <section className="bg-[#050505]">
+      <section className="bg-[#000000]">
         <div className="gs-wrap-64">
           <Pill>{c.tag}</Pill>
           <motion.div
@@ -80,7 +80,7 @@ export default function CaseStudyClient({ slug }) {
       </section>
 
       {/* Problem / Goal / Solution */}
-      <section className="bg-[#050505] py-[100px]">
+      <section className="bg-[#000000] py-[100px]">
         <div className="gs-wrap-64 md:pl-[196px] flex flex-col gap-24">
           <Row label="The Problem">{c.problem}</Row>
           <Row label="The Goal">{c.goal}</Row>
@@ -89,7 +89,7 @@ export default function CaseStudyClient({ slug }) {
       </section>
 
       {/* Results gallery */}
-      <section className="bg-[#050505] pb-[100px]">
+      <section className="bg-[#000000] pb-[100px]">
         <div className="gs-wrap-64 grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-5">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -117,7 +117,7 @@ export default function CaseStudyClient({ slug }) {
       </section>
 
       {/* Explore other works */}
-      <section className="bg-[#050505] pt-20 pb-[100px]">
+      <section className="bg-[#000000] pt-20 pb-[100px]">
         <div className="gs-wrap-64">
           <Kicker size="sm">There&apos;s More</Kicker>
           <h2 className="mt-3 text-[28px] md:text-[36px] leading-[1.5] uppercase text-white">Explore Other Works</h2>

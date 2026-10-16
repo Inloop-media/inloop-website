@@ -88,12 +88,12 @@ function Texture({ variant = 0 }) {
 
 function Hero({ s }) {
   return (
-    <section className="relative h-[100svh] min-h-[640px] overflow-hidden bg-[#050505]">
+    <section className="relative h-[100svh] min-h-[640px] overflow-hidden bg-[#000000]">
       <motion.div initial={{ scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.8, ease: EASE }} className="absolute inset-0">
         <Media src={s.media} />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent" />
       <div className="relative h-full flex items-center">
         <div className="gs-wrap-64">
           <Kicker size="sm">{s.tag} agency in India</Kicker>
@@ -109,7 +109,7 @@ function Hero({ s }) {
 
 function PlatformStrip() {
   return (
-    <section className="bg-[#050505] pt-[120px] pb-[40px]">
+    <section className="bg-[#000000] pt-[120px] pb-[40px]">
       <h2 className="text-center text-[22px] md:text-[28px] font-medium leading-[1.2] uppercase text-white">Platforms we grow brands on</h2>
       <div className="relative mt-[50px] overflow-hidden gs-marquee-mask">
         <div className="gs-marquee flex w-max">
@@ -135,7 +135,7 @@ function Statements({ s }) {
   ];
 
   return (
-    <section ref={ref} className="relative h-[300vh] bg-[#050505]">
+    <section ref={ref} className="relative h-[300vh] bg-[#000000]">
       <div className="sticky top-0 h-[100svh] overflow-hidden">
         <Texture variant={0} />
         <div className="relative h-full gs-wrap-64 flex flex-col">
@@ -202,7 +202,7 @@ function Pillars({ s }) {
     { pos: "md:ml-[60%] md:-mt-[90px]", size: "text-[34px] md:text-[48px]", w: "md:w-[420px]" },
   ];
   return (
-    <section className="relative bg-[#050505] py-20 overflow-hidden">
+    <section className="relative bg-[#000000] py-20 overflow-hidden">
       <Texture variant={1} />
       <div className="relative gs-wrap-64">
         <Kicker size="sm">Four pillars of {s.title}</Kicker>
@@ -231,7 +231,7 @@ function InAction({ s }) {
   const [tab, setTab] = useState(0);
   const c = CASE_STUDIES[tab];
   return (
-    <section className="bg-[#050505] py-20">
+    <section className="bg-[#000000] py-20">
       <div className="gs-wrap-64">
         <Kicker size="sm">{s.title} in action</Kicker>
         <RevealLines lines={["Every engagement we run", "starts with a real business problem."]} className="mt-5 max-w-[1000px] text-[36px] md:text-[72px] font-medium leading-[1.1] text-white" />
@@ -314,7 +314,7 @@ function HowWeWork() {
   }, []);
 
   return (
-    <section ref={ref} className="relative h-[420vh] bg-[#050505]">
+    <section ref={ref} className="relative h-[420vh] bg-[#000000]">
       <div className="sticky top-0 h-[100svh] overflow-hidden">
         <div className="absolute inset-x-0 top-[18%] bottom-[10%] opacity-60">
           <Texture variant={2} />
@@ -359,7 +359,7 @@ function ForYouIf({ s }) {
     { h: "You are preparing for a significant moment", p: "A launch, a new market, a fundraise or a big season. You need one team that can move fast across strategy, creative and performance." },
   ];
   return (
-    <section className="relative bg-[#050505] py-20 overflow-hidden">
+    <section className="relative bg-[#000000] py-20 overflow-hidden">
       <Texture variant={1} />
       <div className="relative gs-wrap-64">
         <h2 className="gs-kicker-sm">This work is for you if</h2>
@@ -385,7 +385,7 @@ function ForYouIf({ s }) {
 
 function Investment() {
   return (
-    <section className="relative bg-[#050505] py-20 overflow-hidden">
+    <section className="relative bg-[#000000] py-20 overflow-hidden">
       <Texture variant={0} />
       <div className="relative gs-wrap-64">
         <div className="gs-kicker-sm">What to expect on investment</div>
@@ -428,7 +428,7 @@ function FAQ({ s }) {
     ...FAQS,
   ];
   return (
-    <section className="bg-[#050505] py-20">
+    <section className="bg-[#000000] py-20">
       <div className="gs-wrap-64 grid grid-cols-1 md:grid-cols-[412px_1fr] gap-12 md:gap-[181px]">
         <div>
           <div className="gs-kicker-sm">Faq</div>

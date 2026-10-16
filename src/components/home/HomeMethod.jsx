@@ -24,7 +24,7 @@ const COLS = [
 
 export default function HomeMethod() {
   return (
-    <section className="bg-[#050505] pt-[100px] pb-[100px]">
+    <section className="bg-[#000000] pt-[100px] pb-[100px]">
       <div className="gs-wrap">
         <Kicker>Our methodology</Kicker>
         <RevealLines lines={["First Systems", "Second Scale", "In that order always."]} className="gs-h2 mt-4" />

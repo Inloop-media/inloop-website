@@ -318,8 +318,8 @@ select.gs-field option { background: #000; color: #fff; }
 .gs-marquee-mask::before, .gs-marquee-mask::after {
   content: ""; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
 }
-.gs-marquee-mask::before { left: 0; background: linear-gradient(to right, #050505, transparent); }
-.gs-marquee-mask::after { right: 0; background: linear-gradient(to left, #050505, transparent); }
+.gs-marquee-mask::before { left: 0; background: linear-gradient(to right, #000000, transparent); }
+.gs-marquee-mask::after { right: 0; background: linear-gradient(to left, #000000, transparent); }
 }
 
 @keyframes gs-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }

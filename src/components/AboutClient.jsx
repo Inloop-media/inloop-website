@@ -45,7 +45,7 @@ export default function AboutClient() {
   return (
     <>
       {/* Hero */}
-      <section className="h-[100svh] min-h-[600px] bg-[#050505] flex items-center justify-center px-5">
+      <section className="h-[100svh] min-h-[600px] bg-[#000000] flex items-center justify-center px-5">
         <motion.h1
           initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -57,7 +57,7 @@ export default function AboutClient() {
       </section>
 
       {/* Who we are */}
-      <section className="bg-[#050505] pt-24 pb-24">
+      <section className="bg-[#000000] pt-24 pb-24">
         <div className="gs-wrap-48">
           <Kicker size="ab">who we are</Kicker>
           <RevealLines lines={["About Us"]} className="mt-4 text-[34px] md:text-[44px] font-normal leading-[1.5] uppercase text-white" />
@@ -83,7 +83,7 @@ export default function AboutClient() {
       </section>
 
       {/* How we work */}
-      <section className="bg-[#050505] pb-24">
+      <section className="bg-[#000000] pb-24">
         <div className="gs-wrap-48">
           <div className="text-center">
             <Kicker size="ab">Our Process</Kicker>
@@ -113,7 +113,7 @@ export default function AboutClient() {
       </section>
 
       {/* Founders + team */}
-      <section className="bg-[#050505] pb-24">
+      <section className="bg-[#000000] pb-24">
         <div className="gs-wrap-48 text-center">
           <RevealLines lines={["our founders"]} className="text-[34px] md:text-[44px] font-normal leading-[1.5] uppercase text-white" />
           <div className="mt-10 flex flex-wrap justify-center gap-[92px] gap-y-14">
@@ -145,7 +145,7 @@ export default function AboutClient() {
         transition={{ duration: 1.4, ease: EASE }}
         className="relative h-[100svh] min-h-[500px] overflow-hidden"
       >
-        <Media src="/videos/ai-realestate.mp4" />
+        <Media src="/videos/ams-team-film.mp4" />
       </motion.section>
     </>
   );

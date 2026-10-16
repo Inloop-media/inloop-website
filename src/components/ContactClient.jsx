@@ -18,14 +18,14 @@ const WAYS = [
 export default function ContactClient() {
   return (
     <>
-      <section className="relative h-[100svh] min-h-[560px] overflow-hidden bg-[#050505]">
+      <section className="relative h-[100svh] min-h-[560px] overflow-hidden bg-[#000000]">
         <motion.div initial={{ scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.8, ease: EASE }} className="absolute inset-0">
-          <Media src="/videos/ai-realestate.mp4" />
+          <Media src="/videos/ams-team-film.mp4" />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/20 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-black/20 to-black/30" />
       </section>
 
-      <section className="bg-[#050505] pt-20 pb-10">
+      <section className="bg-[#000000] pt-20 pb-10">
         <div className="gs-wrap-64">
           <Kicker size="sm">Contact Us</Kicker>
           <RevealLines
@@ -43,7 +43,7 @@ export default function ContactClient() {
 
       <CTA id="form" />
 
-      <section className="bg-[#050505] pt-20 pb-[100px]">
+      <section className="bg-[#000000] pt-20 pb-[100px]">
         <div className="gs-wrap-64">
           <Kicker size="sm">Other ways To reach Us</Kicker>
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-5">

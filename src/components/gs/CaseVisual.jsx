@@ -9,7 +9,7 @@ const EASE = [0.16, 1, 0.3, 1];
 export default function CaseVisual({ c, big = false }) {
   const m = c.metric;
   return (
-    <div className="absolute inset-0 bg-[#0b0b0e] overflow-hidden">
+    <div className="absolute inset-0 bg-[#000000] overflow-hidden">
       <div
         className="absolute inset-0 opacity-70"
         style={{

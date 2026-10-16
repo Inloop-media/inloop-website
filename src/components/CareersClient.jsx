@@ -60,11 +60,11 @@ export default function CareersClient() {
 
   return (
     <>
-      <section className="relative h-[85svh] min-h-[520px] overflow-hidden bg-[#050505]">
+      <section className="relative h-[85svh] min-h-[520px] overflow-hidden bg-[#000000]">
         <motion.div initial={{ scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.8, ease: EASE }} className="absolute inset-0">
           <Media src="/videos/ai-fashion.mp4" />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/30 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-black/30 to-black/40" />
         <div className="absolute left-0 right-0 bottom-14">
           <div className="gs-wrap-48">
             <Kicker size="ab">Careers · Inloop Media</Kicker>
@@ -73,7 +73,7 @@ export default function CareersClient() {
         </div>
       </section>
 
-      <section className="bg-[#050505] pt-24 pb-24">
+      <section className="bg-[#000000] pt-24 pb-24">
         <div className="gs-wrap-48">
           <Kicker size="ab">We&apos;re hiring</Kicker>
           <RevealLines lines={["open positions"]} className="mt-4 text-[34px] md:text-[54px] font-normal leading-[1.5] uppercase text-white" />
@@ -95,13 +95,13 @@ export default function CareersClient() {
         </div>
       </section>
 
-      <section className="bg-[#050505] pb-24">
+      <section className="bg-[#000000] pb-24">
         <div className="gs-wrap-48">
           <Kicker size="ab">Hiring process</Kicker>
           <RevealLines lines={["Four steps. No black holes."]} className="mt-4 text-[30px] md:text-[44px] font-normal leading-[1.3] uppercase text-white" />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#383838] border border-[#383838]">
             {HIRING_STEPS.map((st, i) => (
-              <FadeUp key={st.t} delay={i * 0.08} className="bg-[#050505] p-8 min-h-[220px]">
+              <FadeUp key={st.t} delay={i * 0.08} className="bg-[#000000] p-8 min-h-[220px]">
                 <div className="text-[60px] leading-[0.8] text-white">{i + 1}</div>
                 <div className="mt-8 text-[22px] uppercase text-white">{st.t}</div>
                 <p className="mt-2 text-[15px] leading-[1.5] text-white/80">{st.d}</p>
@@ -111,7 +111,7 @@ export default function CareersClient() {
         </div>
       </section>
 
-      <section className="bg-[#050505] pb-24">
+      <section className="bg-[#000000] pb-24">
         <div className="gs-wrap-48">
           <RevealLines lines={["Who we are"]} className="text-[34px] md:text-[44px] font-normal leading-[1.5] uppercase text-white" />
           <div className="mt-10 flex flex-col">

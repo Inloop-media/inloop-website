@@ -117,7 +117,7 @@ export default function WorkClient() {
 
   return (
     <>
-      <section className="bg-[#050505] pt-[160px] pb-20 text-center">
+      <section className="bg-[#000000] pt-[160px] pb-20 text-center">
         <div className="gs-wrap-64 flex flex-col items-center">
           <Kicker size="sm">Our Portfolio</Kicker>
           <RevealLines
@@ -133,7 +133,7 @@ export default function WorkClient() {
         </div>
       </section>
 
-      <section className="bg-[#050505] pb-[40px]">
+      <section className="bg-[#000000] pb-[40px]">
         <div className="gs-wrap-64 grid grid-cols-1 md:grid-cols-2 gap-5">
           <FeaturedCard c={full} full index={0} />
           {halves.map((c, i) => (
@@ -142,7 +142,7 @@ export default function WorkClient() {
         </div>
       </section>
 
-      <section id="ai-work" className="bg-[#050505] pt-20 pb-[100px]">
+      <section id="ai-work" className="bg-[#000000] pt-20 pb-[100px]">
         <div className="gs-wrap-64">
           <Kicker size="sm">Our Past Projects</Kicker>
           <RevealLines

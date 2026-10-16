@@ -7,7 +7,7 @@ const EASE = [0.16, 1, 0.3, 1];
 
 export default function HomeTeam() {
   return (
-    <section className="relative bg-[#050505] pt-[100px] pb-[100px] overflow-hidden">
+    <section className="relative bg-[#000000] pt-[100px] pb-[100px] overflow-hidden">
       <div className="gs-wrap">
         <div className="relative">
           {/* Giant outlined display type behind the team */}

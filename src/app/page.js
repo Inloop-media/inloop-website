@@ -14,7 +14,7 @@ export default function Home() {
       <HomeHero />
       {/* The next sections slide up over the pinned film, as on GreySpace */}
       <div className="relative z-10 -mt-[300px]">
-        <div className="bg-gradient-to-b from-transparent via-[#050505]/60 to-[#050505]">
+        <div className="bg-gradient-to-b from-transparent via-[#000000]/60 to-[#000000]">
           <LogoStrip />
         </div>
         <HomeIntro />

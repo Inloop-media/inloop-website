@@ -14,7 +14,7 @@ export default function HomeServices() {
   const [open, setOpen] = useState(null);
 
   return (
-    <section id="our-services" className="bg-[#050505] pt-[100px] pb-[100px]">
+    <section id="our-services" className="bg-[#000000] pt-[100px] pb-[100px]">
       <div className="gs-wrap">
         <Kicker>Our services</Kicker>
         <RevealLines lines={["What we can do for you"]} className="gs-h2 mt-4" />

@@ -27,7 +27,7 @@ const link = "text-[15px] leading-[22.5px] tracking-[0.6px] text-white hover:tex
 
 export default function SystemFooter() {
   return (
-    <footer className="bg-[#050505] pt-[100px] pb-10">
+    <footer className="bg-[#000000] pt-[100px] pb-10">
       <div className="gs-wrap">
         <div className="grid grid-cols-2 lg:grid-cols-[36%_1fr_1fr_236px] gap-y-12">
           <div className="col-span-2 lg:col-span-1">

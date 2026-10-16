@@ -14,7 +14,7 @@ export default function PostClient({ slug }) {
 
   return (
     <>
-      <section className="relative h-[70svh] min-h-[460px] overflow-hidden bg-[#050505]">
+      <section className="relative h-[70svh] min-h-[460px] overflow-hidden bg-[#000000]">
         <motion.div initial={{ scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.8, ease: EASE }} className="absolute inset-0">
           <Media src={p.media} position="top" />
         </motion.div>
@@ -35,7 +35,7 @@ export default function PostClient({ slug }) {
         </div>
       </section>
 
-      <section className="bg-[#050505] pt-10 pb-[100px]">
+      <section className="bg-[#000000] pt-10 pb-[100px]">
         <div className="gs-wrap-48">
           <div className="flex flex-wrap items-center gap-3 text-[12px] tracking-[2px] uppercase text-[#5a5a5a]">
             <span className="text-[30px] leading-[40px] tracking-[4px] text-[#383838]">{"//"}</span>

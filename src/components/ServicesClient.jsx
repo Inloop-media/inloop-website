@@ -13,7 +13,7 @@ const EASE = [0.16, 1, 0.3, 1];
 export default function ServicesClient() {
   return (
     <>
-      <section className="bg-[#050505] pt-[160px] pb-20 text-center">
+      <section className="bg-[#000000] pt-[160px] pb-20 text-center">
         <div className="gs-wrap-64 flex flex-col items-center">
           <Kicker size="sm">Our Services</Kicker>
           <RevealLines
@@ -29,7 +29,7 @@ export default function ServicesClient() {
         </div>
       </section>
 
-      <section className="bg-[#050505] pb-[100px]">
+      <section className="bg-[#000000] pb-[100px]">
         <div className="gs-wrap-64 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {SERVICES.map((s, i) => (
             <motion.div

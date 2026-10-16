@@ -13,7 +13,7 @@ export default function HomeArticle() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section className="bg-[#050505] pt-[100px] pb-[60px]">
+    <section className="bg-[#000000] pt-[100px] pb-[60px]">
       <div className="gs-wrap">
         <h2 className="gs-h2">{post.title}</h2>
         <p className="mt-5 text-[18px] font-light leading-[1.5] text-white">{post.excerpt}</p>

@@ -132,7 +132,7 @@ export default function HomeHero() {
 
   return (
     <>
-      <section className="relative h-[2200px] bg-[#050505]">
+      <section className="relative h-[2200px] bg-[#000000]">
         <div className="sticky top-0 h-[100svh] overflow-hidden">
           {/* AMS Group team film — the only visual in the hero */}
           <IntroFilm volume={volume} controlsOpacity={controlsOp} />

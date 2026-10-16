@@ -14,7 +14,7 @@ export default function BlogClient() {
   const featured = POSTS.filter((p) => p.featured).concat(POSTS.slice(1, 4));
 
   return (
-    <section className="bg-[#050505] pt-[160px] pb-[100px]">
+    <section className="bg-[#000000] pt-[160px] pb-[100px]">
       <div className="gs-wrap-48">
         <div className="flex flex-wrap border-b border-white/10">
           {POST_CATEGORIES.map((c) => (

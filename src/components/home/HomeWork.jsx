@@ -53,7 +53,7 @@ function Tile({ t, index }) {
 
 export default function HomeWork() {
   return (
-    <section id="work" className="bg-[#050505] pt-[100px] pb-[100px]">
+    <section id="work" className="bg-[#000000] pt-[100px] pb-[100px]">
       <div className="gs-wrap">
         <Kicker>Our client work</Kicker>
         <RevealLines lines={["Work that did the job,", "It was supposed to do"]} className="gs-h2 mt-4" />
