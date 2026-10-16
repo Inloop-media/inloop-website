@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-outfit), sans-serif;
+  --font-sans: var(--font-overused), Arial, sans-serif;
   --font-serif: var(--font-playfair), serif;
-  --font-heading: var(--font-outfit), sans-serif;
+  --font-heading: var(--font-overused), Arial, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -174,3 +174,154 @@
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
+/* AI video cards: story-style segment bars + Hook / Demo / CTA captions (9s loop) */
+.aiv-seg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  animation: aiv-seg-1 9s linear infinite;
+  animation-delay: calc(var(--i) * -1.3s);
+}
+.aiv-seg:nth-child(2)::after { animation-name: aiv-seg-2; }
+.aiv-seg:nth-child(3)::after { animation-name: aiv-seg-3; }
+
+.aiv-scene {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: aiv-scene-1 9s ease infinite;
+  animation-delay: calc(var(--i) * -1.3s);
+}
+.aiv-scene:nth-child(2) { animation-name: aiv-scene-2; }
+.aiv-scene:nth-child(3) { animation-name: aiv-scene-3; }
+
+@keyframes aiv-seg-1 { 0% { transform: scaleX(0); } 33.3%, 100% { transform: scaleX(1); } }
+@keyframes aiv-seg-2 { 0%, 33.3% { transform: scaleX(0); } 66.6%, 100% { transform: scaleX(1); } }
+@keyframes aiv-seg-3 { 0%, 66.6% { transform: scaleX(0); } 99% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+
+@keyframes aiv-scene-1 { 0%, 30% { opacity: 1; transform: none; } 33.3%, 97% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 1; transform: none; } }
+@keyframes aiv-scene-2 { 0%, 33.3% { opacity: 0; transform: translateY(10px); } 36%, 63.6% { opacity: 1; transform: none; } 66.6%, 100% { opacity: 0; transform: translateY(-10px); } }
+@keyframes aiv-scene-3 { 0%, 66.6% { opacity: 0; transform: translateY(10px); } 69.6%, 97% { opacity: 1; transform: none; } 100% { opacity: 0; transform: translateY(-10px); } }
+
+.aiv-scrub { animation: aiv-scrub 9s linear infinite; animation-delay: calc(var(--i) * -1.3s); }
+@keyframes aiv-scrub { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .aiv-seg::after, .aiv-scene, .aiv-scrub { animation: none; }
+  .aiv-scene:last-child { opacity: 1; transform: none; }
+}
+
+/* ---------- Inloop brand accent ---------- */
+:root { --brand: #818cf8; }
+
+@layer components {
+/* ---------- GreySpace system (measured at 1440px) ---------- */
+.gs-wrap { width: 100%; max-width: 1920px; margin-inline: auto; padding-inline: 80px; }
+.gs-wrap-64 { width: 100%; padding-inline: max(64px, 4vw); }
+.gs-wrap-48 { width: 100%; padding-inline: 48px; }
+@media (max-width: 991px) { .gs-wrap, .gs-wrap-64, .gs-wrap-48 { padding-inline: 32px; } }
+@media (max-width: 767px) { .gs-wrap, .gs-wrap-64, .gs-wrap-48 { padding-inline: 20px; } }
+
+.gs-kicker { font-size: 22px; font-weight: 400; line-height: 1.5; letter-spacing: 1.1px; text-transform: uppercase; color: var(--brand); }
+.gs-kicker-sm { font-size: 16px; font-weight: 300; line-height: 1.5; letter-spacing: 1.8px; text-transform: uppercase; color: var(--brand); }
+.gs-kicker-ab { font-size: 16px; font-weight: 400; line-height: 1.5; letter-spacing: 2.88px; text-transform: uppercase; color: var(--brand); }
+.gs-h2 { font-size: 54px; font-weight: 400; line-height: 1.1; color: #fff; }
+@media (max-width: 767px) {
+  .gs-kicker { font-size: 16px; }
+  .gs-h2 { font-size: 36px; }
+}
+
+/* Liquid wipe buttons */
+.liquid-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.liquid-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background-color: var(--brand);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+.liquid-btn:hover::after { height: 100%; }
+.liquid-btn > * { position: relative; z-index: 1; }
+.liquid-btn-white { background: #fff; color: #000; border: 1px solid #fff; }
+.liquid-btn-white:hover { color: #fff; border-color: var(--brand); }
+.liquid-btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); }
+.liquid-btn-ghost:hover { border-color: var(--brand); }
+.liquid-btn-nav { font-weight: 300; letter-spacing: 1.5px; }
+
+/* Form fields (GreySpace contact form) */
+.gs-field {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0;
+  padding: 12px 0 8px;
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.gs-field::placeholder { color: #fff; opacity: 1; }
+.gs-field:focus { border-bottom-color: var(--brand); }
+select.gs-field { appearance: none; padding-right: 32px; cursor: pointer; }
+select.gs-field option { background: #000; color: #fff; }
+
+/* Outlined display type */
+.text-outline-display {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.35);
+}
+
+/* Arrow-text link */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  transition: color 0.3s;
+}
+.arrow-link span { transition: transform 0.3s; }
+.arrow-link:hover { color: var(--brand); }
+.arrow-link:hover span { transform: translateX(4px); }
+
+/* Logo marquee */
+.gs-marquee { animation: gs-marquee 40s linear infinite; }
+.gs-marquee-mask::before, .gs-marquee-mask::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none;
+}
+.gs-marquee-mask::before { left: 0; background: linear-gradient(to right, #050505, transparent); }
+.gs-marquee-mask::after { right: 0; background: linear-gradient(to left, #050505, transparent); }
+}
+
+@keyframes gs-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+@keyframes sound-bar { from { transform: scaleY(0.3); } to { transform: scaleY(1); } }

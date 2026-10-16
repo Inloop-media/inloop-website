@@ -1,95 +1,106 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import Magnetic from "@/components/Magnetic";
+import { RevealLines } from "@/components/home/SectionHead";
+import { SERVICES } from "@/data/services";
+import { EMAIL } from "@/data/team";
 
-export default function CTA() {
+const EASE = [0.16, 1, 0.3, 1];
+
+const BUDGETS = ["Under ₹50K / month", "₹50K to ₹2L / month", "₹2L to ₹5L / month", "₹5L+ / month", "Not sure yet"];
+
+function Select({ name, placeholder, options }) {
   return (
-    <section className="py-24 md:py-32 bg-white text-black relative w-full overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
-        
-        {/* Growth & Form Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-end w-full">
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="w-full"
-          >
-             <div className="font-mono text-[8px] md:text-[10px] font-bold uppercase tracking-widest mb-4 md:mb-8 text-black/50">
-              Partner
-             </div>
-             <h2 className="text-5xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-8 md:mb-12 text-black text-wrap">
-              Engage <br className="hidden sm:block" /> Support
-             </h2>
-             <p className="text-lg sm:text-xl md:text-2xl font-light max-w-md text-black/70 mb-12 md:mb-16 leading-relaxed">
-               Book a strategic technical review. We architect your enterprise IT roadmap.
-             </p>
-             
-             <div className="space-y-3 font-mono text-[10px] sm:text-xs uppercase tracking-widest text-black border-y border-black/10 py-6 md:py-8 w-full">
-                <div className="flex justify-between w-full">
-                  <span>PHASE 1</span>
-                  <span className="text-black/50">DISCOVERY</span>
-                </div>
-                <div className="flex justify-between w-full">
-                  <span>PHASE 2</span>
-                  <span className="text-black/50">ARCHITECTURE</span>
-                </div>
-                <div className="flex justify-between w-full">
-                  <span>PHASE 3</span>
-                  <span className="text-black/50">DEPLOYMENT</span>
-                </div>
-             </div>
-             
-             <div className="pt-8 md:pt-12 w-full">
-                <a href="mailto:sales@innoworq.com" className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-widest hover:text-black/50 transition-colors break-all">sales@innoworq.com</a>
-             </div>
-          </motion.div>
+    <div className="relative">
+      <select name={name} required defaultValue="" aria-label={placeholder} className="gs-field">
+        <option value="" disabled>{placeholder} *</option>
+        {options.map((o) => (
+          <option key={o} value={o}>{o}</option>
+        ))}
+        <option value="Not sure / open to recommendation">Not sure / open to recommendation</option>
+      </select>
+      <svg viewBox="0 0 24 24" className="pointer-events-none absolute right-1 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--brand)]" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+        <path d="m6 9 6 6 6-6" />
+      </svg>
+    </div>
+  );
+}
 
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="bg-black text-white p-6 sm:p-8 md:p-12 w-full"
-          >
-             <form className="space-y-6 md:space-y-8 w-full">
-                <div className="space-y-2 md:space-y-3 w-full">
-                  <label className="text-[8px] md:text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase">Company Name</label>
-                  <input type="text" className="w-full bg-transparent border-b border-white/20 px-0 py-2 sm:py-3 text-white focus:outline-none focus:border-white transition-colors text-base sm:text-lg md:text-xl font-light placeholder:text-white/20 rounded-none appearance-none" placeholder="COMPANY INC." />
-                </div>
-                
-                <div className="space-y-2 md:space-y-3 w-full">
-                  <label className="text-[8px] md:text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase">Email Address</label>
-                  <input type="email" className="w-full bg-transparent border-b border-white/20 px-0 py-2 sm:py-3 text-white focus:outline-none focus:border-white transition-colors text-base sm:text-lg md:text-xl font-light placeholder:text-white/20 rounded-none appearance-none" placeholder="EMAIL" />
-                </div>
-                
-                <div className="space-y-2 md:space-y-3 w-full">
-                  <label className="text-[8px] md:text-[10px] font-mono tracking-[0.2em] text-white/50 uppercase">Requirements</label>
-                  <textarea className="w-full bg-transparent border-b border-white/20 px-0 py-2 sm:py-3 text-white focus:outline-none focus:border-white transition-colors min-h-[80px] md:min-h-[100px] text-base sm:text-lg md:text-xl font-light placeholder:text-white/20 resize-none rounded-none appearance-none" placeholder="DETAILS..."></textarea>
-                </div>
-                
-                <Magnetic strength={0.4}>
-                  <motion.button 
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    type="button" 
-                    className="w-full group bg-white text-black font-bold uppercase tracking-widest py-5 sm:py-6 flex items-center justify-center gap-4 hover:bg-gray-200 transition-colors mt-8 md:mt-12 cursor-pointer text-sm sm:text-base border-none outline-none"
-                  >
-                    CONTACT SALES
-                    <div className="overflow-hidden relative w-4 h-4 sm:w-5 sm:h-5">
-                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute group-hover:translate-x-full transition-transform duration-300" />
-                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 absolute -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
-                    </div>
-                  </motion.button>
-                </Magnetic>
-             </form>
-          </motion.div>
+export default function CTA({ id = "contact" }) {
+  const [sent, setSent] = useState(false);
 
+  // No backend yet: hand the enquiry to the visitor's email client, addressed to Inloop
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(e.currentTarget).entries());
+    const subject = `New enquiry — ${d.company || `${d.firstName} ${d.lastName}`}`;
+    const body = [
+      `Name: ${d.firstName} ${d.lastName}`,
+      `Phone: ${d.phone}`,
+      `Email: ${d.email}`,
+      `Company / Organization: ${d.company}`,
+      `Country: ${d.country}`,
+      `Service interest: ${d.service}`,
+      `Estimated budget: ${d.budget}`,
+      `Newsletter: ${d.newsletter ? "Yes" : "No"}`,
+      "",
+      d.message,
+    ].join("\n");
+    window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setSent(true);
+  };
+
+  return (
+    <section id={id} className="bg-[#050505] py-[100px]">
+      <div className="gs-wrap grid grid-cols-1 lg:grid-cols-[264px_1fr] gap-14 lg:gap-[11.5vw] 2xl:gap-[226px]">
+        <div>
+          <RevealLines lines={["Lets Get in", "Touch"]} className="gs-h2" />
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2, ease: EASE }}
+            className="mt-6 h-[2px] w-[200px] bg-[var(--brand)] origin-left"
+          />
+          <p className="mt-6 text-[16px] font-light leading-[1.6] text-white">
+            Most engagements begin within a week of enquiry, and we would love to hear about your brand.
+          </p>
         </div>
+
+        <motion.form
+          onSubmit={onSubmit}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.9, ease: EASE }}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10 lg:mr-[15px]"
+        >
+          <input name="firstName" required placeholder="First Name *" aria-label="First Name" className="gs-field" />
+          <input name="lastName" required placeholder="Last Name *" aria-label="Last Name" className="gs-field" />
+          <input name="phone" type="tel" required placeholder="Contact Number *" aria-label="Contact Number" className="gs-field sm:col-span-2" />
+          <input name="email" type="email" required placeholder="Email Address *" aria-label="Email Address" className="gs-field sm:col-span-2" />
+          <input name="company" required placeholder="Company / Organization *" aria-label="Company / Organization" className="gs-field" />
+          <input name="country" required placeholder="Country *" aria-label="Country" className="gs-field" />
+          <Select name="service" placeholder="Service Interest" options={SERVICES.map((s) => s.tag)} />
+          <Select name="budget" placeholder="Estimated Budget" options={BUDGETS} />
+          <textarea name="message" required rows={2} placeholder="Describe Your Project... *" aria-label="Describe Your Project" className="gs-field sm:col-span-2 resize-none min-h-[69px]" />
+
+          <label className="sm:col-span-2 flex items-center gap-3 w-fit cursor-pointer text-[14px] font-bold text-white">
+            <input type="checkbox" name="newsletter" className="w-[18px] h-[18px] accent-[var(--brand)] cursor-pointer" />
+            Subscribe to Newsletter
+          </label>
+
+          <div className="sm:col-span-2 flex flex-wrap items-center gap-6">
+            <button
+              type="submit"
+              className="h-12 px-8 bg-[var(--brand)] text-white text-[12px] uppercase tracking-[0.6px] hover:bg-white hover:text-black transition-colors cursor-pointer"
+            >
+              Submit Message
+            </button>
+            {sent && <span className="text-[13px] text-white/70">Opening your email app — just hit send.</span>}
+          </div>
+        </motion.form>
       </div>
     </section>
   );

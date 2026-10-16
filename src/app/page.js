@@ -1,45 +1,31 @@
-import Hero from "@/components/Hero";
-import TrustTicker from "@/components/TrustTicker";
-import OEMLogos from "@/components/OEMLogos";
-import Features from "@/components/Features";
-import IntelligenceFlow from "@/components/IntelligenceFlow";
-import CaseStudyGrid from "@/components/CaseStudyGrid";
-import DashboardPreview from "@/components/DashboardPreview";
-import ScrollMarquee from "@/components/ScrollMarquee";
-import MockThread from "@/components/MockThread";
-import ProcessGallery from "@/components/ProcessGallery";
-import AtmosphericTypo from "@/components/AtmosphericTypo";
-import SlantedMarquee from "@/components/SlantedMarquee";
-import PerceptionShift from "@/components/PerceptionShift";
-import GlobalNetwork from "@/components/GlobalNetwork";
-import ComparisonTable from "@/components/ComparisonTable";
-import FAQ from "@/components/FAQ";
+import HomeHero, { LogoStrip } from "@/components/home/HomeHero";
+import HomeIntro from "@/components/home/HomeIntro";
+import HomeFlipCards from "@/components/home/HomeFlipCards";
+import HomeWork from "@/components/home/HomeWork";
+import HomeServices from "@/components/home/HomeServices";
+import HomeTeam from "@/components/home/HomeTeam";
+import HomeMethod from "@/components/home/HomeMethod";
+import HomeArticle from "@/components/home/HomeArticle";
 import CTA from "@/components/CTA";
-import AuthorityMeter from "@/components/AuthorityMeter";
-import SubconsciousModule from "@/components/SubconsciousModule";
 
 export default function Home() {
   return (
     <>
-      <AuthorityMeter />
-      <Hero />
-      <TrustTicker />
-      <Features />
-      <OEMLogos />
-      <IntelligenceFlow />
-      <CaseStudyGrid />
-      <DashboardPreview />
-      <ScrollMarquee />
-      <MockThread />
-      <ProcessGallery />
-      <AtmosphericTypo />
-      <SlantedMarquee />
-      <PerceptionShift />
-      <SubconsciousModule />
-      <GlobalNetwork />
-      <ComparisonTable />
-      <FAQ />
-      <CTA />
+      <HomeHero />
+      {/* The next sections slide up over the pinned film, as on GreySpace */}
+      <div className="relative z-10 -mt-[300px]">
+        <div className="bg-gradient-to-b from-transparent via-[#050505]/60 to-[#050505]">
+          <LogoStrip />
+        </div>
+        <HomeIntro />
+        <HomeFlipCards />
+        <HomeWork />
+        <HomeServices />
+        <HomeTeam />
+        <HomeMethod />
+        <HomeArticle />
+        <CTA />
+      </div>
     </>
   );
 }
