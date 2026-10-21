@@ -11,7 +11,7 @@ import { CASE_STUDIES } from "@/data/caseStudies";
 const EASE = [0.16, 1, 0.3, 1];
 const [apploft, luxe, fmcg] = CASE_STUDIES;
 
-// Rows mirror GreySpace: full (1280x775), half pair, full, half pair, full
+// Rows mirror GreySpace: full (1280x775), half pair, full, half pair
 const TILES = [
   { span: "full", href: `/work/${apploft.slug}`, cat: apploft.tag, title: apploft.name, desc: apploft.headline, visual: { case: apploft } },
   { span: "half", h: "md:aspect-[630/392]", href: `/work/${luxe.slug}`, cat: luxe.tag, title: luxe.name, desc: luxe.headline, visual: { case: luxe } },
@@ -19,7 +19,6 @@ const TILES = [
   { span: "full", href: "/work", cat: "AI Video Creative", title: "Fashion & Apparel", desc: "Lookbooks and AI try-on hooks — one jacket, five outfits, every body type. New drop, sizes XS to 3XL.", visual: { src: "/videos/ai-fashion.mp4" } },
   { span: "half", h: "md:aspect-[630/319]", href: "/work", cat: "AI Video Creative", title: "Beauty & Wellness", desc: "UGC unboxings and routines — texture close-ups from day 1 to day 7.", visual: { src: "/videos/ai-beauty.mp4" } },
   { span: "half", h: "md:aspect-[630/319]", href: "/work", cat: "AI Video Creative", title: "High-Tech & SaaS", desc: "Explainer and demo ads — still exporting reports by hand? Live in 10 minutes.", visual: { src: "/videos/ai-saas.mp4" } },
-  { span: "full", href: "/work", cat: "Paid Media", title: "Every Major Ad Platform", desc: "Google, Meta, Microsoft, Taboola, TikTok and Jio Ads — planned, launched and optimised as one growth engine.", visual: { src: "/images/ad-1.webp", position: "top" } },
 ];
 
 function Tile({ t, index }) {

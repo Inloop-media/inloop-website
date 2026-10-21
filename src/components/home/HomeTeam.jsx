@@ -55,7 +55,7 @@ export default function HomeTeam() {
           </div>
         </div>
 
-        <div className="relative z-10 -mt-10 grid grid-cols-1 md:grid-cols-[repeat(3,310px)] md:justify-center gap-10 md:gap-[60px]">
+        <div className="relative z-10 -mt-10 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0">
           {TEAM.map((m, i) => (
             <motion.div
               key={m.name}
@@ -63,6 +63,7 @@ export default function HomeTeam() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.2 + i * 0.1, ease: EASE }}
+              className="mx-auto w-full max-w-[310px] px-2 text-center"
             >
               <div className="text-[18px] leading-[1.5] tracking-[0.36px] uppercase text-white">{m.name}</div>
               <div className="mt-2 text-[11px] font-semibold tracking-[0.55px] text-[var(--brand)]">{m.role}</div>
