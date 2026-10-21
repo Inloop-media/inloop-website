@@ -122,7 +122,7 @@ export default function WorkClient() {
           <Kicker size="sm">Our Portfolio</Kicker>
           <RevealLines
             as="h1"
-            lines={["Bringing brands to life with growth,", "clarity, and imagination."]}
+            lines={["Bringing brands to life with growth,", "clarity, and imagination"]}
             className="mt-4 max-w-[1020px] text-[40px] md:text-[68px] font-medium leading-[1.1] text-white"
           />
           <FadeUp delay={0.3}>
@@ -146,7 +146,7 @@ export default function WorkClient() {
         <div className="gs-wrap-64">
           <Kicker size="sm">Our Past Projects</Kicker>
           <RevealLines
-            lines={["At Inloop, every service overlaps to build", "cohesive, future-ready brands."]}
+            lines={["At Inloop, every service overlaps to build", "cohesive, future-ready brands"]}
             className="mt-5 max-w-[1212px] text-[36px] md:text-[60px] font-semibold leading-[1.1] text-white"
           />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

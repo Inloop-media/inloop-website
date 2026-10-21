@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { REELS } from "@/data/reels";
+import { Kicker } from "@/components/gs/Type";
+import { RevealLines, FadeUp } from "@/components/home/SectionHead";
 
 const EASE = [0.16, 1, 0.3, 1];
 const STEPS = ["Hook", "Demo", "CTA"];
@@ -142,40 +144,15 @@ export default function HomeReels() {
   return (
     <section id="reels" className="bg-[#000000] pt-[100px] pb-[100px]">
       <div className="gs-wrap">
-        <div className="text-center max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: EASE }}
-            className="text-[12px] font-semibold tracking-[0.26em] uppercase text-white/60"
-          >
-            AI Video
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: EASE }}
-            className="mt-4 text-[40px] md:text-[68px] font-bold tracking-[-0.03em] leading-[1.02] text-white"
-          >
-            Scroll-stopping{" "}
-            <span className="font-serif italic font-normal bg-gradient-to-r from-[var(--brand)] to-[#e879f9] bg-clip-text text-transparent">AI video</span>
-            <br />
-            creative
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, delay: 0.15, ease: EASE }}
-            className="mt-6 text-[16px] md:text-[18px] leading-[1.6] text-white/65"
-          >
+        <Kicker>AI Video</Kicker>
+        <RevealLines lines={["Scroll-stopping", "AI video creative"]} className="gs-h2 mt-4" />
+        <FadeUp delay={0.15}>
+          <p className="mt-6 max-w-[712px] text-[18px] font-light leading-[1.5] text-white/80">
             UGC hooks, product demos and story ads — generated and edited with AI, then tuned for performance on every feed.
-          </motion.p>
-        </div>
+          </p>
+        </FadeUp>
 
-        <div className="mt-14 mx-auto max-w-[1320px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {REELS.slice(0, 9).map((reel, i) => (
             <Reel key={reel.src + i} reel={reel} index={i} />
           ))}

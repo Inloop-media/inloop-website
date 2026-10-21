@@ -27,7 +27,7 @@ export default function HomeMethod() {
     <section className="bg-[#000000] pt-[100px] pb-[100px]">
       <div className="gs-wrap">
         <Kicker>Our methodology</Kicker>
-        <RevealLines lines={["First Systems", "Second Scale", "In that order always."]} className="gs-h2 mt-4" />
+        <RevealLines lines={["First Systems", "Second Scale", "In that order always"]} className="gs-h2 mt-4" />
 
         <motion.div
           initial={{ scaleX: 0 }}

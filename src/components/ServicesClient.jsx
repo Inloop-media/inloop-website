@@ -18,7 +18,7 @@ export default function ServicesClient() {
           <Kicker size="sm">Our Services</Kicker>
           <RevealLines
             as="h1"
-            lines={["One roof.", "Every lever of growth."]}
+            lines={["One roof,", "every lever of growth"]}
             className="mt-4 max-w-[1020px] text-[40px] md:text-[68px] font-medium leading-[1.1] text-white"
           />
           <FadeUp delay={0.3}>

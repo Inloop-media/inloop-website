@@ -31,7 +31,7 @@ export default function ContactClient() {
           <Kicker size="sm">Contact Us</Kicker>
           <RevealLines
             as="h1"
-            lines={["You do not need all the answers", "before you begin."]}
+            lines={["You do not need all the answers", "before you begin"]}
             className="mt-5 max-w-[1100px] text-[40px] md:text-[72px] font-semibold leading-[1.1] text-white"
           />
           <FadeUp delay={0.2}>

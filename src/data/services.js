@@ -14,7 +14,7 @@ export const SERVICES = [
     category: "brand",
     tag: "Brand Strategy & Identity",
     title: "Branding",
-    headline: "Brands people remember.",
+    headline: "Brands people remember",
     description: "We build AI-led brand identities that help modern brands define who they are, communicate with conviction and stay relevant as they scale.",
     media: "/videos/ai-services.mp4",
     what: [
@@ -32,7 +32,7 @@ export const SERVICES = [
     category: "social",
     tag: "Social Media Management",
     title: "Social Media",
-    headline: "Social that earns attention.",
+    headline: "Social that earns attention",
     description: "We create and manage social experiences that keep modern brands relevant, consistent and culturally connected across every platform.",
     media: "/videos/ai-beauty.mp4",
     what: [
@@ -51,7 +51,7 @@ export const SERVICES = [
     category: "tech",
     tag: "Website Design & Development",
     title: "Website & Tech",
-    headline: "Websites built to convert.",
+    headline: "Websites built to convert",
     description: "We design and develop responsive, premium, user-focused websites that create strong digital impressions and convert visitors into customers.",
     media: "/videos/ai-saas.mp4",
     what: [
@@ -70,7 +70,7 @@ export const SERVICES = [
     category: "social",
     tag: "Influencer Marketing",
     title: "Influencer",
-    headline: "Creators that move your market.",
+    headline: "Creators that move your market",
     description: "We help brands discover, collaborate and grow through authentic influencer campaigns that build awareness, trust and measurable impact.",
     media: "/videos/ai-fashion.mp4",
     what: [
@@ -89,7 +89,7 @@ export const SERVICES = [
     category: "growth",
     tag: "Performance & Paid Media",
     title: "Performance",
-    headline: "Paid media that pays back.",
+    headline: "Paid media that pays back",
     description: "We plan, build and optimize paid campaigns that help brands move faster and market smarter across every channel.",
     media: "/videos/ai-d2c.mp4",
     what: [
@@ -108,7 +108,7 @@ export const SERVICES = [
     category: "tech",
     tag: "AI-Powered Creative",
     title: "AI Creative",
-    headline: "Creative at the speed of AI.",
+    headline: "Creative at the speed of AI",
     description: "We use AI-led workflows to help brands create smarter content, faster concepts, scalable campaigns and leaner creative systems.",
     media: "/videos/ai-fashion.mp4",
     what: [
@@ -127,7 +127,7 @@ export const SERVICES = [
     category: "social",
     tag: "Creator Management",
     title: "Creator Management",
-    headline: "Creators, managed like brands.",
+    headline: "Creators, managed like brands",
     description: "We help creators build stronger personal brands, improve content direction and unlock better collaboration opportunities.",
     media: "/videos/ai-beauty.mp4",
     what: [
@@ -146,7 +146,7 @@ export const SERVICES = [
     category: "brand",
     tag: "Creative Production",
     title: "Production",
-    headline: "Production that looks premium.",
+    headline: "Production that looks premium",
     description: "We create high-quality video, photography and campaign content that makes brands look polished, professional and visually impactful.",
     media: "/videos/ai-fashion.mp4",
     what: [
@@ -165,7 +165,7 @@ export const SERVICES = [
     category: "brand",
     tag: "Strategic PR & Comms",
     title: "PR & Communication",
-    headline: "Stories that earn trust.",
+    headline: "Stories that earn trust",
     description: "We help brands communicate with clarity, strengthen reputation and create meaningful visibility across media and digital platforms.",
     media: "/videos/ai-services.mp4",
     what: [
@@ -184,7 +184,7 @@ export const SERVICES = [
     category: "brand",
     tag: "Content Creation",
     title: "Content Creation",
-    headline: "Content with a purpose.",
+    headline: "Content with a purpose",
     description: "We create strategic, visually polished and platform-ready content for brands, campaigns, websites and social media.",
     media: "/videos/ai-beauty.mp4",
     what: [
@@ -203,7 +203,7 @@ export const SERVICES = [
     category: "growth",
     tag: "SEO & Search",
     title: "SEO & Search",
-    headline: "Search visibility that compounds.",
+    headline: "Search visibility that compounds",
     description: "We help brands improve their organic search presence through strategic SEO, technical optimization, content planning and search-focused growth systems designed to attract the right audience.",
     media: "/videos/ai-saas.mp4",
     what: [
@@ -222,7 +222,7 @@ export const SERVICES = [
     category: "growth",
     tag: "E-commerce Growth",
     title: "E-commerce Growth",
-    headline: "Turn your store into a sales engine.",
+    headline: "Turn your store into a sales engine",
     description: "We help e-commerce brands improve storefront experience, product storytelling, conversion journeys and retention systems to drive stronger sales and long-term growth.",
     media: "/videos/ai-d2c.mp4",
     what: [

@@ -3,6 +3,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import { Kicker } from "@/components/gs/Type";
+import { RevealLines } from "@/components/home/SectionHead";
 
 // "We don't just consult. We build." — the Inloop pinned flip-card section
 
@@ -155,11 +157,8 @@ function InViewCard({ pillar, index }) {
 function Heading() {
   return (
     <>
-      <div className="text-[12px] font-bold tracking-[0.26em] uppercase text-white/90">What we do</div>
-      <h2 className="mt-3.5 text-[30px] md:text-[52px] font-bold tracking-[-0.02em] leading-[1.04] text-white">
-        We don&apos;t just consult.{" "}
-        <span className="bg-gradient-to-r from-white via-[#d8d9db] to-[#9aa1aa] bg-clip-text text-transparent">We build.</span>
-      </h2>
+      <Kicker>What we do</Kicker>
+      <RevealLines lines={["We don't just consult, we build"]} className="gs-h2 mt-4" />
     </>
   );
 }
@@ -176,8 +175,10 @@ export default function HomeFlipCards() {
         <div className="sticky top-0 h-[100svh] overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none bg-[radial-gradient(rgba(255,255,255,0.05)_0,transparent_70%)]" />
 
-          <div className="absolute top-[12vh] left-0 right-0 px-5 flex flex-col items-center text-center z-10">
-            <Heading />
+          <div className="absolute top-[12vh] left-0 right-0 z-10">
+            <div className="gs-wrap">
+              <Heading />
+            </div>
           </div>
 
           {PILLARS.map((pillar, i) => (
@@ -194,8 +195,8 @@ export default function HomeFlipCards() {
       </section>
 
       {/* Mobile / tablet */}
-      <section className="lg:hidden bg-[#000000] px-5 py-20">
-        <div className="text-center mb-12">
+      <section className="lg:hidden bg-[#000000] py-20">
+        <div className="gs-wrap mb-12">
           <Heading />
           <p className="text-white/50 font-light mt-4">Scroll to reveal each service.</p>
         </div>

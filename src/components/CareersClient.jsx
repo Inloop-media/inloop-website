@@ -68,7 +68,7 @@ export default function CareersClient() {
         <div className="absolute left-0 right-0 bottom-14">
           <div className="gs-wrap-48">
             <Kicker size="ab">Careers · Inloop Media</Kicker>
-            <RevealLines as="h1" lines={["Do the best work of your career.", "In the loop."]} className="mt-3 text-[36px] md:text-[64px] font-normal leading-[1.1] text-white" />
+            <RevealLines as="h1" lines={["Do the best work of your career,", "in the loop"]} className="mt-3 text-[36px] md:text-[64px] font-normal leading-[1.1] text-white" />
           </div>
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function CareersClient() {
       <section className="bg-[#000000] pb-24">
         <div className="gs-wrap-48">
           <Kicker size="ab">Hiring process</Kicker>
-          <RevealLines lines={["Four steps. No black holes."]} className="mt-4 text-[30px] md:text-[44px] font-normal leading-[1.3] uppercase text-white" />
+          <RevealLines lines={["Four steps, no black holes"]} className="mt-4 text-[30px] md:text-[44px] font-normal leading-[1.3] uppercase text-white" />
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#383838] border border-[#383838]">
             {HIRING_STEPS.map((st, i) => (
               <FadeUp key={st.t} delay={i * 0.08} className="bg-[#000000] p-8 min-h-[220px]">

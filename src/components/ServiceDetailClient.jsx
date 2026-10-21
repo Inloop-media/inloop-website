@@ -234,7 +234,7 @@ function InAction({ s }) {
     <section className="bg-[#000000] py-20">
       <div className="gs-wrap-64">
         <Kicker size="sm">{s.title} in action</Kicker>
-        <RevealLines lines={["Every engagement we run", "starts with a real business problem."]} className="mt-5 max-w-[1000px] text-[36px] md:text-[72px] font-medium leading-[1.1] text-white" />
+        <RevealLines lines={["Every engagement we run", "starts with a real business problem"]} className="mt-5 max-w-[1000px] text-[36px] md:text-[72px] font-medium leading-[1.1] text-white" />
 
         <div className="mt-[60px] flex flex-wrap border-b border-white/15">
           {CASE_STUDIES.map((x, i) => (
@@ -391,7 +391,7 @@ function Investment() {
         <div className="gs-kicker-sm">What to expect on investment</div>
         <div className="mt-[50px] grid grid-cols-1 md:grid-cols-[540px_1fr] gap-14 md:gap-[150px] md:pl-[115px]">
           <div>
-            <RevealLines lines={["Scoped to your", "business. Not a", "fixed package."]} className="text-[36px] md:text-[60px] font-medium leading-[1.1] text-white" />
+            <RevealLines lines={["Scoped to your business,", "not a fixed package"]} className="text-[36px] md:text-[60px] font-medium leading-[1.1] text-white" />
             <div className="mt-[136px] flex flex-col gap-8">
               {PACKAGES.map((p) => (
                 <FadeUp key={p.num}>
@@ -403,7 +403,7 @@ function Investment() {
             </div>
           </div>
           <div className="max-w-[380px]">
-            <h3 className="text-[28px] md:text-[32px] font-medium leading-none text-white">A custom scope for every engagement.</h3>
+            <h3 className="text-[28px] md:text-[32px] font-medium leading-none text-white">A custom scope for every engagement</h3>
             {[
               ["Size & Scale", "Aligned with your stage, channels, markets and the number of brands or accounts we manage."],
               ["Velocity", "Determined by launch timelines, season and how fast the plan needs to move."],
