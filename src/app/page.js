@@ -2,6 +2,7 @@ import HomeHero, { LogoStrip } from "@/components/home/HomeHero";
 import HomeIntro from "@/components/home/HomeIntro";
 import HomeFlipCards from "@/components/home/HomeFlipCards";
 import HomeWork from "@/components/home/HomeWork";
+import HomeReels from "@/components/home/HomeReels";
 import HomeServices from "@/components/home/HomeServices";
 import HomeTeam from "@/components/home/HomeTeam";
 import HomeMethod from "@/components/home/HomeMethod";
@@ -20,6 +21,7 @@ export default function Home() {
         <HomeIntro />
         <HomeFlipCards />
         <HomeWork />
+        <HomeReels />
         <HomeServices />
         <HomeTeam />
         <HomeMethod />
