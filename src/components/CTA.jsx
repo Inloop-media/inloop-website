@@ -63,7 +63,7 @@ export default function CTA({ id = "contact" }) {
       }
       if (!res.ok || !data.ok) throw new Error(data.error || "Something went wrong");
       form.reset();
-      setState({ status: "done", id: data.id });
+      setState({ status: "done" });
     } catch (err) {
       setState({ status: "error", message: err.message });
     }
@@ -121,7 +121,7 @@ export default function CTA({ id = "contact" }) {
               {state.status === "sending" ? "Sending…" : "Submit Message"}
             </button>
             <span aria-live="polite" className="text-[13px] text-white/75">
-              {state.status === "done" && <>Thank you — we&apos;ll be in touch within a day.{state.id ? ` Your reference: ${state.id}` : ""}</>}
+              {state.status === "done" && <>Thank you — we&apos;ll be in touch within a day.</>}
               {state.status === "error" && (
                 <>
                   Couldn&apos;t send right now. Please email us at{" "}
