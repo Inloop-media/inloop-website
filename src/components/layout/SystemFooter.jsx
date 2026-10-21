@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { EMAIL } from "@/data/team";
+import { EMAIL, PHONES } from "@/data/team";
 import { SOCIALS } from "@/components/layout/socials";
 import { BrandMark } from "@/components/layout/Header";
 
@@ -59,7 +59,9 @@ export default function SystemFooter() {
             <div className={label}>Contact</div>
             <ul className="mt-6 flex flex-col gap-4">
               <li><a href={`mailto:${EMAIL}`} className={link}>{EMAIL}</a></li>
-              <li><Link href="/contact" className={link}>Book a free call</Link></li>
+              {PHONES.map((p) => (
+                <li key={p.tel}><a href={`tel:${p.tel}`} className={link}>{p.label}</a></li>
+              ))}
             </ul>
             <div className={`${label} mt-10`}>Location</div>
             <p className="mt-6 text-[15px] leading-[22.5px] tracking-[0.6px] text-white">Noida, Uttar Pradesh, India</p>

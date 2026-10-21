@@ -5,14 +5,15 @@ import CTA from "@/components/CTA";
 import Media from "@/components/gs/Media";
 import { Kicker } from "@/components/gs/Type";
 import { RevealLines, FadeUp } from "@/components/home/SectionHead";
-import { EMAIL, INSTAGRAM, COMPANY_LINKEDIN } from "@/data/team";
+import { EMAIL, PHONES, INSTAGRAM } from "@/data/team";
 
 const EASE = [0.16, 1, 0.3, 1];
 
 const WAYS = [
   { h: "Email", v: EMAIL, cta: "Write to Us", href: `mailto:${EMAIL}` },
+  { h: "Call", v: PHONES[0].label, cta: "Call Us", href: `tel:${PHONES[0].tel}` },
+  { h: "Call", v: PHONES[1].label, cta: "Call Us", href: `tel:${PHONES[1].tel}` },
   { h: "Instagram", v: "@inloop.media", cta: "Message Us", href: INSTAGRAM },
-  { h: "LinkedIn", v: "Inloop Media", cta: "Connect", href: COMPANY_LINKEDIN },
 ];
 
 export default function ContactClient() {
@@ -46,7 +47,7 @@ export default function ContactClient() {
       <section className="bg-[#000000] pt-20 pb-[100px]">
         <div className="gs-wrap-64">
           <Kicker size="sm">Other ways To reach Us</Kicker>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {WAYS.map((w, i) => (
               <motion.a
                 key={w.h}

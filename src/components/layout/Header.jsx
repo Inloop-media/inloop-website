@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLenis } from "lenis/react";
 import { SERVICES } from "@/data/services";
-import { EMAIL } from "@/data/team";
+import { EMAIL, PHONES } from "@/data/team";
 import { SOCIALS } from "@/components/layout/socials";
 
 const MENU_LINKS = [
@@ -208,6 +208,9 @@ export default function Header() {
               >
                 <div className="text-[14px] tracking-[0.3px] text-[var(--brand)]">Follow Us</div>
                 <a href={`mailto:${EMAIL}`} className="text-[14px] font-light text-white hover:text-[var(--brand)] transition-colors">{EMAIL}</a>
+                {PHONES.map((p) => (
+                  <a key={p.tel} href={`tel:${p.tel}`} className="text-[14px] font-light text-white hover:text-[var(--brand)] transition-colors">{p.label}</a>
+                ))}
                 <span className="text-[14px] font-light text-white">Noida, India</span>
                 <div className="flex w-fit border border-[#5b5b5b] mt-4">
                   {SOCIALS.map(({ label, href, Icon }) => (

@@ -324,11 +324,11 @@ function HowWeWork() {
         </div>
         <motion.div ref={trackRef} style={{ x }} className="relative mt-[70px] flex w-max pl-[64px]">
           {PHASES.map((p) => (
-            <div key={p.label} className="flex w-[90vw] md:w-[1094px] shrink-0 pr-10 md:pr-[80px]">
+            <div key={p.label} className="flex w-[90vw] md:w-[1231px] shrink-0 pr-10 md:pr-[160px]">
               <div className="relative hidden md:block w-[288px] h-[464px] shrink-0 overflow-hidden mt-[21px]">
                 <Media src={p.media} position="top" />
               </div>
-              <div className="md:w-[727px]">
+              <div className="md:w-[727px] md:ml-14">
                 <div>
                   <div className="text-[16px] md:text-[18px] font-light leading-[1.5] tracking-[3px] uppercase text-[var(--brand)]">{p.label}</div>
                   <h3 className="mt-4 max-w-[260px] text-[28px] md:text-[32px] font-medium leading-none text-white">{p.title}</h3>

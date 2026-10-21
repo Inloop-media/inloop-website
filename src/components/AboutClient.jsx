@@ -18,9 +18,10 @@ const STEPS = [
 ];
 
 // The founders share one photo; each card frames one person from it
+// FOUNDERS order: Sarthak (standing, right of the photo), Mayank (seated, left of the photo)
 const FOUNDER_CROPS = [
-  { scale: "w-[190%] max-w-none", pos: "left-[-26%] top-[-54%]" },
   { scale: "w-[190%] max-w-none", pos: "left-[-82%] top-[-2%]" },
+  { scale: "w-[190%] max-w-none", pos: "left-[-26%] top-[-54%]" },
 ];
 
 function PersonCard({ name, role, linkedin, children, delay }) {
