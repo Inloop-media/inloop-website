@@ -116,6 +116,7 @@ function onOpen() {
     .addItem("2. Create / refresh executive sheets", "ensureExecutiveSheets")
     .addSeparator()
     .addItem("Sync from executives now", "syncFromExecutives")
+    .addItem("Fix executive sheet rows", "compactExecutiveSheets")
     .addItem("Show website secret", "showSecret")
     .addToUi();
 }
@@ -356,12 +357,37 @@ function execLeadsSheet_(ex) {
   return SpreadsheetApp.openById(ex.id).getSheetByName(CFG.EXEC_LEADS_TAB);
 }
 
+/** Last row with a Lead ID — getLastRow() can't be used because the checkbox column fills every row. */
+function lastLeadRow_(sheet) {
+  const last = sheet.getLastRow();
+  if (last < 2) return 1;
+  const ids = sheet.getRange(2, eCol("Lead ID"), last - 1).getValues();
+  for (let i = ids.length - 1; i >= 0; i--) if (String(ids[i][0]).trim()) return i + 2;
+  return 1;
+}
+
 function findRowById_(sheet, idCol, leadId) {
   const last = sheet.getLastRow();
   if (last < 2) return 0;
   const ids = sheet.getRange(2, idCol, last - 1).getValues();
   for (let i = 0; i < ids.length; i++) if (String(ids[i][0]) === String(leadId)) return i + 2;
   return 0;
+}
+
+/** Moves every lead row in each executive sheet up so they start at row 2 with no gaps. */
+function compactExecutiveSheets() {
+  let moved = 0;
+  getExecutives_().forEach((ex) => {
+    const sh = execLeadsSheet_(ex);
+    if (!sh || sh.getLastRow() < 2) return;
+    const n = sh.getLastRow() - 1;
+    const rows = sh.getRange(2, 1, n, EXEC_HEADERS.length).getValues().filter((r) => String(r[eCol("Lead ID") - 1]).trim());
+    sh.getRange(2, 1, n, EXEC_HEADERS.length).clearContent();
+    sh.getRange(2, eCol("Schedule Meeting"), n).setValue(false);
+    if (rows.length) sh.getRange(2, 1, rows.length, EXEC_HEADERS.length).setValues(rows);
+    moved += rows.length;
+  });
+  SpreadsheetApp.getActive().toast(`Executive sheets tidied — ${moved} lead(s) now start from row 2.`, "Inloop CRM", 6);
 }
 
 /* ------------------------------------------------------------------ */
@@ -430,7 +456,7 @@ function assignLead_(master, row) {
 
   let target = findRowById_(sh, eCol("Lead ID"), leadId);
   if (!target) {
-    target = Math.max(sh.getLastRow(), 1) + 1;
+    target = lastLeadRow_(sh) + 1;
     if (target > sh.getMaxRows()) {
       sh.insertRowsAfter(sh.getMaxRows(), 100);
       applyExecRules_(sh, target, 100);
