@@ -101,6 +101,38 @@ const COPIED = [
   "Project Details",
 ];
 
+// Colour of each Status option: [background, text]
+const STATUS_COLORS = {
+  "New Lead": ["#dbeafe", "#1e40af"],
+  "First Call / Touchbase": ["#e0f2fe", "#075985"],
+  "Follow-up Scheduled": ["#fef3c7", "#92400e"],
+  "Discovery Call": ["#cffafe", "#155e75"],
+  "Meeting Scheduled": ["#ede9fe", "#5b21b6"],
+  "In-Person Meeting": ["#f3e8ff", "#6b21a8"],
+  "Client Brief Shared to Ops Team": ["#e0e7ff", "#3730a3"],
+  "Proposal Deck in Making": ["#fce7f3", "#9d174d"],
+  "Strategy / Proposal Discussion": ["#fae8ff", "#86198f"],
+  "Negotiation": ["#ffedd5", "#9a3412"],
+  "Awaiting Client Decision": ["#fef9c3", "#854d0e"],
+  "Won": ["#bbf7d0", "#14532d"],
+  "On Hold": ["#e5e7eb", "#374151"],
+  "No Response": ["#f1f5f9", "#64748b"],
+  "Lost Lead": ["#fecaca", "#991b1b"],
+};
+// Colours handed out to executives in the Assigned To column, in Executives-tab order
+const EXEC_COLORS = [
+  ["#d1fae5", "#065f46"],
+  ["#fee2e2", "#991b1b"],
+  ["#dbeafe", "#1e40af"],
+  ["#fef3c7", "#92400e"],
+  ["#ede9fe", "#5b21b6"],
+  ["#fce7f3", "#9d174d"],
+  ["#cffafe", "#155e75"],
+  ["#ffedd5", "#9a3412"],
+  ["#e5e7eb", "#374151"],
+  ["#ecfccb", "#3f6212"],
+];
+
 const mCol = (name) => MASTER_HEADERS.indexOf(name) + 1;
 const eCol = (name) => EXEC_HEADERS.indexOf(name) + 1;
 const props = () => PropertiesService.getScriptProperties();
@@ -117,6 +149,7 @@ function onOpen() {
     .addSeparator()
     .addItem("Sync from executives now", "syncFromExecutives")
     .addItem("Fix executive sheet rows", "compactExecutiveSheets")
+    .addItem("Apply dropdown colours", "applyAllColors")
     .addItem("Show website secret", "showSecret")
     .addToUi();
 }
@@ -148,6 +181,7 @@ function setup() {
   styleHeader_(master, MASTER_HEADERS);
   ensureRows_(master, 1000);
   applyMasterRules_(master, 2, master.getMaxRows() - 1);
+  applyMasterColors_(master);
 
   // Executives tab
   let execs = ss.getSheetByName(CFG.EXECUTIVES_TAB) || ss.insertSheet(CFG.EXECUTIVES_TAB);
@@ -309,6 +343,7 @@ function ensureExecutiveSheets() {
     styleHeader_(leads, EXEC_HEADERS);
     ensureRows_(leads, 500);
     applyExecRules_(leads, 2, leads.getMaxRows() - 1);
+    applyColors_(leads, [eCol("Status")], STATUS_COLORS);
 
     let cfg = ss.getSheetByName(CFG.EXEC_CONFIG_TAB) || ss.insertSheet(CFG.EXEC_CONFIG_TAB);
     cfg.getRange(1, 1, 3, 2).setValues([
@@ -333,7 +368,48 @@ function ensureExecutiveSheets() {
 
   // Refresh the Assigned To dropdown so new names show up
   const master = masterSS_().getSheetByName(CFG.MASTER_TAB);
-  if (master) applyMasterRules_(master, 2, master.getMaxRows() - 1);
+  if (master) {
+    applyMasterRules_(master, 2, master.getMaxRows() - 1);
+    applyMasterColors_(master);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Dropdown colours (conditional formatting — survives new leads)      */
+/* ------------------------------------------------------------------ */
+
+/** Replaces the colour rules on the given columns; other conditional formatting is kept. */
+function applyColors_(sheet, cols, colors) {
+  const n = sheet.getMaxRows() - 1;
+  if (n < 1) return;
+  const others = sheet.getConditionalFormatRules().filter((r) => !r.getRanges().some((g) => cols.includes(g.getColumn())));
+  const rules = [];
+  cols.forEach((c) => {
+    const range = sheet.getRange(2, c, n);
+    Object.keys(colors).forEach((value) => {
+      const [bg, fg] = colors[value];
+      rules.push(SpreadsheetApp.newConditionalFormatRule().whenTextEqualTo(value).setBackground(bg).setFontColor(fg).setBold(true).setRanges([range]).build());
+    });
+  });
+  sheet.setConditionalFormatRules(others.concat(rules));
+}
+
+function applyMasterColors_(master) {
+  const execColors = {};
+  getExecutives_().forEach((ex, i) => (execColors[ex.name] = EXEC_COLORS[i % EXEC_COLORS.length]));
+  applyColors_(master, [mCol("Status")], STATUS_COLORS);
+  applyColors_(master, [mCol("Assigned To")], execColors);
+}
+
+/** Menu: colours the Status + Assigned To dropdowns in Master and Status in every executive sheet. */
+function applyAllColors() {
+  const master = masterSS_().getSheetByName(CFG.MASTER_TAB);
+  if (master) applyMasterColors_(master);
+  getExecutives_().forEach((ex) => {
+    const sh = execLeadsSheet_(ex);
+    if (sh) applyColors_(sh, [eCol("Status")], STATUS_COLORS);
+  });
+  SpreadsheetApp.getActive().toast("Dropdown colours applied 🎨", "Inloop CRM", 5);
 }
 
 function applyExecRules_(sheet, startRow, numRows) {

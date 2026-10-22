@@ -83,7 +83,6 @@ function scheduleRow_(sheet, r, head) {
     return;
   }
 
-  const leadId = get("Lead ID");
   const name = [get("First Name"), get("Last Name")].filter(String).join(" ");
   const company = get("Brand Name");
   const leadEmail = String(get("Email")).trim();
@@ -96,10 +95,8 @@ function scheduleRow_(sheet, r, head) {
 
   const event = Calendar.Events.insert(
     {
-      summary: `Inloop Media × ${company || name || leadId}`,
-      description:
-        `Lead ${leadId}\n${name}${company ? " — " + company : ""}\n` +
-        `Service: ${get("Service Interest")}\n\n${get("Project Details") || ""}`,
+      summary: `Inloop Media × ${company || name || "Introductory Call"}`,
+      description: welcomeMessage_(get("First Name"), company, get("Service Interest")),
       start: { dateTime: start.toISOString() },
       end: { dateTime: end.toISOString() },
       attendees,
@@ -119,4 +116,23 @@ function scheduleRow_(sheet, r, head) {
   sheet.getRange(r, col("Meeting Link")).setValue(link);
   sheet.getRange(r, col("Status")).setValue("Meeting Scheduled");
   ss.toast(`Meeting booked ✅ Invite sent to ${attendees.map((a) => a.email).join(", ") || "you"}.`, "Inloop", 8);
+}
+
+/** Text the lead sees in the calendar invite. */
+function welcomeMessage_(firstName, company, service) {
+  const execName = config_("EXECUTIVE_NAME");
+  const about = company ? `${company}` : "your brand";
+  const help = service && !/not sure/i.test(service) ? ` with ${service}` : "";
+  return [
+    `Hi ${firstName || "there"},`,
+    "",
+    `Thank you for reaching out to Inloop Media. We're excited to learn more about ${about} and how we can help${help}.`,
+    "",
+    "On this call we'll understand your goals, walk you through how we work, and answer any questions you may have.",
+    "",
+    "Looking forward to speaking with you.",
+    "",
+    "Warm regards,",
+    execName ? `${execName}\nInloop Media` : "Team Inloop Media",
+  ].join("\n");
 }

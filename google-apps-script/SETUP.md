@@ -69,6 +69,8 @@ Run step 4.2 again whenever you add a new executive.
 
 Use **Inloop CRM → Sync from executives now** if you don't want to wait for the 5-minute sync.
 
+Status and Assigned To options are colour-coded. After adding a new executive, run **Inloop CRM → Apply dropdown colours** so their name gets a colour too. To change a colour, edit `STATUS_COLORS` / `EXEC_COLORS` in `master/Code.gs`.
+
 ### Columns
 
 - **Master:** Lead ID · Date Registered · First Name · Last Name · Contact Number · Email · Brand Name · Location · Service Interest · Estimated Budget · Project Details · Newsletter · Status · Assigned To · Date Assigned · Remarks · Brief · Meeting Date & Time · Meeting Link · Last Updated
