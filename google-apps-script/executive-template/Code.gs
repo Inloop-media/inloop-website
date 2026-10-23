@@ -8,13 +8,15 @@
  * Each executive opens their sheet once and runs "Inloop → Enable meeting scheduling".
  * After that, filling "Meeting Date & Time" and ticking "Schedule Meeting" creates a
  * Google Calendar event with a Meet link from THEIR account, invites the lead and the
- * Master owner, writes the link into the sheet and sets Status to "Meeting Scheduled".
+ * Inloop meeting guest, writes the link into the sheet and sets Status to "Meeting Scheduled".
  * The Master sheet picks the link up within a few minutes.
  */
 
 const LEADS_TAB = "Leads";
 const CONFIG_TAB = "_config";
 const MEETING_MINUTES = 30;
+// The first meeting can only be booked once the lead is at this stage
+const REQUIRED_STATUS = "Discovery Call";
 
 function onOpen() {
   SpreadsheetApp.getUi()
@@ -32,7 +34,7 @@ function enableScheduling() {
   // Touch the calendar once so Google asks for permission now, not on the first meeting
   Calendar.CalendarList.list({ maxResults: 1 });
   SpreadsheetApp.getUi().alert(
-    "Meeting scheduling is on ✅\n\nFill 'Meeting Date & Time' for a lead, then tick 'Schedule Meeting'. A Google Meet invite goes to the lead and to Inloop."
+    "Meeting scheduling is on ✅\n\nSet the lead's Status to 'Discovery Call', fill 'Meeting Date & Time', then tick 'Schedule Meeting'. A Google Meet invite goes to the lead and to Inloop."
   );
 }
 
@@ -76,6 +78,11 @@ function scheduleRow_(sheet, r, head) {
     ss.toast("A meeting is already scheduled for this lead. Clear 'Meeting Link' to book a new one.", "Inloop", 6);
     return;
   }
+  if (String(get("Status")).trim() !== REQUIRED_STATUS) {
+    sheet.getRange(r, col("Schedule Meeting")).setValue(false);
+    ss.toast(`Set Status to '${REQUIRED_STATUS}' first, then fill 'Meeting Date & Time' and tick again.`, "Inloop", 8);
+    return;
+  }
   const start = get("Meeting Date & Time");
   if (!(start instanceof Date)) {
     sheet.getRange(r, col("Schedule Meeting")).setValue(false);
@@ -86,12 +93,13 @@ function scheduleRow_(sheet, r, head) {
   const name = [get("First Name"), get("Last Name")].filter(String).join(" ");
   const company = get("Brand Name");
   const leadEmail = String(get("Email")).trim();
-  const masterEmail = config_("MASTER_EMAIL");
+  // Inloop guest on every invite — MEETING_GUEST (e.g. Arushi), falling back to the Master owner
+  const guestEmail = config_("MEETING_GUEST") || config_("MASTER_EMAIL");
   const end = new Date(start.getTime() + MEETING_MINUTES * 60000);
 
   const attendees = [];
   if (leadEmail) attendees.push({ email: leadEmail });
-  if (masterEmail && masterEmail !== Session.getActiveUser().getEmail()) attendees.push({ email: masterEmail });
+  if (guestEmail && guestEmail !== Session.getActiveUser().getEmail()) attendees.push({ email: guestEmail });
 
   const event = Calendar.Events.insert(
     {
