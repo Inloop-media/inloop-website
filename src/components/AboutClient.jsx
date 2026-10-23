@@ -17,6 +17,13 @@ const STEPS = [
   { t: "Scale", d: "We double down on what converts, so growth compounds instead of spiking — and we stay in every loop that matters." },
 ];
 
+const FACTS = [
+  { value: "25+", label: "Brands", text: "Grown across India and global markets." },
+  { value: "AMS", label: "Group heritage", text: "Backed by a diversified business group." },
+  { value: "4", label: "Disciplines, one team", text: "Strategy, creative, performance and technology." },
+  { value: "7", label: "Industries", text: "Apps, fashion, FMCG health, SaaS, D2C, professional services and real estate." },
+];
+
 // The founders share one photo; each card frames one person from it
 // FOUNDERS order: Sarthak (standing, right of the photo), Mayank (seated, left of the photo)
 const FOUNDER_CROPS = [
@@ -62,23 +69,35 @@ export default function AboutClient() {
         <div className="gs-wrap-48">
           <Kicker size="ab">who we are</Kicker>
           <RevealLines lines={["About Us"]} className="mt-4 text-[34px] md:text-[44px] font-normal leading-[1.5] uppercase text-white" />
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <FadeUp className="flex flex-col gap-5 text-[15px] leading-[1.5] text-white">
-              <p>Inloop Media is a full-service brand growth company for brands where marketing is treated as a strategic lever. Human creativity leads and AI accelerates, helping brands scale with clarity, consistency and measurable results.</p>
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-24">
+            <FadeUp>
+              <p className="text-[22px] md:text-[30px] font-light leading-[1.45] text-white">
+                Inloop Media is a full-service brand growth company for brands where marketing is treated as a strategic lever.{" "}
+                <span className="text-[var(--brand)]">Human creativity leads and AI accelerates</span>, helping brands scale with clarity,
+                consistency and measurable results.
+              </p>
+            </FadeUp>
+            <FadeUp delay={0.15} className="flex flex-col gap-5 text-[15px] leading-[1.6] text-white/80 lg:pt-2">
               <p>As part of AMS Group, Inloop brings the heritage of a diversified business group to every brand it grows. Every engagement is led by senior operators across strategy, creative, performance and technology. There are no unnecessary layers between thinking and execution.</p>
               <p>Our work begins with systems. From the outside, marketing looks like creatives, ads and campaigns — but sustainable growth comes from how content, distribution, data and execution work together.</p>
-              <p>We believe growth compounds when it is engineered, not improvised. When strategy, creative and performance align, the brand compounds. When they do not, even strong campaigns fragment.</p>
-              <p>Today we work with 25+ brands across India and global markets — apps, fashion, FMCG health, SaaS, D2C, professional services and real estate — at the stages where clarity matters most before scaling.</p>
+              <p className="border-l-2 border-[var(--brand)] pl-5 text-white">
+                We believe growth compounds when it is engineered, not improvised. When strategy, creative and performance align, the brand compounds. When they do not, even strong campaigns fragment.
+              </p>
             </FadeUp>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.1, ease: EASE }}
-              className="relative aspect-[656/492] overflow-hidden bg-[#111] md:sticky md:top-28"
-            >
-              <Media src="/videos/ai-services.mp4" />
-            </motion.div>
+          </div>
+
+          <div className="mt-16 md:mt-20 grid grid-cols-2 lg:grid-cols-4 border-t border-[#383838]">
+            {FACTS.map((f, i) => (
+              <FadeUp
+                key={f.label}
+                delay={0.1 * i}
+                className={`py-8 md:py-10 pr-6 border-b border-[#383838] lg:border-b-0 ${i % 2 === 0 ? "" : "pl-6 border-l"} ${i > 0 ? "lg:pl-8 lg:border-l" : ""}`}
+              >
+                <div className="text-[40px] md:text-[56px] leading-none text-white">{f.value}</div>
+                <div className="mt-4 text-[12.8px] tracking-[2px] uppercase text-[var(--brand)]">{f.label}</div>
+                <p className="mt-3 text-[14px] leading-[1.55] text-white/70">{f.text}</p>
+              </FadeUp>
+            ))}
           </div>
         </div>
       </section>
