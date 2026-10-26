@@ -8,7 +8,7 @@
  * Each executive opens their sheet once and runs "Inloop → Enable meeting scheduling".
  * After that, filling "Meeting Date & Time" and ticking "Schedule Meeting" creates a
  * Google Calendar event with a Meet link from THEIR account, invites the lead and the
- * Inloop meeting guest, writes the link into the sheet and sets Status to "Meeting Scheduled".
+ * Inloop meeting guest and writes the link into the sheet (Status stays "Discovery Call").
  * The Master sheet picks the link up within a few minutes.
  */
 
@@ -122,7 +122,7 @@ function scheduleRow_(sheet, r, head) {
     event.htmlLink;
 
   sheet.getRange(r, col("Meeting Link")).setValue(link);
-  sheet.getRange(r, col("Status")).setValue("Meeting Scheduled");
+  // Status stays "Discovery Call" so the team can see this was the discovery meeting
   ss.toast(`Meeting booked ✅ Invite sent to ${attendees.map((a) => a.email).join(", ") || "you"}.`, "Inloop", 8);
 }
 

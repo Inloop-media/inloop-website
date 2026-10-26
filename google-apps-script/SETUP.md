@@ -42,10 +42,10 @@ Every executive gets a copy of this file, so the meeting script travels with it.
 
 Run step 4.2 again whenever you add a new executive.
 
-## 4b. Proposal meetings by the ops lead (once)
+## 4b. Proposal meetings by the ops team (once per member)
 
 1. Master Apps Script → **Services → + → Google Calendar API → Add** (or paste `master/appsscript.json`).
-2. The ops lead (`OPS_EMAIL`, needs edit access to Master) opens the Master sheet from their own account →
+2. Each ops team member (`OPS_TEAM` in `master/Code.gs`, needs edit access to Master) opens the Master sheet from their own account →
    **Inloop CRM → Enable proposal meetings** → allows the permissions.
 
 ## 4c. Slack (optional)
@@ -55,7 +55,7 @@ When a proposal meeting is booked, the brief (brand, service interest, meeting t
 1. [api.slack.com/apps](https://api.slack.com/apps) → **Create New App → From scratch** → pick your workspace.
 2. **Incoming Webhooks** → turn **On** → **Add New Webhook to Workspace** → choose the channel → copy the URL.
 3. Master sheet → **Inloop CRM → Connect Slack channel** → paste the URL. A test message appears in the channel.
-4. The ops lead runs **Inloop CRM → Enable proposal meetings** once more so Google asks for the new permission.
+4. Each ops team member runs **Inloop CRM → Enable proposal meetings** once more so Google asks for the new permission.
 
 ## 5. Connect the website
 
@@ -79,10 +79,10 @@ When a proposal meeting is booked, the brief (brand, service interest, meeting t
 | Visitor | Submits the website form | New row in Master: `IM-n`, Date Registered, all details, Status = **New Lead** |
 | You | Pick a name in **Assigned To** | Lead copied to that executive's sheet with **Date Assigned**. Changing the name moves it; clearing it removes it |
 | Executive | Changes **Status / Remarks / Brief** | Master updates instantly |
-| Executive | Sets Status to **Discovery Call**, fills **Meeting Date & Time**, ticks **Schedule Meeting** | Google Calendar event + Meet link from the executive's account, invite to the lead and to the ops lead (`OPS_EMAIL` in `master/Code.gs`); Status → Meeting Scheduled; link shows in Master within ~5 min |
+| Executive | Sets Status to **Discovery Call**, fills **Meeting Date & Time**, ticks **Schedule Meeting** | Google Calendar event + Meet link from the executive's account, invite to the lead and to the first ops team member (`OPS_TEAM` in `master/Code.gs`); Status stays Discovery Call; link shows in Master within ~5 min |
 | You | Edit Status / Remarks / Brief in Master | Pushed to the executive's sheet |
 | Anyone | Sets Status to **Client Brief Shared to Ops Team** | The lead moves to Ops: the executive's meeting link is cleared from Master and the executive sheet, and from now on Meeting Date & Time / Meeting Link no longer sync with the executive |
-| Ops lead | Fills **Meeting Date & Time** in Master, ticks **Schedule Proposal Meeting** | Calendar event + Meet link from the ops lead's account, invite to the client only; link goes in Master's **Meeting Link** (executives never see it) |
+| Ops team member | Fills **Meeting Date & Time** in Master, ticks **Schedule Proposal Meeting** | Calendar event + Meet link from that member's account, invite to the client only; link goes in Master's **Meeting Link** (executives never see it) |
 
 Use **Inloop CRM → Sync from executives now** if you don't want to wait for the 5-minute sync.
 

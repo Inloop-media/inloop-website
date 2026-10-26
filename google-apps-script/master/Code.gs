@@ -20,9 +20,6 @@ const CFG = {
   LEAD_PREFIX: "IM-",
   DATE_FORMAT: "dd-mmm-yyyy hh:mm am/pm",
   SYNC_EVERY_MINUTES: 5,
-  // Ops lead: guest on every meeting an executive books, and organiser of the ops meeting booked from Master
-  OPS_EMAIL: "arushi@inloopmedia.com",
-  OPS_NAME: "Arushi Pant",
   OPS_MEETING_MINUTES: 30,
 };
 
@@ -42,6 +39,14 @@ const STATUSES = [
   "On Hold",
   "No Response",
   "Lost Lead",
+];
+
+// Ops team: can book proposal meetings from Master (each member runs "Enable proposal meetings" once,
+// and the meeting goes out from whoever ticks the box). The FIRST member is also the Inloop guest on
+// every meeting an executive books.
+const OPS_TEAM = [
+  { email: "arushi@inloopmedia.com", name: "Arushi Pant" },
+  { email: "karan.negi@inloopmedia.com", name: "Karan Negi" },
 ];
 
 const MASTER_HEADERS = [
@@ -162,7 +167,7 @@ function onOpen() {
     .addItem("Apply dropdown colours", "applyAllColors")
     .addItem("Show website secret", "showSecret")
     .addSeparator()
-    .addItem("Enable proposal meetings (" + CFG.OPS_NAME.split(" ")[0] + ", run once)", "enableProposalMeetings")
+    .addItem("Enable proposal meetings (ops team, run once)", "enableProposalMeetings")
     .addItem("Schedule proposal meeting for selected row", "scheduleProposalSelected")
     .addItem("Connect Slack channel", "connectSlack")
     .addToUi();
@@ -256,6 +261,10 @@ function applyMasterRules_(sheet, startRow, numRows) {
   }
   ["Date Registered", "Date Assigned", "Meeting Date & Time", "Last Updated"].forEach((h) =>
     sheet.getRange(startRow, mCol(h), numRows).setNumberFormat(CFG.DATE_FORMAT)
+  );
+  // Date rule gives the calendar picker on double-click (same as the executive sheet)
+  sheet.getRange(startRow, mCol("Meeting Date & Time"), numRows).setDataValidation(
+    SpreadsheetApp.newDataValidation().requireDate().setAllowInvalid(false).setHelpText("Pick a date, then type the time e.g. 25/10/2026 15:30").build()
   );
   // Checkbox rule only (no FALSE values written), so getLastRow() still ends at the last lead
   sheet.getRange(startRow, mCol("Schedule Proposal Meeting"), numRows).setDataValidation(SpreadsheetApp.newDataValidation().requireCheckbox().build());
@@ -443,7 +452,7 @@ function writeExecConfig_(ss, ex, ownerEmail) {
     ["MASTER_EMAIL", ownerEmail],
     ["EXECUTIVE_NAME", ex.name],
     ["EXECUTIVE_EMAIL", ex.email],
-    ["MEETING_GUEST", CFG.OPS_EMAIL],
+    ["MEETING_GUEST", OPS_TEAM[0].email],
   ]);
   cfg.hideSheet();
 }
@@ -686,13 +695,14 @@ function handToOps_(master, row) {
   sh.getRange(r, eCol("Schedule Meeting")).setValue(false);
 }
 
-const isOps_ = (email) => String(email).toLowerCase() === CFG.OPS_EMAIL.toLowerCase();
+const opsMember_ = (email) => OPS_TEAM.find((m) => m.email.toLowerCase() === String(email || "").trim().toLowerCase());
+const opsEmails_ = () => OPS_TEAM.map((m) => m.email).join(", ");
 
 /** Run once from the ops lead's own Google account — the meetings are then created from that account. */
 function enableProposalMeetings() {
   const ui = SpreadsheetApp.getUi();
-  if (!isOps_(Session.getActiveUser().getEmail())) {
-    return ui.alert(`Open the Master sheet signed in as ${CFG.OPS_EMAIL} and run this again — the meetings are sent from that account.`);
+  if (!opsMember_(Session.getActiveUser().getEmail())) {
+    return ui.alert(`Only the ops team (${opsEmails_()}) can turn this on. Open the Master sheet signed in as one of them and run it again — meetings are sent from that account.`);
   }
   ScriptApp.getProjectTriggers().forEach((t) => {
     if (t.getHandlerFunction() === "onProposalMeetingEdit") ScriptApp.deleteTrigger(t);
@@ -706,24 +716,36 @@ function enableProposalMeetings() {
 
 /** Installable onEdit created by enableProposalMeetings — runs as the ops lead. */
 function onProposalMeetingEdit(e) {
-  if (!isOps_(Session.getEffectiveUser().getEmail())) return;
+  // Every enabled member has their own trigger and all of them fire on each edit — only the one
+  // belonging to the person who ticked the box acts, so the meeting comes from their account.
+  const me = opsMember_(Session.getEffectiveUser().getEmail());
+  if (!me) return;
   const sheet = e.range.getSheet();
   if (sheet.getName() !== CFG.MASTER_TAB || e.range.getNumColumns() !== 1 || e.range.getColumn() !== mCol("Schedule Proposal Meeting")) return;
+  const editor = String((e.user && e.user.getEmail && e.user.getEmail()) || "").trim();
+  if (editor ? editor.toLowerCase() !== me.email.toLowerCase() : me !== OPS_TEAM[0]) {
+    // Someone outside the ops team ticked it: the first member's trigger undoes the tick and explains
+    if (opsMember_(editor) || me !== OPS_TEAM[0]) return;
+    for (let r = Math.max(e.range.getRow(), 2); r < e.range.getRow() + e.range.getNumRows(); r++) sheet.getRange(r, mCol("Schedule Proposal Meeting")).setValue(false);
+    sheet.getParent().toast(`Only the ops team (${opsEmails_()}) can book proposal meetings.`, "Inloop CRM", 8);
+    return;
+  }
   for (let r = Math.max(e.range.getRow(), 2); r < e.range.getRow() + e.range.getNumRows(); r++) {
-    if (sheet.getRange(r, mCol("Schedule Proposal Meeting")).getValue() === true) scheduleProposalRow_(sheet, r);
+    if (sheet.getRange(r, mCol("Schedule Proposal Meeting")).getValue() === true) scheduleProposalRow_(sheet, r, me);
   }
 }
 
 function scheduleProposalSelected() {
   const ui = SpreadsheetApp.getUi();
-  if (!isOps_(Session.getActiveUser().getEmail())) return ui.alert(`Only ${CFG.OPS_EMAIL} can book proposal meetings.`);
+  const me = opsMember_(Session.getActiveUser().getEmail());
+  if (!me) return ui.alert(`Only the ops team (${opsEmails_()}) can book proposal meetings.`);
   const sheet = SpreadsheetApp.getActiveSheet();
   if (sheet.getName() !== CFG.MASTER_TAB) return ui.alert("Open the 'Master' tab and select a lead's row.");
   const r = sheet.getActiveRange().getRow();
-  if (r >= 2) scheduleProposalRow_(sheet, r);
+  if (r >= 2) scheduleProposalRow_(sheet, r, me);
 }
 
-function scheduleProposalRow_(sheet, r) {
+function scheduleProposalRow_(sheet, r, member) {
   const get = (h) => sheet.getRange(r, mCol(h)).getValue();
   const untick = () => sheet.getRange(r, mCol("Schedule Proposal Meeting")).setValue(false);
   const ss = sheet.getParent();
@@ -753,7 +775,7 @@ function scheduleProposalRow_(sheet, r) {
   const event = Calendar.Events.insert(
     {
       summary: `Inloop Media × ${company || name || "Proposal Discussion"}`,
-      description: proposalMessage_(get("First Name"), company),
+      description: proposalMessage_(get("First Name"), company, member.name),
       start: { dateTime: start.toISOString() },
       end: { dateTime: end.toISOString() },
       attendees: leadEmail ? [{ email: leadEmail }] : [],
@@ -824,7 +846,7 @@ function postBriefToSlack_(sheet, r, start) {
 }
 
 /** Text the client sees in the proposal meeting invite. */
-function proposalMessage_(firstName, company) {
+function proposalMessage_(firstName, company, senderName) {
   return [
     `Hi ${firstName || "there"},`,
     "",
@@ -835,7 +857,7 @@ function proposalMessage_(firstName, company) {
     "Looking forward to speaking with you.",
     "",
     "Warm regards,",
-    `${CFG.OPS_NAME}\nInloop Media`,
+    `${senderName}\nInloop Media`,
   ].join("\n");
 }
 

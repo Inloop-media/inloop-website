@@ -1,68 +1,68 @@
-// Results (metric, channels, category) come from the Inloop Media site.
-// The overview / problem / goal / solution narrative is a draft written around those results — review before launch.
+// Case studies from inloopmedia.com (Apploft, The Luxe Drop & DaLuxera, Snack Shack).
 export const CASE_STUDIES = [
   {
     slug: "apploft",
     name: "Apploft",
-    category: "App · Social + Paid Ads",
-    tag: "Performance Marketing",
-    headline: "Scaled installs with a social-first paid engine.",
-    meta: "Consumer app, India · Social media, paid ads, creative testing",
-    metric: { value: 3.2, decimals: 1, suffix: "x", label: "Installs in 60 days" },
+    category: "Mobile Apps · Social + Google Ads",
+    tag: "Social Media & Ads",
+    headline: "From zero to 5M+ downloads.",
+    meta: "Mobile app publisher · Instagram growth, Google App Campaigns",
+    metric: { value: 5, suffix: "M+", label: "App downloads" },
+    metric2: { value: 3.2, decimals: 1, suffix: "x", label: "Monthly installs in 60 days" },
     bars: [18, 26, 24, 38, 46, 58, 72, 100],
     media: "/videos/ai-saas.mp4",
     overview:
-      "Apploft needed installs that would keep compounding after launch — not a one-off spike from a burst of spend. We built a social-first paid engine that paired always-on content with performance campaigns, so every creative that worked organically could be scaled with paid.",
+      "Apploft is a fast-growing mobile app publisher with a diverse portfolio of apps. We grew their Instagram from zero into a thriving brand presence and drove over 5 million app downloads through precision-targeted Google Ads campaigns — taking Apploft from a new name in the app industry to a recognised brand in its space.",
     problem:
-      "Installs were flat and expensive. Ads ran in isolation from the brand's social presence, creative was refreshed rarely, and there was no clear read on which hooks actually drove downloads.",
+      "Apploft's apps had strong potential, but the company had no organic social presence and no structured funnel for cost-efficient installs in a crowded market. Brand visibility and a sustainable user-acquisition strategy were both missing.",
     goal:
-      "Grow installs fast inside a fixed 60-day window, while bringing cost per install down and building a creative system the team could keep running after launch.",
+      "Build brand credibility from scratch and create a growth funnel that would not only maximise downloads, but also improve install-to-retention ratios and bring the cost per install down.",
     solution:
-      "We set up a weekly creative testing loop — multiple hooks per angle, UGC-style videos alongside polished brand ads — and fed the winners into simplified paid campaigns. Budgets scaled in steady steps only on proven ad sets, with tracking tying every install back to its creative.",
-    scope: "Social media, paid ads, creative strategy",
-    timeline: "60 days",
+      "A dual approach. On Instagram, a content-first calendar established credibility, showcased Apploft's app ecosystem and nurtured engagement from zero. On Google, Universal App Campaigns ran with precision targeting, data-driven audience segmentation, tailored creatives and continuous A/B testing — every campaign monitored closely and scaled on data. The result: 5M+ installs across the portfolio, monthly installs up 3.2x in the first 60 days, and a lower CPI with better retention on every iteration.",
+    scope: "Instagram growth, Google App Campaigns, creative testing",
+    timeline: "Ongoing",
   },
   {
     slug: "luxe-apparel",
-    name: "Luxe Apparel",
-    category: "Fashion · Web + UI/UX + Social",
+    name: "The Luxe Drop & DaLuxera",
+    category: "Luxury Fashion · Social + Web + UI/UX",
     tag: "Website & Social",
-    headline: "A redesign and social system built to convert.",
-    meta: "Fashion & apparel, India · Website redesign, UI/UX, social media",
+    headline: "Curating luxury online.",
+    meta: "Luxury fashion & accessories · UGC-led Instagram, luxury e-commerce website",
     metric: { value: 40, prefix: "+", suffix: "%", label: "Conversion rate lift" },
     bars: [30, 32, 31, 34, 52, 60, 66, 74],
     media: "/videos/ai-fashion.mp4",
     overview:
-      "Luxe Apparel had a premium product and a store that didn't feel like one. We redesigned the shopping experience around how people actually buy on mobile, and rebuilt their social presence to send warmer, better-qualified traffic into it.",
+      "The Luxe Drop (TLD) and DaLuxera had access to high-end apparel and accessories, but not the digital presence to match. We built UGC-driven Instagram communities for both brands and a luxury-first, mobile-optimised website for DaLuxera — creating a seamless journey from discovery on Instagram to purchase on the site.",
     problem:
-      "Most shoppers landed straight on product pages from social and ads, and those pages were slow to answer the basics — fit, price, delivery and trust. Traffic was there; conversion wasn't.",
+      "In luxury fashion, trust and perception decide whether a customer buys. Without consistent branding, content and a professional storefront, both brands risked losing buyers who demand authenticity and assurance before a high-value purchase.",
     goal:
-      "Lift conversion rate without raising acquisition spend, and give the brand a consistent premium look from first scroll to checkout.",
+      "Build trust and digital visibility for both brands, and give DaLuxera a storefront that works as both a sales driver and a credibility anchor.",
     solution:
-      "A redesign and social system built to convert: sharper product pages with photos, video and reviews near add-to-cart, a cleaner checkout, and a social content system — lookbooks and try-on hooks — that matched the new store visually and kept the brand consistent across every touchpoint.",
-    scope: "Website redesign, UI/UX, social media",
-    timeline: "Redesign + ongoing social",
+      "On Instagram, curated calendars and consistent posting built around user-generated content — stories, reels and carousels of real people styling premium fashion — gave audiences social proof while staying true to a luxury aesthetic. For DaLuxera, we designed and built a sleek, responsive store with elegant design, intuitive navigation, product storytelling and fast checkout, lifting the conversion rate by 40%.",
+    scope: "Instagram management, UGC content, website development, UI/UX",
+    timeline: "Website build + ongoing social",
   },
   {
     slug: "fmcg-health-brand",
-    name: "FMCG Health Brand",
-    category: "FMCG Health · Influencer + Meta Ads",
-    tag: "Influencer & Paid Media",
-    headline: "Creator-led demand at profitable ROAS.",
-    meta: "FMCG health & wellness, India · Influencer marketing, Meta ads",
+    name: "Snack Shack",
+    category: "FMCG Health · Branding + Influencer + Meta Ads",
+    tag: "Branding & Growth",
+    headline: "From zero to crunch hero.",
+    meta: "Healthy snacking, FMCG · Brand identity, packaging, influencer marketing, Meta ads",
     metric: { value: 4.3, decimals: 1, suffix: "x", label: "ROAS in month one" },
     bars: [12, 22, 35, 41, 55, 63, 80, 92],
     media: "/videos/ai-beauty.mp4",
     overview:
-      "An FMCG health brand wanted demand that paid for itself from the very first month. We combined creators whose audiences genuinely trusted them with Meta ads that scaled the content that was already converting.",
+      "Snack Shack came to us as an idea for a healthy FMCG snacking brand. We built it from scratch — the entire brand identity, from logo to packaging — and then launched it with an end-to-end growth engine of influencer collaborations and Meta ad funnels.",
     problem:
-      "Earlier influencer work had chased reach over fit — big follower counts, little trust, and no way to tell which creators actually drove sales.",
+      "A new brand entering a crowded FMCG shelf, with no name recognition, no visual identity and no audience — it had to look credible and earn trust from day one.",
     goal:
-      "Reach profitable ROAS in month one and build a repeatable creator-led acquisition engine.",
+      "Create a brand identity that stands out on shelf and on screen, and reach profitable ROAS from the very first month of launch.",
     solution:
-      "We shortlisted creators on audience fit, real engagement and past performance, briefed them on the message rather than scripting them, and tracked every creator with unique codes and links. The best-performing creator content was whitelisted and scaled through Meta ads.",
-    scope: "Influencer marketing, Meta ads, creative",
-    timeline: "Month one",
+      "We designed Snack Shack's complete identity — logo, visual system and packaging — and took it to market with influencer collaborations to build trust and Meta ad funnels to turn that attention into sales. The launch achieved a 4.3x ROAS within the first month.",
+    scope: "Brand identity, packaging, influencer marketing, Meta ads",
+    timeline: "Brand build + launch",
   },
 ];
 

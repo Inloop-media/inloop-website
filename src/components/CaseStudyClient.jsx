@@ -100,9 +100,12 @@ export default function CaseStudyClient({ slug }) {
           >
             <CaseVisual c={c} big />
           </motion.div>
-          <div className="grid grid-rows-3 gap-5">
+          <div className="grid gap-5" style={{ gridTemplateRows: `repeat(${c.metric2 ? 4 : 3}, minmax(0, 1fr))` }}>
             {[
               { k: "Result", v: <>{c.metric.prefix}<CountUp to={c.metric.value} decimals={c.metric.decimals || 0} />{c.metric.suffix}</>, s: c.metric.label },
+              ...(c.metric2
+                ? [{ k: "Growth", v: <>{c.metric2.prefix}<CountUp to={c.metric2.value} decimals={c.metric2.decimals || 0} />{c.metric2.suffix}</>, s: c.metric2.label }]
+                : []),
               { k: "Scope", v: null, s: c.scope },
               { k: "Timeline", v: null, s: c.timeline },
             ].map((b, i) => (
