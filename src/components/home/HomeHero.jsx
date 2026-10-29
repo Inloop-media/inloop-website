@@ -24,7 +24,7 @@ export function LogoStrip() {
   );
 }
 
-// AMS Group team film with sound. Browsers only allow audible autoplay after a user
+// Inloop Media brand film with sound. Browsers only allow audible autoplay after a user
 // gesture, so it starts muted if blocked and unmutes on the visitor's first tap/click/key.
 function IntroFilm({ volume, controlsOpacity }) {
   const ref = useRef(null);
@@ -84,11 +84,11 @@ function IntroFilm({ volume, controlsOpacity }) {
           loop
           playsInline
           preload="auto"
-          poster="/images/ams-team-film-poster.jpg"
+          poster="/images/inloop-hero-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/videos/ams-team-film-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
-          <source src="/videos/ams-team-film.mp4" type="video/mp4" />
+          <source src="/videos/inloop-hero-mobile.mp4" type="video/mp4" media="(max-width: 767px)" />
+          <source src="/videos/inloop-hero.mp4" type="video/mp4" />
         </video>
       </div>
 
