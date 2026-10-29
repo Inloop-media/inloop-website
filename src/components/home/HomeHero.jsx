@@ -3,8 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 
-const EASE = [0.16, 1, 0.3, 1];
-
 // Function-form transforms keep scroll-linked values on the JS path
 const range = (from, to, a, b) => (v) => a + (b - a) * Math.min(1, Math.max(0, (v - from) / (to - from)));
 
@@ -120,13 +118,7 @@ function IntroFilm({ volume, controlsOpacity }) {
 
 export default function HomeHero() {
   const { scrollY } = useScroll();
-  // Lines exit over the first ~700px (GreySpace timing); the film stays pinned underneath
-  const l1x = useTransform(scrollY, range(0, 700, 0, -80));
-  const l2x = useTransform(scrollY, range(0, 700, 0, 80));
-  const l3y = useTransform(scrollY, range(0, 700, 0, 40));
-  const textOp = useTransform(scrollY, range(0, 600, 1, 0));
-  const pY = useTransform(scrollY, range(0, 700, 0, 40));
-  const pOp = useTransform(scrollY, range(0, 600, 0.8, 0));
+  // The film stays pinned while the rest of the page slides up over it
   const volume = useTransform(scrollY, range(700, 1500, 1, 0));
   const controlsOp = useTransform(scrollY, range(900, 1300, 1, 0));
 
@@ -134,40 +126,9 @@ export default function HomeHero() {
     <>
       <section className="relative h-[2200px] bg-[#000000]">
         <div className="sticky top-0 h-[100svh] overflow-hidden">
-          {/* AMS Group team film — the only visual in the hero */}
+          {/* Inloop Media brand film — the only visual in the hero */}
           <IntroFilm volume={volume} controlsOpacity={controlsOp} />
-
-          <div className="relative z-10 h-full flex flex-col items-center justify-center px-5">
-            <h1 className="text-[40px] sm:text-[56px] md:text-[68px] font-light leading-[1.2] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]">
-              {[
-                { t: "We don't just market", x: l1x, y: null, off: "-3.3vw" },
-                { t: "brands, we engineer", x: l2x, y: null, off: "3.3vw" },
-                { t: "their growth", x: null, y: l3y, off: "-1.3vw" },
-              ].map((line, i) => (
-                <span key={line.t} className="block overflow-hidden" style={{ marginLeft: line.off }}>
-                  <motion.span
-                    className="block"
-                    style={{ x: line.x || 0, y: line.y || 0, opacity: textOp }}
-                  >
-                    <motion.span
-                      className="block"
-                      initial={{ y: "105%" }}
-                      animate={{ y: "0%" }}
-                      transition={{ duration: 1.1, delay: 0.4 + i * 0.12, ease: EASE }}
-                    >
-                      {line.t}
-                    </motion.span>
-                  </motion.span>
-                </span>
-              ))}
-            </h1>
-            <motion.p
-              style={{ y: pY, opacity: pOp }}
-              className="mt-16 md:ml-[24vw] max-w-[400px] text-[16px] font-light leading-6 tracking-[0.5px] text-white [text-shadow:0_1px_12px_rgba(0,0,0,0.7)]"
-            >
-              We work with founders, CMOs and growing brands to engineer growth that holds up. Strategy-led, AI-powered, and built to scale across every channel.
-            </motion.p>
-          </div>
+          <h1 className="sr-only">Inloop Media — we don&apos;t just market brands, we engineer their growth</h1>
         </div>
       </section>
     </>
