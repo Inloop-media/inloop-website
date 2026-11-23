@@ -126,10 +126,10 @@ export default function CaseStudyClient({ slug }) {
           <h2 className="mt-3 text-[28px] md:text-[36px] leading-[1.5] uppercase text-white">Explore Other Works</h2>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             {others.map((o, i) => {
-              const href = o ? `/work/${o.slug}` : "/work#ai-work";
+              const href = o ? `/work/${o.slug}` : "/work#video-work";
               return (
                 <motion.div
-                  key={o ? o.slug : "ai"}
+                  key={o ? o.slug : "video"}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -141,8 +141,8 @@ export default function CaseStudyClient({ slug }) {
                         {o ? <CaseVisual c={o} /> : <Media src={extra.media.src} />}
                       </div>
                     </div>
-                    <div className="mt-3 text-[22px] font-light leading-[1.3] text-white group-hover:text-[var(--brand)] transition-colors">{o ? o.name : "AI Video Creative"}</div>
-                    <div className="text-[18px] font-light leading-[1.5] text-white">{o ? o.headline : "Scroll-stopping AI video ads, tuned for every feed."}</div>
+                    <div className="mt-3 text-[22px] font-light leading-[1.3] text-white group-hover:text-[var(--brand)] transition-colors">{o ? o.name : "Video Creative"}</div>
+                    <div className="text-[18px] font-light leading-[1.5] text-white">{o ? o.headline : "Scroll-stopping video ads, tuned for every feed."}</div>
                   </Link>
                 </motion.div>
               );

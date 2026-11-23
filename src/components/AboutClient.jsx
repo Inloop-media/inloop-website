@@ -11,7 +11,7 @@ const EASE = [0.16, 1, 0.3, 1];
 const STEPS = [
   { t: "Discover", d: "Before we start working together, we want to know your vision, numbers, audience and competitors. A 48-hour deep dive shows us what's working today and where the biggest opportunity sits." },
   { t: "Strategy", d: "Our strategists read the data, find the opportunity and set the direction — a channel plan with clear targets, budgets and the creative angles to test." },
-  { t: "Create", d: "Our creators produce and test creative at a scale humans alone can't match — content, video, design and AI ads, all held to the brand." },
+  { t: "Create", d: "Our creators produce and test creative at a scale humans alone can't match — content, video, design and ads, all held to the brand." },
   { t: "Launch", d: "Creative, campaigns, pages and tracking are shipped by one team, fast. No hand-offs, no gaps between agencies." },
   { t: "Optimise", d: "Our optimisers watch performance live — targeting, budgets and creatives are refined every week, with transparent reporting." },
   { t: "Scale", d: "We double down on what converts, so growth compounds instead of spiking — and we stay in every loop that matters." },
@@ -60,7 +60,7 @@ export default function AboutClient() {
           transition={{ duration: 1.2, delay: 0.3, ease: EASE }}
           className="max-w-[1111px] text-center text-[34px] md:text-[54px] font-normal leading-[1.5] uppercase text-white"
         >
-          AI-First <span className="text-[var(--brand)]">brand &amp; Growth Partner.</span>
+          Creative <span className="text-[var(--brand)]">brand &amp; Growth Partner.</span>
         </motion.h1>
       </section>
 
@@ -73,7 +73,7 @@ export default function AboutClient() {
             <FadeUp>
               <p className="text-[22px] md:text-[30px] font-light leading-[1.45] text-white">
                 Inloop Media is a full-service brand growth company for brands where marketing is treated as a strategic lever.{" "}
-                <span className="text-[var(--brand)]">Human creativity leads and AI accelerates</span>, helping brands scale with clarity,
+                <span className="text-[var(--brand)]">Human creativity leads every decision</span>, helping brands scale with clarity,
                 consistency and measurable results.
               </p>
             </FadeUp>

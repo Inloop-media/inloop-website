@@ -174,7 +174,7 @@
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
-/* AI video cards: story-style segment bars + Hook / Demo / CTA captions (9s loop) */
+/* Video ad cards: story-style segment bars + Hook / Demo / CTA captions (9s loop) */
 .aiv-seg::after {
   content: "";
   position: absolute;

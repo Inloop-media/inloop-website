@@ -104,7 +104,7 @@ function Reel({ reel, index }) {
             ))}
           </div>
           <div className="flex items-center gap-2 mt-3 text-[12px] font-semibold text-white/75">
-            <span className="px-[7px] py-[3px] rounded-md text-[11px] font-extrabold tracking-[0.08em] text-black bg-gradient-to-b from-white to-[#c7c8ca]">AI</span>
+            <span className="px-[7px] py-[3px] rounded-md text-[11px] font-extrabold tracking-[0.08em] text-black bg-gradient-to-b from-white to-[#c7c8ca]">Ad</span>
             <span>Sponsored</span>
             <span className="ml-auto px-2 py-[3px] rounded-md text-[11.5px] tabular-nums text-white bg-black/45">{reel.length}</span>
           </div>
@@ -144,11 +144,11 @@ export default function HomeReels() {
   return (
     <section id="reels" className="bg-[#000000] pt-[100px] pb-[100px]">
       <div className="gs-wrap">
-        <Kicker>AI Video</Kicker>
-        <RevealLines lines={["Scroll-stopping", "AI video creative"]} className="gs-h2 mt-4" />
+        <Kicker>Video Ads</Kicker>
+        <RevealLines lines={["Scroll-stopping", "video creative"]} className="gs-h2 mt-4" />
         <FadeUp delay={0.15}>
           <p className="mt-6 max-w-[712px] text-[18px] font-light leading-[1.5] text-white/80">
-            UGC hooks, product demos and story ads — generated and edited with AI, then tuned for performance on every feed.
+            UGC hooks, product demos and story ads — scripted, shot and edited by our team, then tuned for performance on every feed.
           </p>
         </FadeUp>
 

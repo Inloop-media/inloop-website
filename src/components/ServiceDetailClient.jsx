@@ -49,7 +49,7 @@ const PHASES = [
     output: "Live campaigns",
     media: "/videos/ai-fashion.mp4",
     cols: [
-      { t: "Creative", d: "Content, video and design produced at AI speed and held to the brand." },
+      { t: "Creative", d: "Content, video and design produced fast and held to the brand." },
       { t: "Pages", d: "Landing pages and storefront fixes built around how people actually buy." },
       { t: "Tracking", d: "Analytics and attribution wired in, so every result traces back to its cause." },
     ],
@@ -131,7 +131,7 @@ function Statements({ s }) {
   const items = [
     { h: "Most brands don't have a marketing problem.", p: "From the outside, marketing looks like creatives, ads and campaigns. But sustainable growth doesn't come from isolated efforts — it comes from systems: how content, distribution, data and execution work together." },
     { h: "Great ideas built on weak systems fade fast.", p: `Every ${s.title.toLowerCase()} engagement at Inloop begins with a growth conversation. Brands with average ideas and strong systems consistently outgrow brands with brilliant ideas and no structure. The work only holds up when the system underneath is sound.` },
-    { h: "Human thinking. AI speed.", p: "Strategy, taste and judgement come from our team. Scale, speed and optimisation come from AI working quietly in the background — so the work is sharper, faster and built to compound." },
+    { h: "Human thinking. Built to scale.", p: "Strategy, taste and judgement come from our team, backed by tight processes and real data — so the work is sharper, faster and built to compound." },
   ];
 
   return (

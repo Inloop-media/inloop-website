@@ -68,14 +68,14 @@ export const CASE_STUDIES = [
 
 export const getCaseStudy = (slug) => CASE_STUDIES.find((c) => c.slug === slug);
 
-// Inloop's own AI video creative and ad dashboards, shown as "past projects"
+// Inloop's own video creative and ad dashboards, shown as "past projects"
 export const PAST_PROJECTS = [
-  { title: "Glow Kit — UGC Routine", type: "AI Video · Beauty & Wellness", media: { kind: "video", src: "/videos/ai-beauty.mp4" } },
-  { title: "New Drop — AI Try-On", type: "AI Video · Fashion & Apparel", media: { kind: "video", src: "/videos/ai-fashion.mp4" } },
-  { title: "3-Click Dashboard Demo", type: "AI Video · High-Tech & SaaS", media: { kind: "video", src: "/videos/ai-saas.mp4" } },
-  { title: "Expert Breakdown Series", type: "AI Video · Professional Services", media: { kind: "video", src: "/videos/ai-services.mp4" } },
-  { title: "360° Product Spotlight", type: "AI Video · D2C & E-commerce", media: { kind: "video", src: "/videos/ai-d2c.mp4" } },
-  { title: "AI-Staged Walkthrough", type: "AI Video · Real Estate", media: { kind: "video", src: "/videos/ai-realestate.mp4" } },
+  { title: "Glow Kit — UGC Routine", type: "Video · Beauty & Wellness", media: { kind: "video", src: "/videos/ai-beauty.mp4" } },
+  { title: "New Drop — Try-On", type: "Video · Fashion & Apparel", media: { kind: "video", src: "/videos/ai-fashion.mp4" } },
+  { title: "3-Click Dashboard Demo", type: "Video · High-Tech & SaaS", media: { kind: "video", src: "/videos/ai-saas.mp4" } },
+  { title: "Expert Breakdown Series", type: "Video · Professional Services", media: { kind: "video", src: "/videos/ai-services.mp4" } },
+  { title: "360° Product Spotlight", type: "Video · D2C & E-commerce", media: { kind: "video", src: "/videos/ai-d2c.mp4" } },
+  { title: "Styled Walkthrough", type: "Video · Real Estate", media: { kind: "video", src: "/videos/ai-realestate.mp4" } },
   { title: "Google Ads — Campaign Overview", type: "Paid Media", media: { kind: "image", src: "/images/ad-1.webp" } },
   { title: "Google Ads — Search Performance", type: "Paid Media", media: { kind: "image", src: "/images/ad-2.webp" } },
   { title: "Meta Ads — Campaigns Manager", type: "Paid Media", media: { kind: "image", src: "/images/ad-4.webp" } },

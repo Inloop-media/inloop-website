@@ -14,10 +14,10 @@ export default function HomeIntro() {
             className="lg:w-[300px] shrink-0 text-[18px] md:text-[22px] font-medium leading-[1.5] tracking-[1.1px] uppercase text-white"
           />
           <div className="max-w-[712px]">
-            <RevealLines lines={["Built for Growth", "Powered by AI"]} className="gs-h2" />
+            <RevealLines lines={["Built for Growth", "Driven by Creativity"]} className="gs-h2" />
             <FadeUp delay={0.15}>
               <p className="mt-10 text-[20px] md:text-[26px] font-light leading-[1.5] text-white/80">
-                We work with founders, CMOs and growing brands to build growth that holds up under real business decisions. Strategy-led, creatively expressed and powered by AI across every touchpoint. Our job is to look at the challenge from every angle and deliver strategy and execution rich with ideas and perspective.
+                We work with founders, CMOs and growing brands to build growth that holds up under real business decisions. Strategy-led, creatively expressed and measured across every touchpoint. Our job is to look at the challenge from every angle and deliver strategy and execution rich with ideas and perspective.
               </p>
             </FadeUp>
           </div>

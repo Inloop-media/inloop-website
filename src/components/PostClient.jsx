@@ -76,7 +76,7 @@ export default function PostClient({ slug }) {
               <div className="mt-10 pt-8 border-t border-[#383838] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
                 <div>
                   <div className="text-[16px] text-white">Written by the Inloop Media team</div>
-                  <div className="text-[14px] text-white/60">An AI-first marketing agency in Noida, building brands, content and performance systems that grow.</div>
+                  <div className="text-[14px] text-white/60">A creative agency in Noida, building brands, content and performance systems that grow.</div>
                 </div>
                 <Link href="/contact" className="liquid-btn liquid-btn-white"><span>Talk to us →</span></Link>
               </div>

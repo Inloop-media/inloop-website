@@ -1,4 +1,4 @@
-// AI video reels shown on the homepage (from the Inloop Media site).
+// Video ad reels shown on the homepage (from the Inloop Media site).
 // To add a reel: drop the .mp4 in public/videos and add one entry here — the grid shows up to 9.
 export const REELS = [
   {
@@ -13,7 +13,7 @@ export const REELS = [
     length: "0:12",
     industry: "Fashion & Apparel",
     format: "Lookbooks & try-on hooks",
-    scenes: ["One jacket, five outfits", "AI try-on across body types", "New drop — sizes XS to 3XL"],
+    scenes: ["One jacket, five outfits", "Try-on across body types", "New drop — sizes XS to 3XL"],
   },
   {
     src: "/videos/ai-saas.mp4",
@@ -41,6 +41,6 @@ export const REELS = [
     length: "0:22",
     industry: "Real Estate",
     format: "Walkthrough reels",
-    scenes: ["Sunrise from the 14th floor", "AI-staged room walkthrough", "2 & 3 BHK — site visits open"],
+    scenes: ["Sunrise from the 14th floor", "Styled room walkthrough", "2 & 3 BHK — site visits open"],
   },
 ];

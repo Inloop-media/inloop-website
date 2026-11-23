@@ -127,7 +127,7 @@ export default function WorkClient() {
           />
           <FadeUp delay={0.3}>
             <p className="mt-4 max-w-[664px] text-[18px] font-light leading-[1.5] text-white">
-              The work you see here is the result of strategy, creative, performance and AI coming together to solve real business challenges.
+              The work you see here is the result of strategy, creative, production and performance coming together to solve real business challenges.
             </p>
           </FadeUp>
         </div>
@@ -142,7 +142,7 @@ export default function WorkClient() {
         </div>
       </section>
 
-      <section id="ai-work" className="bg-[#000000] pt-20 pb-[100px]">
+      <section id="video-work" className="bg-[#000000] pt-20 pb-[100px]">
         <div className="gs-wrap-64">
           <Kicker size="sm">Our Past Projects</Kicker>
           <RevealLines

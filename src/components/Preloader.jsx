@@ -49,7 +49,7 @@ export default function Preloader() {
           </motion.div>
 
           <div className="absolute bottom-10 left-5 right-5 md:left-12 md:right-12 flex items-end justify-between">
-            <span className="text-[10px] tracking-[0.3em] uppercase text-white/45">AI-First Marketing Agency</span>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-white/45">Creative Agency</span>
             <span className="text-5xl md:text-7xl font-light tracking-[-0.04em] text-white tabular-nums">{count}</span>
           </div>
           <div className="absolute bottom-0 left-0 h-[2px] bg-[var(--brand)]" style={{ width: `${count}%` }} />

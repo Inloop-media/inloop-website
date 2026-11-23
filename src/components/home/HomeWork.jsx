@@ -16,9 +16,9 @@ const TILES = [
   { span: "full", href: `/work/${apploft.slug}`, cat: apploft.tag, title: apploft.name, desc: apploft.headline, visual: { case: apploft } },
   { span: "half", h: "md:aspect-[630/392]", href: `/work/${luxe.slug}`, cat: luxe.tag, title: luxe.name, desc: luxe.headline, visual: { case: luxe } },
   { span: "half", h: "md:aspect-[630/392]", href: `/work/${fmcg.slug}`, cat: fmcg.tag, title: fmcg.name, desc: fmcg.headline, visual: { case: fmcg } },
-  { span: "full", href: "/work", cat: "AI Video Creative", title: "Fashion & Apparel", desc: "Lookbooks and AI try-on hooks — one jacket, five outfits, every body type. New drop, sizes XS to 3XL.", visual: { src: "/videos/ai-fashion.mp4" } },
-  { span: "half", h: "md:aspect-[630/319]", href: "/work", cat: "AI Video Creative", title: "Beauty & Wellness", desc: "UGC unboxings and routines — texture close-ups from day 1 to day 7.", visual: { src: "/videos/ai-beauty.mp4" } },
-  { span: "half", h: "md:aspect-[630/319]", href: "/work", cat: "AI Video Creative", title: "High-Tech & SaaS", desc: "Explainer and demo ads — still exporting reports by hand? Live in 10 minutes.", visual: { src: "/videos/ai-saas.mp4" } },
+  { span: "full", href: "/work", cat: "Video Creative", title: "Fashion & Apparel", desc: "Lookbooks and try-on hooks — one jacket, five outfits, every body type. New drop, sizes XS to 3XL.", visual: { src: "/videos/ai-fashion.mp4" } },
+  { span: "half", h: "md:aspect-[630/319]", href: "/work", cat: "Video Creative", title: "Beauty & Wellness", desc: "UGC unboxings and routines — texture close-ups from day 1 to day 7.", visual: { src: "/videos/ai-beauty.mp4" } },
+  { span: "half", h: "md:aspect-[630/319]", href: "/work", cat: "Video Creative", title: "High-Tech & SaaS", desc: "Explainer and demo ads — still exporting reports by hand? Live in 10 minutes.", visual: { src: "/videos/ai-saas.mp4" } },
 ];
 
 function Tile({ t, index }) {

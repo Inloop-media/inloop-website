@@ -23,8 +23,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  title: "Inloop Media — AI-First Marketing Agency",
-  description: "Inloop Media is an AI-first marketing agency combining creative, performance and automation to engineer measurable growth for modern brands.",
+  title: "Inloop Media — Creative Agency",
+  description: "Inloop Media is a creative agency combining branding, content, production and performance marketing to grow modern brands.",
 };
 
 export default function RootLayout({ children }) {

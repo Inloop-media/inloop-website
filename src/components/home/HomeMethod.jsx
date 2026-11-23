@@ -13,8 +13,8 @@ const COLS = [
     body: "Every engagement begins with a 48-hour deep dive into your brand, numbers, audience and competitors. We dig into the real business challenge before we talk about creative. Clarity first; clarity drives every decision that follows.",
   },
   {
-    title: "Human first, AI always",
-    body: "Creativity and strategy lead; AI gives them speed and scale. Our strategists read the data and set direction, our creators produce and test at a scale humans alone can't match, and our optimisers watch performance live — so every touchpoint stays sharp and on-brand.",
+    title: "Human first, always",
+    body: "Creativity and strategy lead. Our strategists read the data and set direction, our creators produce and test at scale, and our optimisers watch performance live — so every touchpoint stays sharp and on-brand.",
   },
   {
     title: "Built to Scale",

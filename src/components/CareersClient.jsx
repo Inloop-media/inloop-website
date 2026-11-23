@@ -78,7 +78,7 @@ export default function CareersClient() {
           <Kicker size="ab">We&apos;re hiring</Kicker>
           <RevealLines lines={["open positions"]} className="mt-4 text-[34px] md:text-[54px] font-normal leading-[1.5] uppercase text-white" />
           <p className="mt-2 max-w-2xl text-[15px] leading-[1.5] text-white/80">
-            A lean, senior-led team building growth for ambitious brands, with AI in every workflow and taste in every decision. Based in Noida, remote-friendly.
+            A lean, senior-led team building growth for ambitious brands, with craft and taste in every decision. Based in Noida, remote-friendly.
           </p>
           <div className="mt-12 border-t-[1.5px] border-white">
             {ROLES.map((r, i) => (

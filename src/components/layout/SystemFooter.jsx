@@ -19,7 +19,7 @@ const CAPABILITIES = [
   { label: "Social Media", href: "/services/social-media" },
   { label: "Website & Tech", href: "/services/website" },
   { label: "Performance", href: "/services/performance" },
-  { label: "AI Creative", href: "/services/ai" },
+  { label: "Creative Studio", href: "/services/creative-studio" },
 ];
 
 const label = "text-[12px] font-medium leading-[18px] tracking-[0.8px] uppercase text-[var(--brand)]";
@@ -33,7 +33,7 @@ export default function SystemFooter() {
           <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block"><BrandMark size="footer" /></Link>
             <p className="mt-8 max-w-[222px] text-[15px] leading-6 text-white">
-              Strategy, creative, performance and AI automation for brands built to scale.
+              Strategy, creative, production and performance for brands built to scale.
             </p>
           </div>
 

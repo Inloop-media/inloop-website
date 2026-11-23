@@ -9,9 +9,9 @@ import { RevealLines } from "@/components/home/SectionHead";
 // "We don't just consult. We build." — the Inloop pinned flip-card section
 
 const PILLARS = [
-  { num: "01", icon: "◆", label: "Strategy", href: "/services/branding", items: ["AI Growth Strategy", "Brand Positioning", "Creative Direction", "Market Discovery", "Competitive Research"] },
+  { num: "01", icon: "◆", label: "Strategy", href: "/services/branding", items: ["Growth Strategy", "Brand Positioning", "Creative Direction", "Market Discovery", "Competitive Research"] },
   { num: "02", icon: "✦", label: "Creative", href: "/services/content", items: ["Art Direction", "UX / UI Design", "Motion & Animation", "Interactive Design", "Visual Identity"] },
-  { num: "03", icon: "⬡", label: "Tech", href: "/services/website", items: ["Next.js & React Apps", "AI Automation & Agents", "WebGL / Three.js", "API Integrations", "Full-Stack Engineering"] },
+  { num: "03", icon: "⬡", label: "Tech", href: "/services/website", items: ["Next.js & React Apps", "Marketing Automation", "WebGL / Three.js", "API Integrations", "Full-Stack Engineering"] },
   { num: "04", icon: "▲", label: "Growth", href: "/services/performance", items: ["SEO & Content Systems", "Paid Ads & Funnels", "Email Automation", "Analytics & Tracking", "Conversion Optimisation"] },
 ];
 

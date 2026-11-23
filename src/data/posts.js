@@ -9,7 +9,7 @@ const IMG = {
   influencer: "/videos/ai-fashion.mp4",
 };
 
-export const POST_CATEGORIES = ["All Post", "SEO", "Performance", "AI", "E-commerce", "Branding", "Content", "Influencer"];
+export const POST_CATEGORIES = ["All Post", "SEO", "Performance", "E-commerce", "Branding", "Content", "Influencer"];
 
 export const POSTS = [
   {
@@ -63,31 +63,6 @@ export const POSTS = [
       { quote: "A clean account with fewer, stronger campaigns almost always beats a busy one." },
       { h: "Scale with discipline" },
       { p: "When an ad set beats target ROAS for several days, we raise budgets in steady steps rather than doubling overnight. Sudden jumps reset learning and often crash performance. Slow, consistent scaling keeps return stable while spend grows." },
-    ],
-  },
-  {
-    slug: "ai-in-marketing-workflows",
-    category: "AI",
-    date: "9 September 2026",
-    title: "Weaving AI through every marketing workflow",
-    excerpt: "A practical look at where AI actually speeds up creative and strategy, without losing the human touch.",
-    media: IMG.ai,
-    takeaways: [
-      "Use AI for volume and speed; keep humans on taste and judgement.",
-      "The biggest wins are in research, variations and repetitive ops.",
-      "A clear brand voice guide makes AI output usable on day one.",
-    ],
-    body: [
-      { h: "Speed is the real advantage" },
-      { p: "AI rarely produces the final idea. What it does brilliantly is remove the slow parts: first drafts, research summaries, ad variations and resizing. That frees the team to spend time where it matters most, on the concept and the craft." },
-      { h: "Where AI earns its place" },
-      { p: "Across our projects, AI pays off most in four places:" },
-      { ul: ["Audience and competitor research in hours, not days", "Dozens of hook and headline variations for ad testing", "Storyboards and visual concepts before a shoot", "Lead follow-ups and reporting on autopilot"] },
-      { h: "Taste is still human" },
-      { p: "Left alone, AI produces average work, because it is trained on the average. Every asset we ship is chosen, edited and approved by a person who knows the brand." },
-      { quote: "AI gives you more options. Taste decides which one deserves to ship." },
-      { h: "Start small and systemise" },
-      { p: "Pick one workflow that eats your team's week, such as ad variations or monthly reports. Write down your brand voice and rules, build a repeatable prompt process around them, and measure the hours saved. Then move to the next one." },
     ],
   },
   {

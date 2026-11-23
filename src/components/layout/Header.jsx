@@ -100,7 +100,7 @@ export default function Header() {
           <BrandMark />
           <span className="hidden md:block w-px h-10 bg-white/30" />
           <span className="hidden md:block text-[10px] font-light leading-[15px] tracking-[2px] uppercase text-white">
-            AI-First<br />Marketing Agency
+            Creative<br />Agency
           </span>
         </Link>
 

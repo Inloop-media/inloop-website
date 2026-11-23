@@ -4,7 +4,7 @@ export const SERVICE_CATEGORIES = [
   { slug: "brand", label: "Brand & Content" },
   { slug: "social", label: "Social & Creators" },
   { slug: "growth", label: "Performance & Growth" },
-  { slug: "tech", label: "Tech & AI" },
+  { slug: "tech", label: "Tech" },
 ];
 
 export const SERVICES = [
@@ -15,7 +15,7 @@ export const SERVICES = [
     tag: "Brand Strategy & Identity",
     title: "Branding",
     headline: "Brands people remember",
-    description: "We build AI-led brand identities that help modern brands define who they are, communicate with conviction and stay relevant as they scale.",
+    description: "We build brand identities that help modern brands define who they are, communicate with conviction and stay relevant as they scale.",
     media: "/videos/ai-services.mp4",
     what: [
       { t: "Brand Strategy", d: "We define your purpose, audience, positioning, personality and competitive edge." },
@@ -104,22 +104,22 @@ export const SERVICES = [
   },
   {
     num: "06",
-    slug: "ai",
+    slug: "creative-studio",
     category: "tech",
-    tag: "AI-Powered Creative",
-    title: "AI Creative",
-    headline: "Creative at the speed of AI",
-    description: "We use AI-led workflows to help brands create smarter content, faster concepts, scalable campaigns and leaner creative systems.",
+    tag: "Creative Studio",
+    title: "Creative Studio",
+    headline: "Ideas, concepts and content at scale",
+    description: "We help brands create smarter content, faster concepts, scalable campaigns and leaner creative systems.",
     media: "/videos/ai-fashion.mp4",
     what: [
-      { t: "AI Content Ideation", d: "We generate content ideas, hooks, captions, scripts and angles with AI-led strategy." },
-      { t: "AI Visual Concepts", d: "We generate moodboards, ad concepts, creative directions and visual references." },
-      { t: "AI Video Storyboarding", d: "We build AI-assisted video concepts, scene prompts and cinematic storyboards." },
-      { t: "Prompt Engineering", d: "We write advanced prompts for ChatGPT, Claude, Gemini, Midjourney and more." },
+      { t: "Content Ideation", d: "We develop content ideas, hooks, captions, scripts and angles rooted in strategy." },
+      { t: "Visual Concepts", d: "We create moodboards, ad concepts, creative directions and visual references." },
+      { t: "Video Storyboarding", d: "We build video concepts, shot lists and cinematic storyboards." },
+      { t: "Copywriting", d: "We write scripts, captions and ad copy in your brand's voice." },
       { t: "Workflow Automation", d: "We build planning, reporting and execution workflows that cut manual effort." },
       { t: "Creative Scaling", d: "We help brands produce multiple content variations while holding brand consistency." },
     ],
-    features: ["AI content ideation — hooks, captions, scripts & angles", "AI visual concepts & cinematic video storyboards", "Prompt engineering for ChatGPT, Claude, Gemini & Midjourney", "Workflow automation & creative scaling"],
+    features: ["Content ideation — hooks, captions, scripts & angles", "Visual concepts & cinematic video storyboards", "Scripts, captions & ad copy in your brand voice", "Workflow automation & creative scaling"],
   },
   {
     num: "07",
@@ -152,12 +152,12 @@ export const SERVICES = [
     what: [
       { t: "Video Production", d: "Ad films, brand films, product videos, influencer videos, podcast production, social media shoots and corporate videos." },
       { t: "Photography", d: "Product, lifestyle, campaign, real estate, restaurant & cafe and social media shoots." },
-      { t: "Post-Production", d: "Video and ad editing, colour grading, sound design, motion graphics, speed ramping, SaaS explainer videos and AI-generated videos." },
+      { t: "Post-Production", d: "Video and ad editing, colour grading, sound design, motion graphics, speed ramping and SaaS explainer videos." },
       { t: "Creative Direction", d: "Moodboards, scripts, shot lists, styling direction and visual planning." },
       { t: "Shoot Management", d: "Location planning, talent coordination, props, styling and on-ground execution." },
       { t: "Event Coverage", d: "Event reels, recap videos, stories, photography and highlight edits." },
     ],
-    features: ["Ad films, brand films, product & influencer videos", "Podcast production & event coverage", "Product, real estate, restaurant & cafe shoots", "Creative direction & end-to-end shoot management — idea, script, shoot, edit, publish", "Post-production — editing, motion graphics, explainers & AI video"],
+    features: ["Ad films, brand films, product & influencer videos", "Podcast production & event coverage", "Product, real estate, restaurant & cafe shoots", "Creative direction & end-to-end shoot management — idea, script, shoot, edit, publish", "Post-production — editing, motion graphics & explainers"],
   },
   {
     num: "09",
@@ -246,7 +246,7 @@ export const PILLARS = [
     title: "Brand Strategy & Identity",
     slug: "branding",
     short: "The foundation of growth. We define who your brand is, who it's for, and why it deserves to win.",
-    services: ["AI Growth Strategy", "Brand Positioning", "Visual Identity", "Brand Guidelines"],
+    services: ["Growth Strategy", "Brand Positioning", "Visual Identity", "Brand Guidelines"],
     approach:
       "We start with discovery and research to understand your business, audience and market — then translate it into a cohesive visual and verbal identity. Every decision is made with intent, so your brand stands out, earns trust and stays relevant as you grow.",
     media: ["/videos/ai-services.mp4", "/images/team/founders.webp"],
@@ -255,18 +255,18 @@ export const PILLARS = [
     num: "02",
     title: "Social, Content & Production",
     slug: "social-media",
-    short: "Scroll-stopping content and premium production, at the speed of AI.",
+    short: "Scroll-stopping content and premium production, made to perform.",
     services: ["Social Media", "Content Creation", "Production", "Influencer"],
     approach:
-      "Human first, AI always. Strategy, taste and judgement come from our team; AI gives them speed and scale — more concepts, more variations and sharper output, without losing the human touch or brand consistency.",
+      "Human first, always. Strategy, taste and judgement come from our team — more concepts, more variations and sharper output, without losing the human touch or brand consistency.",
     media: ["/videos/ai-beauty.mp4", "/videos/ai-fashion.mp4"],
   },
   {
     num: "03",
-    title: "Website, Tech & AI Automation",
+    title: "Website, Tech & Automation",
     slug: "website",
     short: "Sites, funnels and automation engineered to convert — and to scale with you.",
-    services: ["UX/UI Design", "Next.js & Shopify", "Landing Pages", "AI Automation"],
+    services: ["UX/UI Design", "Next.js & Shopify", "Landing Pages", "Automation"],
     approach:
       "We design clean, conversion-focused interfaces and build them on a modern stack, then wire in the tracking and automation that cut manual effort. Your website becomes the hardest-working member of your growth team.",
     media: ["/videos/ai-saas.mp4", "/images/ad-2.webp"],

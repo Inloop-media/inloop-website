@@ -30,14 +30,14 @@ export const ROLES = [
     responsibilities: [
       "Design social creatives, ad assets and campaign visuals",
       "Extend brand identity systems across every touchpoint",
-      "Work with AI tools to explore concepts and variations faster",
+      "Explore concepts and variations quickly to find the strongest idea",
       "Keep every asset consistent with brand guidelines",
     ],
     requirements: [
       "1–3 years of design experience with a strong portfolio",
       "Fluency in Figma and Adobe Creative Cloud",
       "A sharp eye for typography, layout and detail",
-      "Curiosity about AI-assisted design workflows",
+      "Curiosity about new tools, trends and design workflows",
     ],
   },
   {
