@@ -325,3 +325,24 @@ select.gs-field option { background: #000; color: #fff; }
 @keyframes gs-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 @keyframes sound-bar { from { transform: scaleY(0.3); } to { transform: scaleY(1); } }
+
+/* Work page: a whole website scrolling slowly inside its browser-window card (hover pauses it) */
+@keyframes site-scroll {
+  0%, 6% { object-position: 50% 0%; }
+  94%, 100% { object-position: 50% 100%; }
+}
+.site-scroll { animation: site-scroll 44s ease-in-out infinite alternate; }
+.group:hover .site-scroll { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .site-scroll { animation: none; object-position: 50% 0%; }
+}
+
+/* Work page → Inloop CRM: the "tracks every step" line lights up one step after another */
+@keyframes crm-flow {
+  0%, 12%, 100% { border-color: rgba(255, 255, 255, 0.2); background: transparent; }
+  4%, 8% { border-color: var(--brand); background: color-mix(in srgb, var(--brand) 18%, transparent); }
+}
+.crm-flow-step { animation: crm-flow 5.5s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .crm-flow-step { animation: none; }
+}

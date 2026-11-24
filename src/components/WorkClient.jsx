@@ -9,6 +9,8 @@ import CaseVisual from "@/components/gs/CaseVisual";
 import { Kicker } from "@/components/gs/Type";
 import { RevealLines, FadeUp } from "@/components/home/SectionHead";
 import { CASE_STUDIES, PAST_PROJECTS } from "@/data/caseStudies";
+import { PRODUCT, WEBSITES, domainOf } from "@/data/websites";
+import CrmShowcase from "@/components/CrmShowcase";
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -43,6 +45,74 @@ function FeaturedCard({ c, full, index }) {
         </div>
       </Link>
     </motion.div>
+  );
+}
+
+/** A browser window around a screenshot: three dots and the site's address. */
+function BrowserFrame({ src, full, delay = 0, alt, url, className = "aspect-[16/10]", position = "object-top" }) {
+  return (
+    <div className="overflow-hidden rounded-[12px] bg-[#0d0d0f] ring-1 ring-white/12 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)] transition-[box-shadow,transform] duration-500 group-hover:-translate-y-1 group-hover:ring-white/30 group-hover:shadow-[0_40px_100px_-30px_rgba(129,140,248,0.35)]">
+      <div className="flex items-center gap-3 border-b border-white/10 bg-[#161618] px-4 py-2.5">
+        <span className="flex gap-1.5">
+          <i className="h-2.5 w-2.5 rounded-full bg-white/20" />
+          <i className="h-2.5 w-2.5 rounded-full bg-white/20" />
+          <i className="h-2.5 w-2.5 rounded-full bg-white/20" />
+        </span>
+        <span className="mx-auto max-w-[70%] truncate rounded-md bg-white/[0.06] px-3 py-1 text-center text-[11px] tracking-wide text-white/55">{domainOf(url)}</span>
+        <span className="w-[42px]" />
+      </div>
+      <div className={`relative overflow-hidden ${className}`}>
+        {full ? (
+          // The whole page scrolls slowly inside the window; hovering pauses it
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={full} alt={alt} loading="lazy" className="site-scroll absolute inset-0 h-full w-full object-cover" style={{ animationDelay: `${-delay}s` }} />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={src} alt={alt} loading="lazy" className={`absolute inset-0 h-full w-full object-cover ${position} transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]`} />
+        )}
+      </div>
+    </div>
+  );
+}
+
+function WebsiteCard({ w, index }) {
+  return (
+    <motion.a
+      href={w.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.8, delay: (index % 2) * 0.1, ease: EASE }}
+      data-cursor="Visit"
+      className="group block"
+    >
+      <BrowserFrame src={w.img} full={w.full} delay={index * 5} alt={`${w.name} website`} url={w.url} />
+      <div className="px-1 pt-5 pb-2">
+        <div className="flex items-end justify-between gap-4">
+          <div className="min-w-0">
+            <div className="text-[20px] md:text-[24px] font-medium leading-[1.25] text-white">{w.name}</div>
+            <div className="mt-1 text-[15px] font-light leading-[1.5] text-white/70">{w.category}</div>
+          </div>
+          <span className="flex shrink-0 items-center gap-1.5 text-[13px] uppercase tracking-[0.12em] text-white/80 group-hover:text-white">
+            Visit <Arrow />
+          </span>
+        </div>
+        {w.did?.length > 0 && (
+          <div className="mt-4 border-t border-white/10 pt-4">
+            <div className="text-[11px] uppercase tracking-[0.18em] text-white/45">What we did</div>
+            <ul className="mt-2.5 flex flex-wrap gap-2">
+              {w.did.map((d) => (
+                <li key={d} className="rounded-full border border-white/15 px-3 py-1 text-[12.5px] text-white/80">
+                  {d}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </motion.a>
   );
 }
 
@@ -141,6 +211,20 @@ export default function WorkClient() {
           ))}
         </div>
       </section>
+
+      <section id="websites" className="bg-[#000000] pt-20 pb-[40px]">
+        <div className="gs-wrap-64">
+          <Kicker size="sm">Websites We&apos;ve Built</Kicker>
+          <RevealLines lines={["Websites and stores", "built to look good and sell"]} className="mt-5 max-w-[1212px] text-[36px] md:text-[60px] font-semibold leading-[1.1] text-white" />
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-14 lg:gap-x-10 lg:gap-y-16">
+            {WEBSITES.map((w, i) => (
+              <WebsiteCard key={w.url} w={w} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CrmShowcase p={PRODUCT} />
 
       <section id="video-work" className="bg-[#000000] pt-20 pb-[100px]">
         <div className="gs-wrap-64">
